@@ -1,0 +1,4 @@
+[08-Apr-2023 13:49:15 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hasheobd/syedzameen.com/config/cache.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/hasheobd/syedzameen.com/config/cache.php on line 21
