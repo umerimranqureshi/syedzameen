@@ -339,19 +339,19 @@
                 <div class="form-group col-lg-3 col-md-12 col-sm-12 pt-15">
                     <div class="select-wrapper position-relative">
                         <select name="beds" class="select form-control has-val">
-                            <option @isset($old_beds) {$old_beds=="null" ?"selected":''}@endisset
+                            <option @isset($old_beds) {{$old_beds=="null" ?"selected":''}}@endisset
                                 value="null">
                                 Beds</option>
-                            <option @isset($old_beds) {$old_beds=="1" ?"selected":''}@endisset
+                            <option @isset($old_beds) {{$old_beds=="1" ?"selected":''}}@endisset
                                 value="1">One
                             </option>
-                            <option @isset($old_beds) {$old_beds=="2" ?"selected":''}@endisset
+                            <option @isset($old_beds) {{$old_beds=="2" ?"selected":''}}@endisset
                                 value="2">Two
                             </option>
-                            <option @isset($old_beds) {$old_beds=="3" ?"selected":''}@endisset
+                            <option @isset($old_beds) {{$old_beds=="3" ?"selected":''}}@endisset
                                 value="3">Three
                             </option>
-                            <option @isset($old_beds) {$old_beds=="4" ?"selected":''}@endisset
+                            <option @isset($old_beds) {{$old_beds=="4" ?"selected":''}}@endisset
                                 value="4">Four
                             </option>
                         </select>
@@ -402,7 +402,7 @@
     =========================================================================-->
     <!-- Feautred Properties Start
     =========================================================================-->
-    <section class="featured-properties bg-light mt-5"  style="margin-bottom:-132">
+    <section class="featured-properties bg-light mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -428,7 +428,7 @@
 
     <!-- Latest Properties Start
     =========================================================================-->
-    <section class=" ">
+    <section class=" featured-properties bg-light mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -466,67 +466,61 @@
 
     <!-- Why Choose Us Start
     =========================================================================-->
-    <section class="position-relative" style="background: url(images/background/1.png) no-repeat bottom center / cover; margin-top: -258px">
+    <section class="position-relative" style="background: url(images/background/1.png) no-repeat bottom center / cover; ">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-7">
-                    <div class="bg-white p-50">
-                        <div class="row">
-                            <div class="col-md-10 col-lg-10">
-                                <div class="side-title mb-30">
-                                    <span class="small-title color-primary position-relative line-primary">Want A Better
-                                        Life?</span>
-                                    <h2 class="title mb-20 color-secondary">Buy A Property and Lead A Happy Life.</h2>
-                                    <p>Owning a home is one of the most common financial goals in the Pakistan,
-                                        and there are many reasons why. It’s a source of stability,
-                                        it gives you control, it allows you to build equity,
-                                        it reflects your style, and on some level,
-                                        it’s associated with a feeling of success.</p>
+                <div class="col-md-12 col-lg-6">
+                    <div class="side-title mb-30">
+                        <span class="small-title color-primary position-relative line-primary">Want A Better
+                            Life?</span>
+                        <h2 class="title mb-20 color-secondary">Buy A Property and Lead A Happy Life.</h2>
+                        <p>Owning a home is one of the most common financial goals in the Pakistan,
+                            and there are many reasons why. It’s a source of stability,
+                            it gives you control, it allows you to build equity,
+                            it reflects your style, and on some level,
+                            it’s associated with a feeling of success.</p>
+                    </div>
+                    <div class="why-us mt-30 flat-medium icon-primary">
+                        <ul>
+                            <li>
+                                <span class="float-left mr-15"><i style="font-size:40px"
+                                        class="fa fa-bed"></i></span>
+                                <div class="d-table">
+                                    <h4 class="color-secondary mb-15">Location of the House</h4>
+                                    <p>Location is key to valuable real estate.
+                                        Homes in cities that have little room for expansion tend to be
+                                        more valuable than those in cities that have plenty of room..</p>
                                 </div>
-                                <div class="why-us mt-30 flat-medium icon-primary">
-                                    <ul>
-                                        <li>
-                                            <span class="float-left mr-15"><i style="font-size:40px"
-                                                    class="fa fa-bed"></i></span>
-                                            <div class="d-table">
-                                                <h4 class="color-secondary mb-15">Location of the House</h4>
-                                                <p>Location is key to valuable real estate.
-                                                    Homes in cities that have little room for expansion tend to be
-                                                    more valuable than those in cities that have plenty of room..</p>
-                                            </div>
-                                        </li>
-                                        <li class="mt-30">
-                                            <span class="float-left mr-15"><i style="font-size: 40px"
-                                                    class="fa fa-car"></i></span>
-                                            <div class="d-table">
-                                                <h4 class="color-secondary mb-15">Parking Lot Size</h4>
-                                                <p>The average size of a parking space is 320 square feet. However, there
-                                                    are also other sizes available,
-                                                    one of the most common of which is 270 square feet.
-                                                    These sizes include the landscaping or end of aisle areas,
-                                                    the circulation areas and the parking space. .</p>
-                                            </div>
-                                        </li>
-                                        <li class="mt-30">
-                                            <span class="float-left mr-15"><i style="font-size:40px"
-                                                    class="fa fa-home"></i></span>
-                                            <div class="d-table">
-                                                <h4 class="color-secondary mb-15">Age of the House</h4>
-                                                <p>A house is a concrete structure made of other earthly elements that are
-                                                    bound to deteriorate over time.
-                                                    Moreover, extreme weather,
-                                                    environmental conditions and rigorous usage, damage the structure in its
-                                                    own way..</p>
-                                            </div>
-                                        </li>
-                                    </ul>
+                            </li>
+                            <li class="mt-30">
+                                <span class="float-left mr-15"><i style="font-size: 40px"
+                                        class="fa fa-car"></i></span>
+                                <div class="d-table">
+                                    <h4 class="color-secondary mb-15">Parking Lot Size</h4>
+                                    <p>The average size of a parking space is 320 square feet. However, there
+                                        are also other sizes available,
+                                        one of the most common of which is 270 square feet.
+                                        These sizes include the landscaping or end of aisle areas,
+                                        the circulation areas and the parking space. .</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                            <li class="mt-30">
+                                <span class="float-left mr-15"><i style="font-size:40px"
+                                        class="fa fa-home"></i></span>
+                                <div class="d-table">
+                                    <h4 class="color-secondary mb-15">Age of the House</h4>
+                                    <p>A house is a concrete structure made of other earthly elements that are
+                                        bound to deteriorate over time.
+                                        Moreover, extreme weather,
+                                        environmental conditions and rigorous usage, damage the structure in its
+                                        own way..</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="w-100">
-                    <div class="fact-counter achievement text-center py-50 px-30 position-absolute bg-secondary">
+                <div class="col-md-12 col-lg-6" style="align-self: center;">
+                    <div class="fact-counter  text-center py-50 px-30 my-30 bg-secondary">
                         <div class="row">
                             <div class="col-md-6 col-lg-6">
                                 <div class="counter count wow">
@@ -574,7 +568,7 @@
 
     <!-- Best Offer Start
     =========================================================================-->
-    <section style="margin-top: -112px">
+    <section >
         <div class="container">
             <h2 class="title mb-20 color-secondary">Recent Blogs</h2>
             <p>Find the information which is compulsory for your daily life.</p>
@@ -694,7 +688,7 @@
                             <div class="agent-profile">
                                 <div class="overflow-hidden"><img src="/image/{{ $agency->image }}" alt="image">
                                 </div>
-                                <div class="agent-profile-content hover-secondery-primary py-20 px-15 bg-white">
+                                <div class="agent-profile-content hover-secondery-primary py-20 px-20 bg-gray d-flex">
                                     <a class="mb-5 d-block" href="">
                                         <h5>{{ $agency->name }}</h5>
                                     </a>
