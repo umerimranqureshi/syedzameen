@@ -74,7 +74,7 @@
 
 
 				<!-----------form-section end---------------------------->
-
+{{-- {{dd($allRCP)}} --}}
 			</div>
 			<div class="col-md-12 col-lg-12">
 				<div class="tab-content  border-top-1-gray" id="myTabContent">

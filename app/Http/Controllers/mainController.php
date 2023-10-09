@@ -152,8 +152,9 @@ class mainController extends Controller
         $location = DB::table("city_and_areas")->distinct()->get("area");
         $favPost = AddToFavorite::where('user_id', Auth::id())->get();
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
+        // dd($allRCP);
 
-        return view('rent.search', compact('allRCP', "subtypee", "cities", "favPost" ,"location"));
+        return view('rent.commercial', compact('allRCP', "subtypee", "cities", "favPost" ,"location"));
     }
 
     public function saleResidentialView()
