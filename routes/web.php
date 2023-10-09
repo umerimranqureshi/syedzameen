@@ -50,7 +50,7 @@ Route::get('/rent/commercial', [mainController::class, 'rentCommercialView'])->n
 Route::get('/rent/residential', [mainController::class, 'rentResidentialView'])->name('rentResidential');
 Route::get('/sale/residential', [mainController::class, 'saleResidentialView'])->name('saleResidentail');
 Route::get('/sale/commercial', [mainController::class, 'saleCommercialView'])->name('saleCommercial');
- Route::get('/single/pageadd/{id}', [mainController::class, 'singlePageAddView'])->name("singlePage");
+ Route::get('/ad/{title}/{id}', [mainController::class, 'singlePageAddView'])->name("singlePage");
 
 Route::get('/contact', [SecondMain::class, "contactUs"])->name('contactUs');
 

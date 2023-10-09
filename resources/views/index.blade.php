@@ -87,21 +87,21 @@
                 <p style="font-weight:400;cursor:pointer; letter-spacing: 1px; padding-right:30px; padding-left:30px; font-family:Montserrat; font-size:16px; line-height:50px; color:#ffffff; background:#fd9834; border-radius:0px; top:385px; left:66px;"
                     class="ls-l"
                     data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:199.2% -244.4% -600px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:199.2% -244.4% -600px; hover:true; hoverdurationin:300; hoveropacity:1; hoverbgcolor:#ffa319; parallax:true; parallaxlevel:30;">
-                    <a style="text-decoration: none;color:white" href="{{ route('singlePage', ['id' => $post->id]) }}"> View
+                    <a style="text-decoration: none;color:white" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}"> View
                         Details
                     </a>
                 </p>
 
                 @if ($post->postImages->count() > 0)
                     @if (count($post->postImages) >= 1)
-                        <a href="{{ route('singlePage', ['id' => $post->id]) }}">
+                        <a href="{{ route('singlePage', ['title'=> str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}">
                             <img width="618" height="304"
                                 src="{{ asset('propertyImages/' . $post->postImages[0]->img_path) }}" class="ls-l"
                                 alt="" style="top:205px; left:374px;"
                                 data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:13.2% 24.3% -1000px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:13.2% 24.3% -1000px; parallax:true; parallaxlevel:50;">
                         </a>
                     @endif
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}" target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-185.1% 134.1% -1400px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-185.1% 134.1% -1400px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:70;">
                         @if (count($post->postImages) >= 2)
                             <img width="185" height="185"
@@ -110,7 +110,7 @@
                         @endif
                     </a>
 
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}" target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-149.2% 170.4% -1200px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-149.2% 170.4% -1200px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:60;">
                         @if (count($post->postImages) >= 3)
                             <img width="125" height="125"
@@ -774,9 +774,11 @@
         function changecolor(id) {
 
             if (id == "sale") {
-                document.getElementById("sale").style.borderColor = "balck";
+                document.getElementById("sale").style.borderColor = "green";
+                document.getElementById("sale").style.backgroundColor = "#b2ffb2 !important";
+                document.getElementById("sale").style.color = "white !important";
                 document.getElementById("rent").style.borderColor = "orange";
-
+                console.log('umer');
             }
             if (id == "rent") {
 

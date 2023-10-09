@@ -197,7 +197,10 @@
 
         if (id == "sale") {
             document.getElementById("sale").style.borderColor = "green";
+            document.getElementById("sale").style.backgroundColor = "#b2ffb2 !important";
+            document.getElementById("sale").style.color = "white !important";
             document.getElementById("rent").style.borderColor = "orange";
+            console.log('umer');
 
         }
         if (id == "rent") {

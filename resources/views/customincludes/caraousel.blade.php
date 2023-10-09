@@ -72,7 +72,8 @@
                                                                 <b style="color: black;"> RS
                                                                 </b></span>
                                                             <a class="color-secondary mb-5"
-                                                                href="/single/pageadd/{{ $post->id }}">
+                                                            
+                                                                href="ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
                                                                 <h4> {{ Str::limit($post->property_title, 20, $end = '.......') }}
                                                                 </h4>
 
@@ -84,7 +85,7 @@
 
                                                             </a>
                                                         </div><a class="color-secondary mb-5"
-                                                            href="/single/pageadd/{{ $post->id }}">
+                                                            href="ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
                                                             <ul
                                                                 class="about-property icon-primary d-table f-14 z-index-1 position-relative">
                                                                 <li><span
@@ -160,7 +161,7 @@
                                                                 <b style="color: black;"> RS
                                                                 </b></span>
                                                             <a class="color-secondary mb-5"
-                                                                href="/single/pageadd/{{ $post->id }}">
+                                                                href="ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
 
                                                                 <h4> {{ Str::limit($post->property_title, 20, $end = '.......') }}
                                                                 </h4>
@@ -169,7 +170,7 @@
                                                                         class="fa fa-map-marker"></i>{{ $post->area }}</span>
                                                             </a>
                                                         </div><a class="color-secondary mb-5"
-                                                            href="/single/pageadd/{{ $post->id }}">
+                                                            href="ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
                                                             <ul
                                                                 class="about-property icon-primary d-table f-14 z-index-1 position-relative">
                                                                 <li><span

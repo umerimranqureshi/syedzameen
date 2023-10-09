@@ -153,7 +153,7 @@
 
 												<span class="text-success convrt2"> <b>Price </b> </span>
 													<a class="color-secondary mb-5"
-														href="{{route('singlePage',['id'=>$post->id])}}">
+														href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title), 'id'=>$post->id])}}">
 														<h4>{{$post->property_title}}</h4>
 
 														<span class="address icon-primary f-14"><i

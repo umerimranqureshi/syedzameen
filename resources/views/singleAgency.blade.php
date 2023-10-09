@@ -149,7 +149,7 @@ object-fit: fill;
                             <div class="property-content bg-white pt-30 pb-50 px-30">
     
                                 <a class="color-secondary mb-5" style="word-break: break-all"
-                                    href="{{route('singlePage',["id" => "$postt->id"])}}">
+                                    href="{{route('singlePage',['title'=>str_replace(' ', '-', $postt->property_title), "id" => "$postt->id"])}}">
                                     <h4 id="for-lenght" style="line-height: 30px;height:61px">{{$postt->property_title}}.
                                     </h4>
     

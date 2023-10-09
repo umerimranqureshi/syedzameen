@@ -122,7 +122,7 @@
                                                 style="color: gray;font-size:18px" > 
                                                 <i class="fas fa-pen"></i></a>
                                             
-                                                <a  href="{{route('singlePage',['id'=>$post->id])}}"
+                                                <a  href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title), 'id'=>$post->id])}}"
                                                 style="color: gray;font-size:18px" > 
                                                 <i class="btn btn-block btn-primary">Detail</i></a>
                                             
