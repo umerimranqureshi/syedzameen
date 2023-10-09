@@ -658,7 +658,7 @@ class mainController extends Controller
     }
 
 
-    public function singlePageAddView($id)
+    public function singlePageAddView($title, $id)
     {
 
         $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->latest()->limit(6)->get();

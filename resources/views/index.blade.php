@@ -44,6 +44,9 @@
             font-size: 13px;
             font-weight: 200;
         }
+        .jslider-value {
+            color: white;
+        }
     </style>
 @endsection
 
@@ -87,21 +90,21 @@
                 <p style="font-weight:400;cursor:pointer; letter-spacing: 1px; padding-right:30px; padding-left:30px; font-family:Montserrat; font-size:16px; line-height:50px; color:#ffffff; background:#fd9834; border-radius:0px; top:385px; left:66px;"
                     class="ls-l"
                     data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:199.2% -244.4% -600px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:199.2% -244.4% -600px; hover:true; hoverdurationin:300; hoveropacity:1; hoverbgcolor:#ffa319; parallax:true; parallaxlevel:30;">
-                    <a style="text-decoration: none;color:white" href="{{ route('singlePage', ['id' => $post->id]) }}"> View
+                    <a style="text-decoration: none;color:white" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}"> View
                         Details
                     </a>
                 </p>
 
                 @if ($post->postImages->count() > 0)
                     @if (count($post->postImages) >= 1)
-                        <a href="{{ route('singlePage', ['id' => $post->id]) }}">
+                        <a href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}">
                             <img width="618" height="304"
                                 src="{{ asset('propertyImages/' . $post->postImages[0]->img_path) }}" class="ls-l"
                                 alt="" style="top:205px; left:374px;"
                                 data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:13.2% 24.3% -1000px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:13.2% 24.3% -1000px; parallax:true; parallaxlevel:50;">
                         </a>
                     @endif
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}" target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-185.1% 134.1% -1400px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-185.1% 134.1% -1400px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:70;">
                         @if (count($post->postImages) >= 2)
                             <img width="185" height="185"
@@ -110,7 +113,7 @@
                         @endif
                     </a>
 
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}" target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-149.2% 170.4% -1200px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-149.2% 170.4% -1200px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:60;">
                         @if (count($post->postImages) >= 3)
                             <img width="125" height="125"
@@ -191,21 +194,21 @@
                     </div>
                 </div>
 
-<div class="form-group col-lg-3 col-md-12 col-sm-12 px-0 pt-md-15">
-  <div class="btn-group btn-group-toggle position-relative propBtns" style="width: 91%;margin-left: 6%" data-toggle="buttons">
-    <label id="sale" style="margin-top: 15px;" class="btn btn-secondary" onclick="changecolor(id)">
-      <input type="radio" name="purpose" class="property_type margin hg" value="sale" required />Sale
-    </label>
-    <label id="rent" style="margin-top: 15px" class="btn btn-secondary" onclick="changecolor(id)">
-      <input type="radio" name="purpose" class="property_type" value="rent" />Rent
-    </label>
-  </div>
-</div>
+                <div class="form-group col-lg-2 col-md-12 col-sm-12 px-0 pt-md-15">
+                    <div class="btn-group btn-group-toggle position-relative propBtns" style="width: 91%;margin-left: 6%" data-toggle="buttons">
+                        <label id="sale" style="margin-top: 15px;" class="btn btn-secondary" onclick="changecolor(id)">
+                        <input type="radio" name="purpose" class="property_type margin hg" value="sale" required /><span id="sale_span" style="position: relative"> Sale</span>
+                        </label>
+                        <label id="rent" style="margin-top: 15px" class="btn btn-secondary" onclick="changecolor(id)">
+                        <input type="radio" name="purpose" class="property_type" value="rent" /><span id="rent_span" style="position: relative">Rent</span>
+                        </label>
+                    </div>
+                </div>
 
 
-                <div class="form-group col-lg-3 px-lg-0  col-md-12  col-sm-12  col-sm-11 pt-15">
+                <div class="form-group col-lg-4 px-lg-0  col-md-12  col-sm-12  col-sm-11 pt-15">
 
-                    <div class="row pt-md-15">
+                    <div class="d-flex">
 
                         <div class="form-group  col-md-6 px-lg-1 col-sm-12  col-sm-11">
                             <div class="select-wrapper position-relative">
@@ -359,27 +362,27 @@
                 </div>
 
                 <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-                    <div class="select-wrapper position-relative">
+                    <div class="price_range">
                         <div class="price-filter">
-
-                            <input id="filter_sqft" type="text" name="area" value="{{ $old_area ?? '0;200' }}" />
-                            <input type="" class="select form-control has-val" placehoder="0 to Any">
-
-
+                            <span><input id="filter_sqft" type="text" name="area" value="{{$old_area ?? "0;1000"}}"  style="color: #ffffff"/>
+                                <input type="" class="select form-control has-val" placehoder="0 to Any" style="display: none">
+                                <input type="text" name="area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
+                            </span>
+        
                         </div>
                     </div>
                 </div>
-
-
+        
+        
                 <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-                    <div class="select-wrapper position-relative">
+                    <div class="price_range">
                         <div class="price-filter">
-
-                            <input class="filter_price" type="text" name="price" 
-                                value="{{ $old_price ?? '0;90000000' }}" />
-                            <input type="" class=" form-control " placehoder="">
-
-
+                            <span class="price-slider">
+                                <input class="filter_price" type="text" name="price" value="{{$old_price ?? "0;90000000"}}" style="color: #ffffff"/>
+                                <input type="" class="select form-control has-val" placehoder="" style="display: none">
+                                <input type="text" min="0" name="price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
+        
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -768,14 +771,16 @@
         function changecolor(id) {
 
             if (id == "sale") {
-                document.getElementById("sale").style.borderColor = "balck";
-                document.getElementById("rent").style.borderColor = "orange";
-
+                document.getElementById("sale").style.border = "5px solid green";
+                document.getElementById("sale_span").style.top = "-3px";
+                document.getElementById("rent").style.border = "3px solid orange";
+                document.getElementById("rent_span").style.top = "0";
             }
             if (id == "rent") {
-
-                document.getElementById("rent").style.borderColor = "green";
-                document.getElementById("sale").style.borderColor = "orange";
+                document.getElementById("rent").style.border = "5px solid green";
+                document.getElementById("rent_span").style.top = "-3px";
+                document.getElementById("sale").style.border = "3px solid orange";
+                document.getElementById("sale_span").style.top = "0";
             }
 
         }

@@ -74,7 +74,6 @@
 
 
 				<!-----------form-section end---------------------------->
-{{-- {{dd($allRCP)}} --}}
 			</div>
 			<div class="col-md-12 col-lg-12">
 				<div class="tab-content  border-top-1-gray" id="myTabContent">
@@ -153,7 +152,7 @@
 
 												<span class="text-success convrt2"> <b>Price </b> </span>
 													<a class="color-secondary mb-5"
-														href="{{route('singlePage',['id'=>$post->id])}}">
+														href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$post->id])}}">
 														<h4>{{$post->property_title}}</h4>
 
 														<span class="address icon-primary f-14"><i

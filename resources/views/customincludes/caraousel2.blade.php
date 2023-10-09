@@ -63,11 +63,11 @@
 															<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt3">
 																<b  style="color: black;"> RS
 																</b></span>
-															<a class="color-secondary mb-5" href="/single/pageadd/{{$post->id}}">
+															<a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
 															<h4>	{{Str::limit($post->property_title, 20, $end='.......')}}</h4>
 
 																<span class="address icon-primary f-14"><i class="fa fa-map-marker"></i>{{$post->area}}</span>
-														</a></div><a class="color-secondary mb-5" href="/single/pageadd/{{$post->id}}">
+														</a></div><a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
 														<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
 															<li><span class="color-primary">{{$post->land_area}}</span>Marla
 															</li>
@@ -131,7 +131,7 @@
 
 														<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt4"><b style="color: black;"> RS
 															</b></span>
-														<a class="color-secondary mb-5" href="/single/pageadd/{{$post->id}}">
+														<a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
 														<h4>	{{Str::limit($post->property_title, 20, $end='.......')}}</h4>
 
 															<span class="address icon-primary f-14"><i class="fa fa-map-marker"></i>{{$post->area}}</span>

@@ -94,7 +94,7 @@ object-fit: fill;
           
             <div class="col-sm-4 mt-3">
       
-              <a href="{{route('singlePage',['id'=>$favpost->post->id])}}">
+              <a href="{{route('singlePage',['title'=>str_replace(' ', '-', $favpost->post->property_title),'id'=>$favpost->post->id])}}">
               <div class="card">
                 <div class="container-pos">
 

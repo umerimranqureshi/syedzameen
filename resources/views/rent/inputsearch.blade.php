@@ -92,7 +92,7 @@
                     <div class="col-sm-5">
                     
                        
-                        <a class="color-secondary mb-5" href="/single/pageadd/{{$posts->id}}">
+                        <a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
                         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 
                         <img src="/mainimage/{{$posts->mainimage }}" alt="image" style="height:300px;width:450px" >
@@ -101,7 +101,7 @@
 
                     </div>
                     <div class="col-sm-7"> 
-                        <a class="color-secondary mb-5" href="/single/pageadd/{{$posts->id}}">
+                        <a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
                 
                         <div class="card-body p-2">
                        

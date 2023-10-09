@@ -4759,6 +4759,10 @@ price-range #debt-amount-slider::before,
     height: 45px !important;
 }
 
+/* adding new styling */
+.navbar {
+    padding: 0;
+}
 .arrow-button:hover{
 color: #242424;
 }

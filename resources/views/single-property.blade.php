@@ -198,7 +198,7 @@
 
                                                     <div class="form-group col-md-12">
                                                         <input type="hidden" name="message[]"
-                                                            value=" <a href='{{ url('single/pageadd/') . '/' . $post->id }}'>Property Title : {{ $post->property_title }}</a><br>">
+                                                            value=" <a href='{{ url('ad/') .'/'. str_replace(' ', '-', $post->property_title) . '/' . $post->id }}'>Property Title : {{ $post->property_title }}</a><br>">
 
                                                         <textarea class="form-control bg-gray" rows="4" name="message[]" placeholder="Type Your Message"></textarea>
 
@@ -386,11 +386,11 @@ function initMap() {
 					<div class="owl-carousel slide-1 owl-dots-none">
 
 						@foreach ($latestPost as $postL)
-						<a class="color-secondary mb-5" href="{{route('singlePage',['id'=>$postL->id])}}">
+						<a class="color-secondary mb-5" href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$postL->id])}}">
 							<div class="property-item">
 								<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 
-									<a class="color-secondary mb-5" href="{{route('singlePage',['id'=>$postL->id])}}">
+									<a class="color-secondary mb-5" href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$postL->id])}}">
 										<img src="/mainimage/{{$postL->mainimage }}" style="height: 200px">
 									</a>
 									<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New
@@ -424,7 +424,7 @@ function initMap() {
 									</ul>
 									<div class="meta-property icon-primary color-white z-index-1">
 										<ul>
-											<a class="color-secondary mb-5" style="color: white !important" href="{{route('singlePage',['id'=>$postL->id])}}">
+											<a class="color-secondary mb-5" style="color: white !important" href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$postL->id])}}">
 												<li><i class="fa fa-calendar"></i>{{$postL->created_at}}</li>
 												<li><i class="fa fa-user"></i> {{$postL->user->name}}</li>
 											</a>
@@ -432,10 +432,10 @@ function initMap() {
 									</div>
 								</div>
 								<div class="property-content bg-white pt-30 pb-50">
-									<a class="color-secondary mb-5" href="{{route('singlePage',['id'=>$postL->id])}}">
+									<a class="color-secondary mb-5" href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$postL->id])}}">
 										<h5>{{$postL->property_title}}</h5>
 									</a>
-									<a class="color-secondary mb-5" href="{{route('singlePage',['id'=>$postL->id])}}">
+									<a class="color-secondary mb-5" href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$postL->id])}}">
 										<span class="address icon-primary f-14"><i class="fa fa-map-marker"></i>{{$postL->address}}</span>
 										<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
 											<li><i class="fa fa-plus-square "></i>{{$postL->land_area." ". $postL->unit }}</li>

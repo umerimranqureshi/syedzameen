@@ -70,7 +70,6 @@
 
 		</div>
 
-{{dd($allRCP)}}
 
 		<div class="col-md-12 col-lg-12">
 			<div class="tab-content  border-top-1-gray" id="myTabContent">
@@ -145,7 +144,7 @@
 													class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">$
 													{{$post->price}}</span>
 												<a class="color-secondary mb-5"
-													href="{{route('singlePage',['id'=>$post->id])}}">
+													href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$post->id])}}">
 													<h4>{{$post->property_title}}</h4>
 
 													<span class="address icon-primary f-14"><i
