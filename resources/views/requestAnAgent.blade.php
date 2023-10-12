@@ -114,7 +114,7 @@
 							<form class="news-letter bg-gray mt-30">
 								<div class="form-group position-relative">
 									<input class="form-control" type="text" name="email" placeholder="Subscribe">
-									<button class="bg-gray color-secondary"><i class="fa fa-paper-plane"></i></button>
+									<button class="bg-gray color-secondary" id="btn-subscribe"><i class="fa fa-paper-plane"></i></button>
 								</div>
 							</form>
 						</div>

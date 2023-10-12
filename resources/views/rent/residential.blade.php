@@ -85,7 +85,7 @@
 								<div class="property-thumbnail mt-30">
 									<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 									
-										<img src="/mainimage/{{$post->mainimage }}" alt="image"  style="height:300px;width:450px">
+										<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image"  style="height:300px;width:450px">
 
 
 										@if ($post->sold=="1")

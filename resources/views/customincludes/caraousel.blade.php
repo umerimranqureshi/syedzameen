@@ -28,8 +28,7 @@
                                         <div
                                             class="property-img position-relative overflow-hidden overlay-secondary-4">
 
-                                            <img src="/mainimage/{{ $post->mainimage }}" alt="image"
-                                                style="height:300px ">
+                                            <img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
 
                                             <div class="thumbnail-content z-index-1 color-white-a color-white">
@@ -124,8 +123,7 @@
                                         <div
                                             class="property-img position-relative overflow-hidden overlay-secondary-4">
 
-                                            <img src="/mainimage/{{ $post->mainimage }}" alt="image"
-                                                style="height:300px ">
+                                            <img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
                                             <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                 <span

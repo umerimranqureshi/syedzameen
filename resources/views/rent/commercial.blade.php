@@ -85,7 +85,7 @@
 								<div class="property-thumbnail mt-30">
 									<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 									
-										<img src="/mainimage/{{$post->mainimage }}" alt="image"  style="height:300px;width:450px">
+										<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image"  style="height:300px;width:450px">
 
 
 										@if ($post->sold=="1")
@@ -109,25 +109,27 @@
 												@endif
 											</span>
 											<ul class="hover-option position-absolute icon-white z-index-1">
-												<li>
-													<a data-toggle="tooltip" data-placement="top" @foreach ($favPost as
-														$fav) @if($fav->user_id==Auth::id() &&
-														$post->favPostUser->count()>0 &&
-														$fav->post_id==$post->id)
-														class="bg-danger fav-heart"
-														title="remove wishlist"
+												@if (isset($favPost))
+												
+													<li>
+														<a data-toggle="tooltip" data-placement="top" 
+															@foreach ($favPost as $fav) 
+																@if($fav->user_id==Auth::id() && $post->favPostUser->count()>0 && $fav->post_id==$post->id)
+																	class="bg-danger fav-heart"
+																	title="remove wishlist"
+																@endif
 
+															@endforeach
+															@if($post->favUserPost==null && Auth::check())
+																class="fav-heart"
+																title="wishlist"
+															@endif
+															href="{{route('favPost',['id'=>$post->id])}}">
+															<i class="fa fa-heart-o" aria-hidden="true"></i>
+														</a>
+													</li>
+												@endif
 
-														@endif
-
-														@endforeach
-														@if($post->favUserPost==null && Auth::check())
-														class="fav-heart"
-														title="wishlist"
-														@endif
-														href="{{route('favPost',['id'=>$post->id])}}">
-														<i class="fa fa-heart-o" aria-hidden="true"></i></a>
-												</li>
 												<li>
 													<a data-toggle="tooltip" data-placement="top" title="Compare"
 														href="#"><i class="fa fa-random" aria-hidden="true"></i></a>

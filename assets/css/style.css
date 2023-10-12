@@ -212,7 +212,7 @@ select {
 }
 
 section {
-    padding: 80px 0px;
+    padding: 50px 0px;
 }
 
 *,
@@ -2451,16 +2451,17 @@ header.header-fixed .top-header-two {
 }
 
 .agent-profile-content {
-    margin-top: -90px;
+    /* margin-top: -90px; */
     position: relative;
     z-index: 11;
     margin-right: 40px;
+    align-items: center;
 }
 
 .agent-profile .btn-round {
     position: absolute;
-    bottom: -25px;
     right: -25px;
+    
 }
 
 .contact-agent-image img {
@@ -4758,6 +4759,23 @@ price-range #debt-amount-slider::before,
     height: 45px !important;
 }
 
+/* adding new styling */
+.navbar {
+    padding: 0;
+}
 .arrow-button:hover{
 color: #242424;
+}
+.agent-profile .overflow-hidden{
+    min-height: 320px !important;
+}
+
+/* .agent-profile{
+    min-height: 460px !important;
+} */
+#btn-subscribe {
+    background: none !important;
+}
+.color-white{
+    color: #fff !important;
 }

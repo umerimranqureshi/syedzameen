@@ -140,9 +140,11 @@
                 <div class="price-filter">
                     <span><input id="filter_sqft" type="text" name="area" value="{{$old_area ?? "0;1000"}}" />
                         <input type="" class="select form-control has-val" placehoder="0 to Any" style="display: none">
-                        <input type="text" name="area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
+                        <div class="d-flex">
+                            <div class="w-50"><input type="number" name="min_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                            <div class="w-50"><input type="number" name="max_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                        </div>
                     </span>
-
                 </div>
             </div>
         </div>
@@ -154,8 +156,10 @@
                     <span class="price-slider">
                         <input class="filter_price" type="text" name="price" value="{{$old_price ?? "0;90000000"}}" />
                         <input type="" class="select form-control has-val" placehoder="" style="display: none">
-                        <input type="text" min="0" name="price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
-
+                        <div class="d-flex">
+                            <div class="w-50"><input type="number" min="0" name="min_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                            <div class="w-50"><input type="number" min="0" name="max_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                        </div>
                     </span>
                 </div>
             </div>

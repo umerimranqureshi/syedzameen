@@ -7,7 +7,7 @@
 <!-- Find the best Place End
 ==================================================================-->
 
-  <section class="section novi-background section-sm">
+  <section class="section novi-background section-sm bg-light">
 
 <style>
 /* CSS for Contact Section */

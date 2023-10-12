@@ -81,7 +81,7 @@
 							<div class="property-thumbnail mt-30">
 								<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 								
-									<img src="/mainimage/{{$post->mainimage }}" alt="image" style="height:300px ">
+									<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 									
 
 									@if ($post->sold=="1")
@@ -141,7 +141,7 @@
 												@endif
 
 												<span
-													class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">$
+													class="thumbnail-price bg-white text-dark px-15 mb-10 d-table">$
 													{{$post->price}}</span>
 												<a class="color-secondary mb-5"
 													href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$post->id])}}">

@@ -71,7 +71,7 @@
                                       
                                         <td>{{$banner->id}}</td>
                                        
-                                        <td><img width="200" height="100" src="/mainimage/{{$banner->logo}}" ></td>
+                                        <td><img width="200" height="100" src="{{asset('mainimage/'.$banner->logo)}}" ></td>
 
 
                                         <td>

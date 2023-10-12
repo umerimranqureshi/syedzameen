@@ -73,7 +73,7 @@
                                         <td>{{$agn->id}}</td>
                                         <td>{{$agn->name}}</td>
                                         <td>{{$agn->url}}</td>
-                                        <td><img width="200" height="100" src="/image/{{$agn->image }}" ></td>
+                                        <td><img width="200" height="100" src="{{asset('image/'. $agn->image)}}" ></td>
 
 
                                         <td>

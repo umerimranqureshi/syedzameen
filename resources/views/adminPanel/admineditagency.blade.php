@@ -95,7 +95,7 @@
                                             <h5 class="mt-2 mb-2">logo</h5>
                                             <input type="file" class="form-control" placeholder="" id="" name="image"
                                                 type="text"><br>
-                                                <img width="200" height="100" src="/image/{{$agency->image }}" ><br>
+                                                <img width="200" height="100" src="{{asset('image/'. $agency->image)}}" ><br>
 
 
                                             <br><button class="btn btn-light w-100 shadow-sm bg-gradient" type="submit"

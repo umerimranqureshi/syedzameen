@@ -1079,14 +1079,14 @@ class mainController extends Controller
     //filteration
    public function propertySearch(Request $req)
     {
-        // dd($req->all());
+
          $req->validateWithBag("addPostError", [
-            "purpose" => "required"
-        ],
-        [
-            'purpose.required' => 'Select One from Sale Or Rent',
-        ]
-    );
+                "purpose" => "required"
+            ],
+            [
+                'purpose.required' => 'Select One from Sale Or Rent',
+            ]
+        );
 
         
         if($req->sub_type== "not_commercial")
@@ -1103,7 +1103,6 @@ class mainController extends Controller
             ->where("property_sub_type", $req->sub_type)
             ->first();
         }
-
         $search = $req['search'] ?? "";
 
         $search2 = $req->input('search2');
@@ -1121,8 +1120,8 @@ class mainController extends Controller
                 $allRCP = Post::with(["cityAndArea", "propertyCate", "postViews", "postImagesOne"])
                     ->where('city_area_id', '=',  "$req->city_area")
                     ->where('property_categorie_id', '=',  "$propertyAllFields->id")
-                    ->whereBetween("land_area", $areaInArray)
-                    ->whereBetween("price", $priceInArray)
+                    ->whereBetween("land_area", [$req->min_area, $req->max_area])
+                    ->whereBetween("price", [$req->min_price, $req->max_price])
                     ->where('disable', '0')
                     ->paginate(15);
             } else {
@@ -1131,18 +1130,18 @@ class mainController extends Controller
                     ->where('bedrooms', '=',  "$req->beds")
                     ->where('city_area_id', '=',  "$req->city_area")
                     ->where('property_categorie_id', '=',  "$propertyAllFields->id")
-                    ->whereBetween("land_area", $areaInArray)
-                    ->whereBetween("price", $priceInArray)
+                    ->whereBetween("land_area", [$req->min_area, $req->max_area])
+                    ->whereBetween("price", [$req->min_price, $req->max_price])
                     ->where('disable', '0')
                     ->paginate(15);
             }
         }
-
         $cities = DB::table("city_and_areas")->distinct()->get("city");
         $location = DB::table("city_and_areas")->distinct()->get("area");
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
+        $favPost = AddToFavorite::where('user_id', Auth::id())->get();
 
-        return view("rent.commercial", compact(["allRCP", "cities", "subtypee", "location"]));
+        return view("rent.commercial", compact(["allRCP", "cities", "subtypee", "location", "favPost"]));
     }
 
 

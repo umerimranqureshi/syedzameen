@@ -366,9 +366,11 @@
                         <div class="price-filter">
                             <span><input id="filter_sqft" type="text" name="area" value="{{$old_area ?? "0;1000"}}"  style="color: #ffffff"/>
                                 <input type="" class="select form-control has-val" placehoder="0 to Any" style="display: none">
-                                <input type="text" name="area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
+                                <div class="d-flex">
+                                    <div class="w-50"><input type="number" name="min_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                                    <div class="w-50"><input type="number" name="max_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                                </div>
                             </span>
-        
                         </div>
                     </div>
                 </div>
@@ -380,8 +382,10 @@
                             <span class="price-slider">
                                 <input class="filter_price" type="text" name="price" value="{{$old_price ?? "0;90000000"}}" style="color: #ffffff"/>
                                 <input type="" class="select form-control has-val" placehoder="" style="display: none">
-                                <input type="text" min="0" name="price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative">
-        
+                                <div class="d-flex">
+                                    <div class="w-50"><input type="number" min="0" name="min_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                                    <div class="w-50"><input type="number" min="0" name="max_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
+                                </div>
                             </span>
                         </div>
                     </div>
@@ -689,7 +693,7 @@
 
                         @foreach ($agencies as $agency)
                             <div class="agent-profile">
-                                <div class="overflow-hidden"><img src="/image/{{ $agency->image }}" alt="image">
+                                <div class="overflow-hidden"><img src="{{asset('image/'. $agency->image)}}" alt="image">
                                 </div>
                                 <div class="agent-profile-content hover-secondery-primary py-20 px-20 bg-gray d-flex">
                                     <a class="mb-5 d-block" href="">

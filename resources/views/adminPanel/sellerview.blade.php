@@ -111,7 +111,7 @@
                     </td>
                     <td>{{$post->mobile_number}}</td>
 
-                    <td><img width="200" height="100" src="/mainimage/{{$post->mainimage }}"></td>
+                    <td><img width="200" height="100" src="{{asset('mainimage/'.$post->mainimage)}}"></td>
 
 
 

@@ -1119,7 +1119,7 @@ label+label {
                                                     <input type="file" name="mainimage"
                                                         data-height="300" id="mainimage" />
                                                         <img width="100" height="80"
-                                                                                src="/mainimage/{{$userPost->mainimage }}"
+                                                                                src="{{asset('mainimage/'.$post->mainimage)}}"
                                                                                 alt="" srcset="">
 
                                                 </div> <!-- end card-body-->
