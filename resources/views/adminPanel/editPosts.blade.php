@@ -83,7 +83,7 @@ label+label {
 
                                     <nav aria-label="breadcrumb">
 
-                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                             <li class="breadcrumb-item active text-light" aria-current="page">PURPOSE,
                                                 PROPERTY TYPE AND LOCATION</li>
@@ -378,7 +378,7 @@ label+label {
                                             <nav aria-label="breadcrumb">
 
                                                 <ol class="breadcrumb rounded p-3 mt-4"
-                                                    style="background-color: #fd9834;">
+                                                    style="background-color: #2f77ad;">
 
                                                     <li class="breadcrumb-item active text-light" aria-current="page">
                                                         PROPERTY
@@ -467,7 +467,7 @@ label+label {
                                             <nav aria-label="breadcrumb">
 
                                                 <ol class="breadcrumb rounded p-3 mt-4"
-                                                    style="background-color: #fd9834;">
+                                                    style="background-color: #2f77ad;">
 
                                                     <li class="breadcrumb-item active text-light" aria-current="page">
                                                         PROPERTY
@@ -759,7 +759,7 @@ label+label {
 
                                                             <!--home section start//////////////////-->
                                                             <p class="mt-3 ">
-                                                                <a class="btn " style="background-color: #fd9834;"
+                                                                <a class="btn " style="background-color: #2f77ad;"
                                                                     data-bs-toggle="collapse" href="#collapseExample"
                                                                     role="button" aria-expanded="false"
                                                                     aria-controls="collapseExample">
@@ -944,7 +944,7 @@ label+label {
 
                                                             <!--Plots  start///////////////-->
                                                             <p class="mt-3 ">
-                                                                <a class="btn " style="background-color: #fd9834;"
+                                                                <a class="btn " style="background-color: #2f77ad;"
                                                                     data-bs-toggle="collapse" href="#collapseExample1"
                                                                     role="button" aria-expanded="false"
                                                                     aria-controls="collapseExample">
@@ -1189,7 +1189,7 @@ label+label {
                                                     <nav aria-label="breadcrumb">
 
                                                         <ol class="breadcrumb rounded p-3 mt-4"
-                                                            style="background-color: #fd9834;">
+                                                            style="background-color: #2f77ad;">
 
                                                             <li class="breadcrumb-item active text-light"
                                                                 aria-current="page">

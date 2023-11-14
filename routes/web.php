@@ -321,3 +321,7 @@ Route::group(['middleware' => 'Dealer'], function () {
 Route::get('/contactus', function () {
     return view('contactus');
 });
+
+Route::get('/about-us', function () {
+        return view('about-us');
+    });

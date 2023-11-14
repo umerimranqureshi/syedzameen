@@ -44,6 +44,7 @@
             font-size: 13px;
             font-weight: 200;
         }
+
         .jslider-value {
             color: white;
         }
@@ -52,7 +53,7 @@
 
 @section('body')
     <!-- Slider Start
-    =========================================================================-->
+                            =========================================================================-->
     <div id="slider" style="height:1080px;margin:0 auto;margin-bottom: 0px;">
 
         @foreach ($adminPost as $post)
@@ -87,24 +88,29 @@
                     data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:124.7% 32.5% -500px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:124.7% 32.5% -500px; parallax:true; parallaxlevel:25;">
                     {{ $post->description }}.
                 </p>
-                <p style="font-weight:400;cursor:pointer; letter-spacing: 1px; padding-right:30px; padding-left:30px; font-family:Montserrat; font-size:16px; line-height:50px; color:#ffffff; background:#fd9834; border-radius:0px; top:385px; left:66px;"
+                <p style="font-weight:400;cursor:pointer; letter-spacing: 1px; padding-right:30px; padding-left:30px; font-family:Montserrat; font-size:16px; line-height:50px; color:#ffffff; background:#2f77ad; border-radius:0px; top:385px; left:66px;"
                     class="ls-l"
                     data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:199.2% -244.4% -600px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:199.2% -244.4% -600px; hover:true; hoverdurationin:300; hoveropacity:1; hoverbgcolor:#ffa319; parallax:true; parallaxlevel:30;">
-                    <a style="text-decoration: none;color:white" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}"> View
+                    <a style="text-decoration: none;color:white"
+                        href="{{ route('singlePage', ['title' => str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}">
+                        View
                         Details
                     </a>
                 </p>
 
                 @if ($post->postImages->count() > 0)
                     @if (count($post->postImages) >= 1)
-                        <a href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}">
+                        <a
+                            href="{{ route('singlePage', ['title' => str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}">
                             <img width="618" height="304"
                                 src="{{ asset('propertyImages/' . $post->postImages[0]->img_path) }}" class="ls-l"
                                 alt="" style="top:205px; left:374px;"
                                 data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:13.2% 24.3% -1000px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:13.2% 24.3% -1000px; parallax:true; parallaxlevel:50;">
                         </a>
                     @endif
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l"
+                        href="{{ route('singlePage', ['title' => str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}"
+                        target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-185.1% 134.1% -1400px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-185.1% 134.1% -1400px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:70;">
                         @if (count($post->postImages) >= 2)
                             <img width="185" height="185"
@@ -113,7 +119,9 @@
                         @endif
                     </a>
 
-                    <a style="" class="ls-l" href="{{ route('singlePage', ['title'=>str_replace(' ', '-', $post->property_title),'id' => $post->id]) }}" target="_self"
+                    <a style="" class="ls-l"
+                        href="{{ route('singlePage', ['title' => str_replace(' ', '-', $post->property_title), 'id' => $post->id]) }}"
+                        target="_self"
                         data-ls="offsetxin:-150; durationin:2000; easingin:easeOutExpo; rotateyin:-30; transformoriginin:-149.2% 170.4% -1200px; offsetxout:100; durationout:800; easingout:easeInExpo; rotateyout:30; transformoriginout:-149.2% 170.4% -1200px; hover:true; hoveropacity:1; hoverscalex:0.95; hoverscaley:0.95; parallax:true; parallaxlevel:60;">
                         @if (count($post->postImages) >= 3)
                             <img width="125" height="125"
@@ -155,261 +163,33 @@
     </div>
 
     <!--form section
-         ------------------>
-    <div class="Ubackground" style="background-image: url('{{ asset('assets/images/background/Ubackground.png') }}');">
+                                 ------------------>
+    <section class="p-0 mobile-responsive-header" style="    margin-top: -90px;">
+        <div class=" row p-0 " >
 
-        <form id="main-search-form" method="GET" action="{{ route('property.search') }}" autocomplete="off"
-            class="adbanced-form-two amenities-list border-top-1-gray">
-            <input name="search" value="search" type="hidden">
-
-            @if ($errors->hasBag('addPostError'))
-                <p class="text-danger">
-
-
-                    {{ $errors->addPostError->first('purpose') }}
-                </p>
-            @endif
-
-            <div class="row" id="umer" style="margin-top: 138px">
-
-                <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
-                    <div class="select-wrapper position-relative">
-                        <select id="city" name="city" class="select form-control select2">
-
-                            @foreach ($cities as $citii)
-                                <option value="{{ $citii->city }}">{{ $citii->city }} </option>
-                            @endforeach
-
-                        </select>
-
-                    </div>
+            <div class="col-4 p-100 Ubackground"
+                style="min-height:95vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
+                <div class="position-absolute" style="    width: 60vw;
+                z-index: 9999;
+                left: 10vw;
+                margin-top: 30vh;">
+                    @include('search-pagination-file.index-search')
                 </div>
-
-                <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
-                    <div class="select-wrapper position-relative">
-                        <select id="location" name="city_area" class="form-control text-light bg-secondary select2  "
-                            style="background-color: whitesmoke !important;color: ;m: black;color: black !important;">
-                        </select>
-
-                    </div>
-                </div>
-
-                <div class="form-group col-lg-2 col-md-12 col-sm-12 px-0 pt-md-15">
-                    <div class="btn-group btn-group-toggle position-relative propBtns" style="width: 91%;margin-left: 6%" data-toggle="buttons">
-                        <label id="sale" style="margin-top: 15px;" class="btn btn-secondary" onclick="changecolor(id)">
-                        <input type="radio" name="purpose" class="property_type margin hg" value="sale" required /><span id="sale_span" style="position: relative"> Sale</span>
-                        </label>
-                        <label id="rent" style="margin-top: 15px" class="btn btn-secondary" onclick="changecolor(id)">
-                        <input type="radio" name="purpose" class="property_type" value="rent" /><span id="rent_span" style="position: relative">Rent</span>
-                        </label>
-                    </div>
-                </div>
-
-
-                <div class="form-group col-lg-4 px-lg-0  col-md-12  col-sm-12  col-sm-11 pt-15">
-
-                    <div class="d-flex">
-
-                        <div class="form-group  col-md-6 px-lg-1 col-sm-12  col-sm-11">
-                            <div class="select-wrapper position-relative">
-
-                                @php
-                                    
-                                    if (isset($old_property_sub_type)) {
-                                        $OPT = $old_property_sub_type;
-                                    }
-                                @endphp
-
-                                <select name="sub_type" value="sub_type" id="mySelect" class="select form-control "
-                                    onchange="mainInfox();">
-
-                                    <option value="not_commercial">Commercial</option>
-
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="commercial_plot" name="sub_type">Commercial plot</option>
-
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="commercial_plot_file" name="sub_type">Commercial plot file</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="office" name="sub_type">Office</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="shop" name="sub_type">Shop</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="warehouse" name="sub_type">Warehouse</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="factory" name="sub_type">factory</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="agriculture_land" name="sub_type">Agriculture land</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="industrial_land" name="sub_type">Industrial land</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
-                                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="gym" name="sub_type">Gym</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="plaza" name="sub_type">Plaza</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="land" name="sub_type">Land</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="hall" name="sub_type">Hall</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                        value="building" name="sub_type">Building</option>
-
-                                </select>
-
-
-
-                            </div>
-                        </div>
-                        <div class="form-group  col-md-6 px-lg-1  col-sm-12  col-sm-11">
-                            <div class="select-wrapper position-relative">
-
-                                @php
-                                    
-                                    if (isset($old_property_sub_type)) {
-                                        $OPT = $old_property_sub_type;
-                                    }
-                                @endphp
-
-                                <select name="sub_typee" value="sub_typee" id="Select" class="select form-control "
-                                    onchange="mainInfo();">
-
-                                    <option value="not_residential">Residential</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="home" name="sub_typee">home</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="guest_house" name="sub_typee">Guest house</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="appartment" name="sub_typee">Appartment</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="farm_house" name="sub_typee">Farm house</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="penthouse" name="sub_typee">Penthouse</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="hotel_suite" name="sub_typee">Hotel suite</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="basement" name="sub_typee">Basement</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="hostel" name="sub_typee">Hostel</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="flat" name="sub_typee">Flat</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="upper_portion" name="sub_typee">Upper portion</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="lower_portion">Lower portion</option>
-
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="residential_plot" name="sub_typee">Residential plot</option>
-                                    <option
-                                        @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                        value="residential_plot_file" name="sub_typee">Residential plot file</option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="form-group col-lg-3 col-md-12 col-sm-12 pt-15">
-                    <div class="select-wrapper position-relative">
-                        <select name="beds" class="select form-control has-val">
-                            <option @isset($old_beds) {{$old_beds=="null" ?"selected":''}}@endisset
-                                value="null">
-                                Beds</option>
-                            <option @isset($old_beds) {{$old_beds=="1" ?"selected":''}}@endisset
-                                value="1">One
-                            </option>
-                            <option @isset($old_beds) {{$old_beds=="2" ?"selected":''}}@endisset
-                                value="2">Two
-                            </option>
-                            <option @isset($old_beds) {{$old_beds=="3" ?"selected":''}}@endisset
-                                value="3">Three
-                            </option>
-                            <option @isset($old_beds) {{$old_beds=="4" ?"selected":''}}@endisset
-                                value="4">Four
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-                    <div class="price_range">
-                        <div class="price-filter">
-                            <span><input id="filter_sqft" type="text" name="area" value="{{$old_area ?? "0;1000"}}"  style="color: #ffffff"/>
-                                <input type="" class="select form-control has-val" placehoder="0 to Any" style="display: none">
-                                <div class="d-flex">
-                                    <div class="w-50"><input type="number" name="min_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
-                                    <div class="w-50"><input type="number" name="max_area" min="0" max="9999" pattern="\d{4}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-        
-        
-                <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-                    <div class="price_range">
-                        <div class="price-filter">
-                            <span class="price-slider">
-                                <input class="filter_price" type="text" name="price" value="{{$old_price ?? "0;90000000"}}" style="color: #ffffff"/>
-                                <input type="" class="select form-control has-val" placehoder="" style="display: none">
-                                <div class="d-flex">
-                                    <div class="w-50"><input type="number" min="0" name="min_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
-                                    <div class="w-50"><input type="number" min="0" name="max_price" max="10000000" pattern="\d{8}" maxlength="4" placeholder="" class="select form-control has-val" style="position: relative"></div>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-
-                    <button class="p-5  search" style="margin-top: 13px;background-color: orange; width:100%;"
-                        type="submit">Search!</button>
-                </div>
-
             </div>
-        </form>
-    </div>
+            <div class="col-8 p-100 Ubackground"
+                style="min-height:95vh;background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('{{ asset('assets/images/background/background-right.jpeg') }}');">
+            </div>
+        </div>
+    </section>
+
     <!--form section end
-         ------------->
+                                 ------------->
 
 
-    <!-- Slider End
-    =========================================================================-->
+
     <!-- Feautred Properties Start
-    =========================================================================-->
-    <section class="featured-properties bg-light mt-5">
+                            =========================================================================-->
+    <section class="featured-properties bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -418,7 +198,8 @@
                             One</span>
 
                         <h2 class="title mb-20 color-secondary">Featured Properties</h2>
-                        <span class="sub-title" style="font-size: 135%" >Check out our Latest Properties section. Here you can find out
+                        <span class="sub-title" style="font-size: 135%">Check out our Latest Properties section. Here you
+                            can find out
                             the latest six properties.
                         </span>
                     </div>
@@ -431,11 +212,11 @@
 
     </section>
     <!-- Feautred Properties End
-    =========================================================================-->
+                            =========================================================================-->
 
     <!-- Latest Properties Start
-    =========================================================================-->
-    <section class=" featured-properties bg-light mt-5">
+                            =========================================================================-->
+    <section class=" featured-properties bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -444,7 +225,8 @@
                             One</span>
 
                         <h2 class="title mb-20 color-secondary">Latest Properties</h2>
-                        <span class="sub-title" style="font-size: 135%" >Check out our Latest Properties section. Here you can find out
+                        <span class="sub-title" style="font-size: 135%">Check out our Latest Properties section. Here you
+                            can find out
                             the latest six properties.
                         </span>
                     </div>
@@ -458,21 +240,21 @@
     </section>
 
     <!-- Latest Properties End
-    =========================================================================-->
+                            =========================================================================-->
 
     <!-- Carasoul section start
-    =============================================================-->
+                            =============================================================-->
 
     <!-- Carasoul section end
-    ===============================================-->
+                            ===============================================-->
 
     <!-- Feautred Properties End
-    =========================================================================-->
+                            =========================================================================-->
 
 
 
     <!-- Why Choose Us Start
-    =========================================================================-->
+                            =========================================================================-->
     <section class="position-relative" style="background: url(images/background/1.png) no-repeat bottom center / cover; ">
         <div class="container">
             <div class="row">
@@ -490,8 +272,7 @@
                     <div class="why-us mt-30 flat-medium icon-primary">
                         <ul>
                             <li>
-                                <span class="float-left mr-15"><i style="font-size:40px"
-                                        class="fa fa-bed"></i></span>
+                                <span class="float-left mr-15"><i style="font-size:40px" class="fa fa-bed"></i></span>
                                 <div class="d-table">
                                     <h4 class="color-secondary mb-15">Location of the House</h4>
                                     <p>Location is key to valuable real estate.
@@ -500,8 +281,7 @@
                                 </div>
                             </li>
                             <li class="mt-30">
-                                <span class="float-left mr-15"><i style="font-size: 40px"
-                                        class="fa fa-car"></i></span>
+                                <span class="float-left mr-15"><i style="font-size: 40px" class="fa fa-car"></i></span>
                                 <div class="d-table">
                                     <h4 class="color-secondary mb-15">Parking Lot Size</h4>
                                     <p>The average size of a parking space is 320 square feet. However, there
@@ -512,8 +292,7 @@
                                 </div>
                             </li>
                             <li class="mt-30">
-                                <span class="float-left mr-15"><i style="font-size:40px"
-                                        class="fa fa-home"></i></span>
+                                <span class="float-left mr-15"><i style="font-size:40px" class="fa fa-home"></i></span>
                                 <div class="d-table">
                                     <h4 class="color-secondary mb-15">Age of the House</h4>
                                     <p>A house is a concrete structure made of other earthly elements that are
@@ -527,6 +306,9 @@
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6" style="align-self: center;">
+                    <div class="  text-center  my-30 ">
+                        <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
+                    </div>
                     <div class="fact-counter  text-center py-50 px-30 my-30 bg-secondary">
                         <div class="row">
                             <div class="col-md-6 col-lg-6">
@@ -549,8 +331,7 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="counter count wow mt-30">
                                     <div class="counter-point d-inline-block">
-                                        <h2 class="count-num color-primary" data-speed="3000"
-                                            data-stop="45">45</h2>
+                                        <h2 class="count-num color-primary" data-speed="3000" data-stop="45">45</h2>
                                     </div>
                                     <h6 class="achievement-title color-white">Expert Agents</h6>
                                 </div>
@@ -558,8 +339,7 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="counter count wow mt-30">
                                     <div class="counter-point d-inline-block">
-                                        <h2 class="count-num color-primary" data-speed="3000"
-                                            data-stop="350">350</h2>
+                                        <h2 class="count-num color-primary" data-speed="3000" data-stop="350">350</h2>
                                     </div>
                                     <h6 class="achievement-title color-white">Properties Sold</h6>
                                 </div>
@@ -571,23 +351,191 @@
         </div>
     </section>
     <!-- Why Choose Us Start
-    =========================================================================-->
+                            =========================================================================-->
 
+        <section>
+            <div class="container">
+                <p>OUR PORTFOLIO</p>
+
+                <h2 class="title mb-20 color-secondary">Properties By Section</h2>
+                <div class="row">
+                    {{-- <div class=" col-3 text-center p-1">
+                        <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
+                        <p>view more</p>
+                    </div>
+                    <div class=" col-3 text-center p-1">
+                        <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
+                    </div>
+                    <div class=" col-3 text-center p-1">
+                        <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
+                    </div>
+                    <div class=" col-3 text-center p-1">
+                        <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
+                    </div> --}}
+                    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+                            
+                            <!--- carousel item closing div --->
+                            <div class="carousel-item active">
+        
+                                <div class="row">
+                                        <div class="col-md-3 col-sm-6 m-0 p-0">
+                                            <div class="property-thumbnail m-0 p-0">
+                                                <div
+                                                    class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                    <img src="{{asset('assets\images\background\buyPlot.jpeg')}}" alt="image" style="height:500px;  width: auto; ">
+                                                    <div class="thumbnail-content z-index-1 color-white-a color-white">
+                                                        
+                                                        <div class="hover-content hover-content-index-section py-30 px-20 overlay-hover-gradient" >
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <h4> 
+                                                                    {{'Buy Plots'}}
+                                                                </h4>
+                                                            </div>
+                                                            <a class="color-secondary m-10"
+                                                            href="{{ route('plotResidentail') }}">
+                                                                <ul
+                                                                    class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                    <li>
+                                                                        <span
+                                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
+                                                                            <b style="color: black;"> View More
+                                                                            </b>
+                                                                        </span>
+                                                                    </li>
+                                                                   
+                                                                </ul>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 m-0 p-0">
+                                            <div class="property-thumbnail m-0 p-0">
+                                                <div
+                                                    class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                    <img src="{{asset('assets\images\background\buyCommercial.jpeg')}}" alt="image" style="height:500px;  width: auto; ">
+                                                    <div class="thumbnail-content z-index-1 color-white-a color-white">
+                                                        
+                                                        <div class="hover-content hover-content-index-section py-30 px-20 overlay-hover-gradient" >
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <h4> 
+                                                                    {{'Buy Commercial'}}
+                                                                </h4>
+                                                            </div>
+                                                            <a class="color-secondary m-10"
+                                                            href="{{ route('buyCommercial') }}">
+                                                                <ul
+                                                                    class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                    <li>
+                                                                        <span
+                                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
+                                                                            <b style="color: black;"> View More
+                                                                            </b>
+                                                                        </span>
+                                                                    </li>
+                                                                   
+                                                                </ul>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 m-0 p-0">
+                                            <div class="property-thumbnail m-0 p-0">
+                                                <div
+                                                    class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                    <img src="{{asset('assets\images\background\rentResidential.jpeg')}}" alt="image" style="height:500px;  width: auto;">
+                                                    <div class="thumbnail-content z-index-1 color-white-a color-white">
+                                                        
+                                                        <div class="hover-content hover-content-index-section py-30 px-20 overlay-hover-gradient" >
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <h4> 
+                                                                    {{'Rent Residential'}}
+                                                                </h4>
+                                                            </div>
+                                                            <a class="color-secondary m-10"
+                                                                href="{{ route('rentResidential') }}">
+                                                                <ul
+                                                                    class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                    <li>
+                                                                        <span
+                                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
+                                                                            <b style="color: black;"> View More
+                                                                            </b>
+                                                                        </span>
+                                                                    </li>
+                                                                   
+                                                                </ul>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 m-0 p-0">
+                                            <div class="property-thumbnail m-0 p-0">
+                                                <div
+                                                    class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                    <img src="{{ asset('assets/images/background/rentCommercial.jpeg') }}" alt="image" style="height: 500px; width: auto;">
+                                                    <div class="thumbnail-content z-index-1 color-white-a color-white">
+                                                        
+                                                        <div class="hover-content hover-content-index-section py-30 px-20 overlay-hover-gradient" >
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <h4> 
+                                                                    {{'Rent Commercial'}}
+                                                                </h4>
+                                                            </div>
+                                                            <a class="color-secondary m-10  hover-content-index-section"
+                                                                href="{{ route('rentCommercial') }}">
+                                                                <ul
+                                                                    class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                    <li>
+                                                                        <span
+                                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
+                                                                            <b style="color: black;"> View More
+                                                                            </b>
+                                                                        </span>
+                                                                    </li>
+                                                                   
+                                                                </ul>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                </div>
+        
+                            </div>
+                            <!--- carousel item closing div --->
+        
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </section>                    
     <!-- Best Offer Start
-    =========================================================================-->
-    <section >
+                            =========================================================================-->
+    <section>
         <div class="container">
             <h2 class="title mb-20 color-secondary">Recent Blogs</h2>
             <p>Find the information which is compulsory for your daily life.</p>
-    
+
             <div class="row">
                 @foreach ($blogs as $blog)
                     <div class="col-md-12 col-lg-4">
                         <div class="post-thumbnail hover-secondery-primary mt-30">
                             <a href="{{ route('blogMainSingleView', ['id' => $blog->id]) }}">
                                 <div class="post-img overflow-hidden"><img style="height: 200px"
-                            src="{{ $blog->blogOneImage !=null ? asset(''.$blog->blogOneImage->img_path):''}}" alt="">
-                    </div>
+                                        src="{{ $blog->blogOneImage != null ? asset('' . $blog->blogOneImage->img_path) : '' }}"
+                                        alt="">
+                                </div>
                             </a>
                             <div class="post-meta icon-primary color-secondary-a px-20 py-10 bg-gray">
                                 <ul class="post-info list-style-1 d-flex color-secondary">
@@ -602,9 +550,9 @@
                             <div class="post-content mt-20 color-secondary color-secondary-a">
                                 <div class="post-date w-25 float-left bg-gray mr-20 text-center">
                                     @php
-                                        
+
                                         $dateArray = helper::DBDateToSimpleFormat($blog->created_at->toDateString());
-                                        
+
                                     @endphp
                                     <div class="py-10"><span
                                             class="d-block">{{ $dateArray[0] }}</span>{{ $dateArray[1] }}</div>
@@ -641,7 +589,8 @@
                             $currentPage = $blogs->currentPage();
                             
                             ?>
-                            <li class="page-item"><a class="{{ 1 >= $currentPage ? 'isDisabled page-link' : ' page-link ' }}"
+                            <li class="page-item"><a
+                                    class="{{ 1 >= $currentPage ? 'isDisabled page-link' : ' page-link ' }}"
                                     href="{{ url('rent/commercial/?page=' . ($currentPage - 1)) }}">Prev</a></li>
                             @for ($i = 1; $i <= $loopValue; $i++)
                                 <li class="page-item">
@@ -656,21 +605,22 @@
                             </li>
                         </ul>
                     </div>
-                </div>            </div>
+                </div>
+            </div>
         </div>
     </section>
-  
-            <?php
-            $i = 0;
-            $p = $specialPost;
-            ?>
- 
+
+    <?php
+    $i = 0;
+    $p = $specialPost;
+    ?>
+
     <!-- Best Offer End
-    =========================================================================-->
+                            =========================================================================-->
 
 
     <!-- Our Agents Two Start
-    ==================================================================-->
+                            ==================================================================-->
     <section class="agent-style-2;">
         <div class="container">
             <div class="row">
@@ -693,7 +643,7 @@
 
                         @foreach ($agencies as $agency)
                             <div class="agent-profile">
-                                <div class="overflow-hidden"><img src="{{asset('image/'. $agency->image)}}" alt="image">
+                                <div class="overflow-hidden">  <img src="{{ asset('image/' . $agency->image) }}"  alt="image">
                                 </div>
                                 <div class="agent-profile-content hover-secondery-primary py-20 px-20 bg-gray d-flex">
                                     <a class="mb-5 d-block" href="">
@@ -714,14 +664,14 @@
         </div>
     </section>
     <!-- Our Agents Two End
-    ==================================================================-->
+                            ==================================================================-->
     <!-- Testimonial Start
-    =========================================================================-->
+                            =========================================================================-->
 
     <!-- Blog End
-    =========================================================================-->
+                            =========================================================================-->
     <!--  Partners and Subscribe Form Start
-    =========================================================================-->
+                            =========================================================================-->
     <div class="patner-subscribe">
         <div class="container">
             <div class="row">
@@ -777,13 +727,13 @@
             if (id == "sale") {
                 document.getElementById("sale").style.border = "5px solid green";
                 document.getElementById("sale_span").style.top = "-3px";
-                document.getElementById("rent").style.border = "3px solid orange";
+                document.getElementById("rent").style.border = "3px solid #2f77ad";
                 document.getElementById("rent_span").style.top = "0";
             }
             if (id == "rent") {
                 document.getElementById("rent").style.border = "5px solid green";
                 document.getElementById("rent_span").style.top = "-3px";
-                document.getElementById("sale").style.border = "3px solid orange";
+                document.getElementById("sale").style.border = "3px solid #2f77ad";
                 document.getElementById("sale_span").style.top = "0";
             }
 
@@ -1111,4 +1061,3 @@
         });
     </script>
 @endsection
- 

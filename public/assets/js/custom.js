@@ -444,34 +444,35 @@
 
 	// Put slider space for nav not in mini screen
 	//----------------------------------------------------------------------------------
-	if(document.querySelector('.nav-on-top') !== null) {
-		var get_height = jQuery('.nav-on-top').height();
-		if(get_height > 0 && $window.width() > 992){
-			jQuery('.nav-on-top').next().css('margin-top', get_height);
-		}
-		$window.on('resize', function(){
-			if($window.width() < 992){
-				jQuery('.nav-on-top').next().css('margin-top', '0');
-			}
-			else {
-				jQuery('.nav-on-top').next().css('margin-top', get_height);
-			}
-		});
-	 }
-	 if(document.querySelector('.nav-on-banner') !== null) {
-		var get_height = jQuery('.nav-on-banner').height();
-		if(get_height > 0 && $window.width() > 992){
-			jQuery('.page-banner').css('padding-top', get_height);
-		}
-		$window.on('resize', function(){
-			if($window.width() < 992){
-				jQuery('.page-banner').css('padding-top', '0');
-			}
-			else {
-				jQuery('.page-banner').css('padding-top', get_height);
-			}
-		});
-	}
+	// if(document.querySelector('.nav-on-top') !== null) {
+	// 	var get_height = jQuery('.nav-on-top').height();
+	// 	alert(get_height);
+	// 	if(get_height > 0 && $window.width() > 992){
+	// 		jQuery('.nav-on-top').next().css('margin-top', get_height);
+	// 	}
+	// 	$window.on('resize', function(){
+	// 		if($window.width() < 992){
+	// 			jQuery('.nav-on-top').next().css('margin-top', '0');
+	// 		}
+	// 		else {
+	// 			jQuery('.nav-on-top').next().css('margin-top', get_height);
+	// 		}
+	// 	});
+	//  }
+	//  if(document.querySelector('.nav-on-banner') !== null) {
+	// 	var get_height = jQuery('.nav-on-banner').height();
+	// 	if(get_height > 0 && $window.width() > 992){
+	// 		jQuery('.page-banner').css('padding-top', get_height);
+	// 	}
+	// 	$window.on('resize', function(){
+	// 		if($window.width() < 992){
+	// 			jQuery('.page-banner').css('padding-top', '0');
+	// 		}
+	// 		else {
+	// 			jQuery('.page-banner').css('padding-top', get_height);
+	// 		}
+	// 	});
+	// }
 
 	//  Fact Counter For Achivement Counting
   	//----------------------------------------------------------------------------------

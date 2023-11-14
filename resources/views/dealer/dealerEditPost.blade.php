@@ -72,7 +72,7 @@ nav 1 start
                                         <div class="row">
                                             <nav aria-label="breadcrumb">
 
-                                                <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                                <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                                     <li class="breadcrumb-item active text-light" aria-current="page">
                                                         PROPERTY TITLE AND PlOT SIZE</li>

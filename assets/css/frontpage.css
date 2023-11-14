@@ -2,12 +2,13 @@
     display: none!important;
 }
 
-#main-search-form {
-    padding: 15%;
+#home-page-main-search-form {
+    padding: 20px;
+    background-color: black;
+    border-radius: 25px;
 }
-
 .featured-properties {
-    margin-top: -110px;
+    /* margin-top: -110px; */
 }
 
 .Ubackground {
@@ -20,11 +21,11 @@
     width: 100%;
     background: whitesmoke;
     height: 45px;
-    border: 3px solid orange;
+    border: 3px solid #2f77ad;
 }
 
 
-}
+
 #umer {
     /* margin-top: 100px; */
     

@@ -12,7 +12,7 @@
 =========================================================================-->
 <!-- Start Header
 ===================================================================-->
-<div class="page-banner overlay-black" style="padding: 150px 0">
+<div class="page-banner overlay-black  mobile-responsive-header" style="padding: 150px 0 ; margin-top: -90px;" >
 	<div class="container h-100">
 		<div class="row h-100 align-items-center">
 			<div class="col-lg-12">

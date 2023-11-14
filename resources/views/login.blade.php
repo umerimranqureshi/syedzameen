@@ -9,7 +9,7 @@
 	    
 	    font-size: 40px;
         font-weight: 700;
-        color: orange;
+        color: #2f77ad;
         back
          
 	}

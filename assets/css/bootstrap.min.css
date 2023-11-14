@@ -128,7 +128,7 @@ a {
 }
 a:hover {
 	/*color: #0056b3;*/
-		color: #fd9834;
+		color: #2f77ad;
 	text-decoration: underline
 }
 a:not([href]) {
@@ -5568,7 +5568,7 @@ opacity:1
 	vertical-align: text-top!important
 }
 .bg-primary {
-    /*background-color: #fd9834 !important;*/
+    /*background-color: #2f77ad !important;*/
 }
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
 	background-color: #0062cc!important

@@ -23,7 +23,7 @@
 
                             <div class="row">
 								@foreach($showReallatestPost as $post)
-									<div class="col-md-3 mb-3">
+									<div class="col-md-4 col-sm-6 mb-4">
 
 
 										<div class="property-thumbnail mt-30">
@@ -63,11 +63,14 @@
 															<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt3">
 																<b  style="color: black;"> RS
 																</b></span>
-															<a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
-															<h4>	{{Str::limit($post->property_title, 20, $end='.......')}}</h4>
+															<a class="color-secondary mb-5" href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
+															<h4>	
+																{{-- {{Str::limit($post->property_title, 20, $end='.......')}} --}}
+																{{$post->property_title}}
+															</h4>
 
 																<span class="address icon-primary f-14"><i class="fa fa-map-marker"></i>{{$post->area}}</span>
-														</a></div><a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
+														</a></div><a class="color-secondary mb-5" href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
 														<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
 															<li><span class="color-primary">{{$post->land_area}}</span>Marla
 															</li>
@@ -93,7 +96,7 @@
 
 								<div class="row">
 									@foreach($showReallatestPost2 as $post)
-										<div class="col-md-3 mb-3">
+										<div class="col-md-4 col-sm-6 mb-4">
 
 									<div class="property-thumbnail mt-30">
 
@@ -131,8 +134,11 @@
 
 														<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt4"><b style="color: black;"> RS
 															</b></span>
-														<a class="color-secondary mb-5" href="/ad/{{ str_replace(' ', '-', $post->property_title) }}/{{ $post->id }}">
-														<h4>	{{Str::limit($post->property_title, 20, $end='.......')}}</h4>
+														<a class="color-secondary mb-5" href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
+														<h4>	
+															{{-- {{Str::limit($post->property_title, 20, $end='.......')}} --}}
+															{{$post->property_title}}
+														</h4>
 
 															<span class="address icon-primary f-14"><i class="fa fa-map-marker"></i>{{$post->area}}</span>
 													</a></div><a class="color-secondary mb-5">

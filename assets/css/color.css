@@ -36,7 +36,7 @@ body{
 .comment-content .user-rating li.active,
 .btn-link:hover,
 .rating i, .language .active{
-	color: #fd9834 !important;
+	color: #2f77ad !important;
 }
 .header-seven .navbar-light .navbar-nav .nav-link,
 .color-secondary, .hover-secondery-primary a, .icon-secondary i, 
@@ -148,7 +148,7 @@ a.bg-primary:focus,
 a.bg-primary:hover,
 button.bg-primary:focus,
 button.bg-primary:hover {
-    color: #fd9834 !important;
+    color: #2f77ad !important;
     background: transparent;
     /*background-color: black !important;*/
 
@@ -200,7 +200,7 @@ a.btn-round,
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:hover,
 .btn-primary:focus{
-	border-color: #fd9834;
+	border-color: #2f77ad;
 	filter: brightness(110%);
 }
 .btn-secondary:hover{
@@ -273,7 +273,7 @@ hr,
 .price-range #debt-amount-slider input:checked + label::after,
 .custom-radio input[type="radio"]:checked~.design,
 .social-media-2.border-white li a:hover{
-	border-color: #fd9834;
+	border-color: #2f77ad;
 }
 .border-top-1-light-gray{
 	border-color: #dee2e6
@@ -287,16 +287,16 @@ hr,
 }
 
 .hexagon, .hexagon:after {
-  border-left-color: #fd9834;
+  border-left-color: #2f77ad;
 }
 .hexagon, .hexagon:before {
-  border-right-color: #fd9834;
+  border-right-color: #2f77ad;
 }
 .hexagon:before {
-  border-top-color: #fd9834;
+  border-top-color: #2f77ad;
 }
 .hexagon:after {
-  border-bottom-color: #fd9834;
+  border-bottom-color: #2f77ad;
 }
 .box-shadow-gray{
 	box-shadow: 0px 0px 15px 4px rgb(245, 245, 245, 0.1);
@@ -314,10 +314,10 @@ hr,
 	.dropdown-menu li.active .dropdown-item,
 	.dropdown-menu .dropdown-item:hover{
 		background-color: transparent !important;
-		color: #fd9834 !important
+		color: #2f77ad !important
 	}
 	.property-img{
-		background-color: #fd9834;
+		background-color: #2f77ad;
 	}
 	.dropdown-item{
 		color: #fff;

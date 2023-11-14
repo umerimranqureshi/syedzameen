@@ -85,7 +85,7 @@
 
                                     <nav aria-label="breadcrumb">
 
-                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                             <li class="breadcrumb-item active text-light" aria-current="page">PURPOSE,
                                                 PROPERTY TYPE AND LOCATION</li>
@@ -256,7 +256,7 @@
                                             <div class="row">
                                                 <nav aria-label="breadcrumb">
 
-                                                    <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                                    <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                                         <li class="breadcrumb-item active text-light" aria-current="page">
                                                             PROPERTY TITLE AND DESCRIPTION</li>
@@ -338,7 +338,7 @@
                                             <div class="row">
                                                 <nav aria-label="breadcrumb">
 
-                                                    <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                                    <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                                         <li class="breadcrumb-item active text-light" aria-current="page">
                                                             PROPERTY SPECS AND PRICE</li>
@@ -582,7 +582,7 @@
 
                                                                 <!--home section start//////////////////-->
                                                                 <p class="mt-3 ">
-                                                                    <a class="btn " style="background-color: #fd9834;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                                    <a class="btn " style="background-color: #2f77ad;" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                                         HOME
                                                                     </a>
                                                                 </p>
@@ -673,7 +673,7 @@
 
                                                                 <!--Plots  start///////////////-->
                                                                 <p class="mt-3 ">
-                                                                    <a class="btn " style="background-color: #fd9834;" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                                    <a class="btn " style="background-color: #2f77ad;" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
                                                                         PLOTS
                                                                     </a>
                                                                 </p>
@@ -846,7 +846,7 @@
                                                 <div class="row">
                                                     <nav aria-label="breadcrumb">
 
-                                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #fd9834;">
+                                                        <ol class="breadcrumb rounded p-3 mt-4" style="background-color: #2f77ad;">
 
                                                             <li class="breadcrumb-item active text-light" aria-current="page">CONTACT DETAILS</li>
 

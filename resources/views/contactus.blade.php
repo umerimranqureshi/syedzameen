@@ -1,234 +1,238 @@
 @extends('layout')
 
 @section('body')
+    <!-- Find the best Place End
+        ==================================================================-->
 
+    <section class="section novi-background section-sm">
 
+        <style>
+            /* CSS for Contact Section */
 
-<!-- Find the best Place End
-==================================================================-->
+            .section {
+                padding: 60px 0;
+            }
 
-  <section class="section novi-background section-sm bg-light">
+            .section-sm {
+                padding: 30px 0;
+            }
 
-<style>
-/* CSS for Contact Section */
+            .container {
+                width: 100%;
+                max-width: 1140px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
 
-.section {
-  padding: 60px 0;
-}
+            .layout-bordered {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
-.section-sm {
-  padding: 30px 0;
-}
+            .layout-bordered-item {
+                flex-basis: 33.33%;
+                /* Set the width to 33.33% to display three blocks inline */
+                max-width: 33.33%;
+                text-align: center;
+                padding: 30px;
+            }
 
-.container {
-  width: 100%;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+            .icon {
+                font-size: 40px;
+                margin-bottom: 20px;
+                color: black;
+                /* Change the icon color to black */
+            }
 
-.layout-bordered {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+            .list-0 {
+                padding-left: 0;
+                list-style: none;
+            }
 
-.layout-bordered-item {
-  flex-basis: 33.33%; /* Set the width to 33.33% to display three blocks inline */
-  max-width: 33.33%;
-  text-align: center;
-  padding: 30px;
-}
+            .list-0 li {
+                margin-bottom: 10px;
+                color: black;
+                /* Change the text color to black */
+            }
 
-.icon {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: black; /* Change the icon color to black */
-}
+            .link-default {
+                /* color: #007bff; */
+                color: black;
+            }
 
-.list-0 {
-  padding-left: 0;
-  list-style: none;
-}
+            .link-default:hover {
+                text-decoration: none;
+            }
 
-.list-0 li {
-  margin-bottom: 10px;
-  color: black; /* Change the text color to black */
-}
+            .icon-lg {
+                font-size: 60px;
+            }
 
-.link-default {
-  /* color: #007bff; */
-  color: black;
-}
+            .mdi {
+                background-color: transparent;
+            }
 
-.link-default:hover {
-  text-decoration: none;
-}
+            .text-primary {
+                color: black;
+                /* Change the text color to black */
+            }
 
-.icon-lg {
-  font-size: 60px;
-}
+            .layout-bordered-item-inner {
+                /* position: relative; */
+                transition: 0.4s;
+            }
 
-.mdi {
-  background-color: transparent;
-}
+            .wow-outer {
+                position: relative;
+            }
 
-.text-primary {
-  color: black; /* Change the text color to black */
-}
+            .slideInUp {
+                animation-name: slideInUp;
+                animation-duration: 0.7s;
+                visibility: visible !important;
+            }
 
-.layout-bordered-item-inner {
-  /* position: relative; */
-  transition: 0.4s;
-}
+            @keyframes slideInUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
 
-.wow-outer {
-  position: relative;
-}
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
 
-.slideInUp {
-  animation-name: slideInUp;
-  animation-duration: 0.7s;
-  visibility: visible !important;
-}
+            .icons {
+                font-size: 40px;
+                margin-bottom: 40px;
+                color: #2f77ad;
+            }
+        </style>
 
-@keyframes slideInUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.icons{
-font-size: 40px;
-margin-bottom: 40px;
-color: #fd9834;
-}
+        <div class="container">
+            <div class="layout-bordered">
 
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary">
+                        </div>
+                        <div class="icons"><i class="fa fa-map-marker"></i></div>
+                        <a class="link-default" href="#">28F 1st Floor commercial Area DHA, Phase 1 Lahore</a>
 
+                        <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary"></div>
+                        <div class="icons"><i class="fa fa-map-marker"></i></div>
+                        <a class="link-default" href="#"> 2nd floor 47-MB<br>(Main Boulevard) Phase 6 DHA Lahore</a>
 
-</style>
-
-      <div class="container">
-        <div class="layout-bordered">
-
-              <div class="layout-bordered-item wow-outer">
-            <div class="layout-bordered-item-inner wow slideInUp">
-              <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary">
+                    </div>
                 </div>
-                <div class="icons"><i class="fa fa-map-marker"></i></div>
-                <a class="link-default" href="#">28F 1st Floor commercial Area DHA, Phase 1 Lahore</a>
 
-              <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary"></div>
-              <div class="icons"><i class="fa fa-map-marker"></i></div>
-              <a class="link-default" href="#"> 2nd floor 47-MB<br>(Main Boulevard) Phase 6 DHA Lahore</a>
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon novi-icon icon-lg mdi mdi-email text-primary"></div>
+                        <div class="icons"><i class="fa fa-envelope"></i></div>
+                        <a class="link-default"
+                            href="mailto:syedrealestateandbuilders@gmail.com">syedrealestateandbuilders@gmail.com</a>
+                        <a class="link-default" href="mailto:syedrealestateandbuilders@gmail.com">
+                            info@syedrealestates.com</a>
+
+                    </div>
+                </div>
+
+                <div class="layout-bordered-item wow-outer">
+                    <div class="layout-bordered-item-inner wow slideInUp">
+                        <div class="icon novi-icon icon-lg mdi mdi-phone text-primary"></div>
+                        <ul class="list-0">
+                            <div class="icons"><i class="fa fa-phone"></i></div>
+                            <li><a class="link-default" href="tel:#">+(92)-332-8447174</a></li>
+                            <li><a class="link-default" href="tel:#">+(
+                                    92)-324-8430329</a></li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
-          </div>
-
-          <div class="layout-bordered-item wow-outer">
-            <div class="layout-bordered-item-inner wow slideInUp">
-              <div class="icon novi-icon icon-lg mdi mdi-email text-primary"></div>
-              <div class="icons"><i class="fa fa-envelope"></i></div>
-              <a class="link-default" href="mailto:syedrealestateandbuilders@gmail.com">syedrealestateandbuilders@gmail.com</a>
-              <a class="link-default" href="mailto:syedrealestateandbuilders@gmail.com"> info@syedrealestates.com</a>
-
-            </div>
-          </div>
-
-          <div class="layout-bordered-item wow-outer">
-            <div class="layout-bordered-item-inner wow slideInUp">
-              <div class="icon novi-icon icon-lg mdi mdi-phone text-primary"></div>
-              <ul class="list-0">
-                <div class="icons"><i class="fa fa-phone"></i></div>
-                <li><a class="link-default" href="tel:#">+(92)-332-8447174</a></li>
-                <li><a class="link-default" href="tel:#">+(
-                    92)-324-8430329</a></li>
-              </ul>
-            </div>
-          </div>
-
         </div>
-      </div>
     </section>
-<!--  Partners and Subscribe Form Start
-==================================================================-->
-<div class="patner-subscribe bg-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 col-lg-12">
-				<div class="bg-white shadow py-80">
-					<div class="row">
-						<div class="col-md-12 col-lg-6 px-60 border-right">
-							<div class="side-title pb-30">
-								<span class="small-title color-primary position-relative line-primary">Partners</span>
-								<h2 class="title mb-20 color-secondary">Our Popular Fellows!</h2>
-								<p>These are our popular fellows. if you want to become a fellow then <a href="{{route('contactUs')}}">contact us</a>
-								</p>
-							</div>
-							<div class="owl-carousel partners mt-30">
-								<img src="{{asset('Ourfellow.jpg')}}" alt="Image not found!">
-								<img src="{{asset('syedEstate Real logo.png')}}" alt="">
-								<img src="{{asset('logo-3.png')}}" alt="">
-							</div>
-						</div>
-						<div class="col-md-12 col-lg-6 px-60">
-							<div class="side-title pb-30 text-right mt-md-50">
-								<span
-									class="small-title color-primary position-relative line-right-primary">Newsletter</span>
-								<h2 class="title mb-20 color-secondary">Get Update Now!</h2>
-								<p>Get daily news of properties in the market by our newsletter features just subscribe us</p>
-							</div>
-							<form class="news-letter bg-gray mt-30">
-								<div id="subscribe-message" style="margin-bottom:2px;font-size:20px"></div>
-								<div class="form-group position-relative" id="subscribe-hide">
-									<input class="form-control" type="text" name="email" placeholder="Subscribe" id="subscribe-input">
-									<button class="bg-gray color-secondary" id="btn-subscribe"><i class="fa fa-paper-plane"></i></button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <!--  Partners and Subscribe Form Start
+        ==================================================================-->
+    <div class="patner-subscribe bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="bg-white shadow py-80">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-6 px-60 border-right">
+                                <div class="side-title pb-30">
+                                    <span class="small-title color-primary position-relative line-primary">Partners</span>
+                                    <h2 class="title mb-20 color-secondary">Our Popular Fellows!</h2>
+                                    <p>These are our popular fellows. if you want to become a fellow then <a
+                                            href="{{ route('contactUs') }}">contact us</a>
+                                    </p>
+                                </div>
+                                <div class="owl-carousel partners mt-30">
+                                    <img src="{{ asset('Ourfellow.jpg') }}" alt="Image not found!">
+                                    <img src="{{ asset('syedEstate Real logo.png') }}" alt="">
+                                    <img src="{{ asset('logo-3.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-6 px-60">
+                                <div class="side-title pb-30 text-right mt-md-50">
+                                    <span
+                                        class="small-title color-primary position-relative line-right-primary">Newsletter</span>
+                                    <h2 class="title mb-20 color-secondary">Get Update Now!</h2>
+                                    <p>Get daily news of properties in the market by our newsletter features just subscribe
+                                        us</p>
+                                </div>
+                                <form class="news-letter bg-gray mt-30">
+                                    <div id="subscribe-message" style="margin-bottom:2px;font-size:20px"></div>
+                                    <div class="form-group position-relative" id="subscribe-hide">
+                                        <input class="form-control" type="text" name="email" placeholder="Subscribe"
+                                            id="subscribe-input">
+                                        <button class="bg-gray color-secondary" id="btn-subscribe"><i
+                                                class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script>
+    <script>
+        $("#subscribe-input").on("input", function() {
+            // Print entered value in a div box
 
-$("#subscribe-input").on("input", function(){
-        // Print entered value in a div box
+            if (!$(this).val()) {
 
-			if(!$(this).val()){
+                $('#subscribe-message').text('email required');
+                $('#subscribe-message').css('color', 'red');
 
-				$('#subscribe-message').text('email required');
-		$('#subscribe-message').css('color','red');
+            } else {
+                $('#subscribe-message').text('');
+            }
 
-			}else{
-				$('#subscribe-message').text('');
-			}
+        });
 
-    });
-
-	$(document).on('click', '#btn-subscribe', function(e) {
-	e.preventDefault();
-	if($('#subscribe-input').val()==''){
-		$('#subscribe-message').text('email required');
-		$('#subscribe-message').css('color','red');
-	}else{
+        $(document).on('click', '#btn-subscribe', function(e) {
+            e.preventDefault();
+            if ($('#subscribe-input').val() == '') {
+                $('#subscribe-message').text('email required');
+                $('#subscribe-message').css('color', 'red');
+            } else {
 
 
-	$('#subscribe-hide').hide();
-	$('#subscribe-message').text('Thanks for subscribing us');
-	$('#subscribe-message').addClass('color-primary');
+                $('#subscribe-hide').hide();
+                $('#subscribe-message').text('Thanks for subscribing us');
+                $('#subscribe-message').addClass('color-primary');
 
-	}
-});
-</script>
-
+            }
+        });
+    </script>
 @endsection

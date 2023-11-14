@@ -38,13 +38,13 @@ class mainController extends Controller
     public function indexView()
     {
         // dd(User::where('google_id','10635473357604182573')->first());
-        $latestPostLimit = 8;
+        $latestPostLimit = 9;
 
         $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->where('disable', '0')->latest()->limit($latestPostLimit)->reorder('post_boaster', 'DESC')->get();
         $allPost = Post::with(["postImages", "postViews", "propertyCate", "cityAndArea"])->where('admin_post', 1)->get();
         $citys = CityAndArea::with(["cityAndArea"])->get();
         $cities = DB::table("city_and_areas")->distinct()->get("city");
-        $alllocation = DB::table("city_and_areas")->distinct()->get("area");
+        $location = DB::table("city_and_areas")->distinct()->get("area");
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
 
         $showlatestPost = DB::table('posts')
@@ -120,7 +120,7 @@ class mainController extends Controller
         $allSoldProperty = $phpObj["allSoldPostNum"];
         $blogs = blog::with("blogOneImage")->paginate(12);
 
-        return view('index', compact('allPost', 'blogs', 'subtypee', 'cities', 'agencies', 'alllocation', 'showReallatestPost2', 'showReallatestPost', 'latestPost', 'showlatestPost2', 'showlatestPost', 'adminPost', 'featureAgencies', 'favPost', "allSoldProperty", "allPostNumber", "allAgentNumber", "specialPost"));
+        return view('index', compact('allPost', 'blogs', 'subtypee', 'cities', 'agencies', 'location', 'showReallatestPost2', 'showReallatestPost', 'latestPost', 'showlatestPost2', 'showlatestPost', 'adminPost', 'featureAgencies', 'favPost', "allSoldProperty", "allPostNumber", "allAgentNumber", "specialPost"));
     }
     private function specialPostSort($posts, $limit)
     {
