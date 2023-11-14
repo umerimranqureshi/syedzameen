@@ -323,5 +323,5 @@ Route::get('/contactus', function () {
 });
 
 Route::get('/about-us', function () {
-        return view('about-us');
+        return view('aboutus');
     });
