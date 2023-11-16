@@ -588,7 +588,7 @@
                 <hr class="border-bottom-1 w-100 m-0">
                 <div class="col-md-12 col-lg-12">
                     <div class="py-15 text-center">
-                        Copyright SyedZameen.com &copy; 2023. All Rights Reserved.
+                        Copyright  <a href="http://directoptimize.com" target="_blank">directoptimize.com</a> 2023. All Rights Reserved.
                     </div>
                 </div>
             </div>

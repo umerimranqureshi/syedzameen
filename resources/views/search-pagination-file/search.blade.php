@@ -34,15 +34,13 @@
         <div class="form-group col-lg-2 col-md-12 col-12 pt-15">
             <div class="btn-group btn-group-toggle position-relative propBtns" data-toggle="buttons"
                 style="gap: 15px; width:100%;">
-                <label id="sale" class="btn btn-secondary" onclick="changecolor(id)"
-                    style="width: 100%; margin: 0px;">
+                <label id="sale" class="searchable btn btn-secondary" style="width: 100%; margin: 0px;">
                     <input type="radio" name="purpose" class="property_type margin hg" value="sale" required /><span
-                        id="sale_span" style="position: relative"> Sale</span>
+                        id="sale_span" style="position: relative; top:-3px;"> Sale</span>
                 </label>
-                <label id="rent" class="btn btn-secondary" onclick="changecolor(id)"
-                    style="width: 100%; margin: 0px;">
+                <label id="rent" class="searchable btn btn-secondary" style="width: 100%; margin: 0px;">
                     <input type="radio" name="purpose" class="property_type" value="rent" /><span id="rent_span"
-                        style="position: relative">Rent</span>
+                        style="position: relative; top:-3px;">Rent</span>
                 </label>
             </div>
         </div>
@@ -225,25 +223,6 @@
 
     </div>
 </form>
-
-<script>
-    function changecolor(id) {
-
-        if (id == "sale") {
-            document.getElementById("sale").style.border = "5px solid green";
-            document.getElementById("sale_span").style.top = "-3px";
-            document.getElementById("rent").style.border = "3px solid #2f77ad";
-            document.getElementById("rent_span").style.top = "0";
-        }
-        if (id == "rent") {
-            document.getElementById("rent").style.border = "5px solid green";
-            document.getElementById("rent_span").style.top = "-3px";
-            document.getElementById("sale").style.border = "3px solid #2f77ad";
-            document.getElementById("sale_span").style.top = "0";
-        }
-
-    }
-</script>
 
 <script>
     function mainInfo() {

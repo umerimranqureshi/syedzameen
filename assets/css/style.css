@@ -3748,7 +3748,7 @@ blockquote i.fa {
 =======================================================*/
 
 .app {
-    font-family: font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
@@ -3978,13 +3978,13 @@ price-range #debt-amount-slider::before,
         padding: 30px;
     }
     .booking-property table tbody tr td:first-child {
-        width: 55%
+        width: 55%;
     }
     .booking-property table tbody tr td:nth-child(2),
     .booking-property table tbody tr td:nth-child(4),
-    .booking-property table tbody tr td:nth-child(5),
+    .booking-property table tbody tr td:nth-child(5)
     {
-        width: 13%
+        width: 13%;
     }
 }
 
@@ -4789,9 +4789,46 @@ color: #242424;
         text-align: center;
         text-align: -webkit-center;
 }
+.mobile-responsive-search{
+    width: 60vw;
+    z-index: 9999;
+    left: 10vw;
+    margin-top: 30vh;
+}
 @media only screen and (max-width: 991px) {
     .mobile-responsive-header{
         margin-top: 0px !important;
     }
+    .mobile-responsive-search{
+        width: 88vw;
+        z-index: 9999;
+        left: 8vw;
+        margin-top: 4vh;
+    }
+    .adbanced-form-two.amenities-list .price_range {
+        margin-bottom: 10px;
+    }
     
+    .Ubackground{
+        min-height:95vh !important;
+    }
+}
+
+span.select2-container {
+    z-index: 99999;
+}
+
+
+.searchable.active{
+    /* border: 10px solid #2f77ad; */
+    background-color : #2f77ad !important;
+    color: #fff !important;
+    /* top: -3px; */
+}
+.searchable.active:hover{
+    border: 5px solid #2f77ad !important;
+    background-color : #2f77ad !important;
+    color: #fff !important;
+    /* font-size: 18px !important; */
+    /* top: -3px; */
 }

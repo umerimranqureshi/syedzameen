@@ -38,7 +38,7 @@ class mainController extends Controller
     public function indexView()
     {
         // dd(User::where('google_id','10635473357604182573')->first());
-        $latestPostLimit = 9;
+        $latestPostLimit = 6;
 
         $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->where('disable', '0')->latest()->limit($latestPostLimit)->reorder('post_boaster', 'DESC')->get();
         $allPost = Post::with(["postImages", "postViews", "propertyCate", "cityAndArea"])->where('admin_post', 1)->get();

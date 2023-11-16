@@ -12,7 +12,7 @@
         </p>
     @endif
     <div class="row ">
-        <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
+        <div class="form-group pt-15 col-lg-3 col-md-6 col-sm-12 ">
             <div class="select-wrapper position-relative">
                 <select id="city" name="city" class="select form-control select2">
                     @foreach ($cities as $citi)
@@ -21,7 +21,7 @@
                 </select>
             </div>
         </div>
-        <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
+        <div class="form-group pt-15  col-lg-3 col-md-6 col-sm-12 ">
             <div class="select-wrapper position-relative">
                 <select id="location" name="area" class="select form-control select2 ">
                     {{-- <option value="null">Select Location</option> --}}
@@ -31,130 +31,124 @@
                 </select>
             </div>
         </div>
-        <div class="form-group col-lg-2 col-md-12 col-12 pt-15">
+        <div class="form-group pt-15  col-lg-3 col-md-6 col-sm-12 ">
             <div class="btn-group btn-group-toggle position-relative propBtns" data-toggle="buttons"
                 style="gap: 15px; width:100%;">
-                <label id="sale" class="btn btn-secondary" onclick="changecolor(id)"
-                    style="width: 100%; margin: 0px;">
+                <label id="sale" class="searchable btn btn-secondary" style="width: 100%; margin: 0px;">
                     <input type="radio" name="purpose" class="property_type margin hg" value="sale" required /><span
-                        id="sale_span" style="position: relative"> Sale</span>
+                        id="sale_span" style="position: relative; top:-3px;"> Sale</span>
                 </label>
-                <label id="rent" class="btn btn-secondary" onclick="changecolor(id)"
-                    style="width: 100%; margin: 0px;">
+                <label id="rent" class="searchable btn btn-secondary" style="width: 100%; margin: 0px;">
                     <input type="radio" name="purpose" class="property_type" value="rent" /><span id="rent_span"
-                        style="position: relative">Rent</span>
+                        style="position: relative; top:-3px;">Rent</span>
                 </label>
             </div>
         </div>
-        <div class="form-group col-lg-4 col-md-12 col-12 pt-15">
-            <div class="d-flex">
-                <div class="form-group  col-md-6 px-lg-1 col-sm-12  col-sm-11">
-                    <div class="select-wrapper position-relative">
-                        @php
-                            if (isset($old_property_sub_type)) {
-                                $OPT = $old_property_sub_type;
-                            }
-                        @endphp
+        <div class="form-group pt-15   col-lg-3 col-md-6 col-sm-12">
+            <div class="select-wrapper position-relative">
+                @php
+                    if (isset($old_property_sub_type)) {
+                        $OPT = $old_property_sub_type;
+                    }
+                @endphp
 
-                        <select name="sub_type" value="sub_type" id="mySelect" class="select form-control "
-                            onchange="mainInfox();">
+                <select name="sub_type" value="sub_type" id="mySelect" class="select form-control "
+                    onchange="mainInfox();">
 
-                            <option value="not_commercial">Commercial</option>
+                    <option value="not_commercial">Commercial</option>
 
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="commercial_plot" name="sub_type">Commercial plot</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="commercial_plot" name="sub_type">Commercial plot</option>
 
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="commercial_plot_file" name="sub_type">Commercial plot file</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="office" name="sub_type">Office</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="shop" name="sub_type">Shop</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="warehouse" name="sub_type">Warehouse</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="factory" name="sub_type">Factory</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="agriculture_land" name="sub_type">Agriculture land</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="industrial_land" name="sub_type">Industrial land</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="gym" name="sub_type">Gym</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="plaza" name="sub_type">Plaza</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="land" name="sub_type">Land</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="hall" name="sub_type">Hall</option>
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="commercial_plot_file" name="sub_type">Commercial plot file</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="office" name="sub_type">Office</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="shop" name="sub_type">Shop</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="warehouse" name="sub_type">Warehouse</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="factory" name="sub_type">Factory</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="agriculture_land" name="sub_type">Agriculture land</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="industrial_land" name="sub_type">Industrial land</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="gym" name="sub_type">Gym</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="plaza" name="sub_type">Plaza</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="land" name="sub_type">Land</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="hall" name="sub_type">Hall</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="farmhouse_plot" name="sub_type">Farmhouse plot</option>
 
-                            <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
-                                value="building" name="sub_type">Building</option>
+                    <option @isset($OPT) {$OPT=="sub_type" ?"selected":''} @endisset
+                        value="building" name="sub_type">Building</option>
 
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group  col-md-6 px-lg-1  col-sm-12  col-sm-11">
-                    <div class="select-wrapper position-relative">
+                </select>
+            </div>
+        </div>
+        <div class="form-group pt-15  col-lg-3 col-md-6 col-sm-12">
+            <div class="select-wrapper position-relative">
 
-                        @php
+                @php
 
-                            if (isset($old_property_sub_type)) {
-                                $OPT = $old_property_sub_type;
-                            }
-                        @endphp
+                    if (isset($old_property_sub_type)) {
+                        $OPT = $old_property_sub_type;
+                    }
+                @endphp
 
-                        <select name="sub_typee" value="sub_typee" id="Select" class="select form-control "
-                            onchange="mainInfo();">
+                <select name="sub_typee" value="sub_typee" id="Select" class="select form-control "
+                    onchange="mainInfo();">
 
-                            <option value="not_residential">Residential</option>
+                    <option value="not_residential">Residential</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="home" name="sub_typee">Home</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="home" name="sub_typee">Home</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="guest_house" name="sub_typee">Guest house</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="appartment" name="sub_typee">Appartment</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="guest_house" name="sub_typee">Guest house</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="appartment" name="sub_typee">Appartment</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="farm_house" name="sub_typee">Farm house</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="penthouse" name="sub_typee">Penthouse</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="farm_house" name="sub_typee">Farm house</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="penthouse" name="sub_typee">Penthouse</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="hotel_suite" name="sub_typee">Hotel suite</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="basement" name="sub_typee">Basement</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="hotel_suite" name="sub_typee">Hotel suite</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="basement" name="sub_typee">Basement</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="hostel" name="sub_typee">Hostel</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="flat" name="sub_typee">Flat</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="hostel" name="sub_typee">Hostel</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="flat" name="sub_typee">Flat</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="upper_portion" name="sub_typee">Upper portion</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="lower_portion">Lower portion</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="upper_portion" name="sub_typee">Upper portion</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="lower_portion">Lower portion</option>
 
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="residential_plot" name="sub_typee">Residential plot</option>
-                            <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
-                                value="residential_plot_file" name="sub_typee">Residential plot file</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="residential_plot" name="sub_typee">Residential plot</option>
+                    <option @isset($OPT) {$OPT=="sub_typee" ?"selected":''} @endisset
+                        value="residential_plot_file" name="sub_typee">Residential plot file</option>
 
-                        </select>
-                    </div>
-
-                </div>
+                </select>
             </div>
 
         </div>
 
 
-        <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
+
+        <div class="form-group pt-15  col-lg-3 col-md-6 col-sm-12 ">
             <div class="select-wrapper position-relative">
                 <select name="beds" class="select form-control has-val">
                     <option @isset($old_beds) {{ $old_beds == 'null' ? 'selected' : '' }}@endisset
@@ -176,7 +170,7 @@
             </div>
         </div>
 
-        <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
+        <div class="form-group col-lg-3 col-md-6 col-sm-12">
             <div class="price_range">
                 <div class="price-filter">
                     <span><input id="filter_sqft" type="text" name="area"
@@ -197,7 +191,7 @@
         </div>
 
 
-        <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
+        <div class="form-group col-lg-3 col-md-6 col-sm-12">
             <div class="price_range">
                 <div class="price-filter">
                     <span class="price-slider">
@@ -218,31 +212,14 @@
             </div>
         </div>
 
-        <div class="form-group mb-0 pb-15 col-lg-3 col-md-12 col-12">
-            <button class="p-5  search" style="margin-top: 13px; width:100%; color:white;" type="submit">Search!</button>
+        <div class="form-group  pt-15  col-lg-3 col-md-6 col-sm-12">
+            <button class="p-5  search" style="margin-top: 13px; width:100%; color:white;"
+                type="submit">Search!</button>
         </div>
 
 
     </div>
 </form>
-
-<script>
-    function changecolor(data) {
-        if (id == "sale") {
-            document.getElementById("sale").style.border = "5px solid green";
-            document.getElementById("sale_span").style.top = "-3px";
-            document.getElementById("rent").style.border = "3px solid #2f77ad";
-            document.getElementById("rent_span").style.top = "0";
-        }
-        if (id == "rent") {
-            document.getElementById("rent").style.border = "5px solid green";
-            document.getElementById("rent_span").style.top = "-3px";
-            document.getElementById("sale").style.border = "3px solid #2f77ad";
-            document.getElementById("sale_span").style.top = "0";
-        }
-
-    }
-</script>
 
 <script>
     function mainInfo() {

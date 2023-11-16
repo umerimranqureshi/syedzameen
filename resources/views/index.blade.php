@@ -165,19 +165,16 @@
     <!--form section
                                  ------------------>
     <section class="p-0 mobile-responsive-header" style="    margin-top: -90px;">
-        <div class=" row p-0 " >
-
+        <div class=" row p-0 "  style="width:100%" >
+            
             <div class="col-4 p-100 Ubackground"
-                style="min-height:95vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
-                <div class="position-absolute" style="    width: 60vw;
-                z-index: 9999;
-                left: 10vw;
-                margin-top: 30vh;">
+                style="min-height:80vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
+                <div class="position-absolute mobile-responsive-search" >
                     @include('search-pagination-file.index-search')
                 </div>
             </div>
             <div class="col-8 p-100 Ubackground"
-                style="min-height:95vh;background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('{{ asset('assets/images/background/background-right.jpeg') }}');">
+                style="min-height:80vh;background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('{{ asset('assets/images/background/background-right.jpeg') }}');">
             </div>
         </div>
     </section>
@@ -192,6 +189,21 @@
     <section class="featured-properties bg-light">
         <div class="container">
             <div class="row">
+                <div  class="col-lg-12">
+                    <ul>
+                        <li class="mt-30">
+                            <div class="d-table">
+                            <span class="float-left mr-15"></span>
+
+                                <h1 class="color-secondary mb-15  text-center"  style="font-size: 40px"><i style="font-size: 40px" class="fa fa-home"></i> Buy, Sell, Rent Homes & Properties</h1>
+                                <p>
+                                    Syed Zameen is the leading property portal based in Pakistan - We offer the highest levels of service to property buyers sellers landlords tenants alike in Lahore and all over Pakistan. We are providing quality property - commercial plots, Industrial lands, Buildings, apartments - bungalows, and home buying. Moreover, You can also list your property on our portal.
+                                    Syed Zameen, a dynamic and forward-thinking entrepreneur, recognized the gaps and challenges in Pakistan's real estate sector. Syed Zameen envisioned a digital platform that could bridge these gaps, offering a one-stop solution for all real estate needs. With a background in technology and a passion for real estate, Syed Zameen embarked on a journey to create something revolutionary.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
                 <div class="col-lg-12">
                     <div class="main-title w-75 mx-auto d-table text-center mb-30">
                         <span class="small-title color-primary position-relative line-2-primary">Find Out the Best
@@ -302,6 +314,8 @@
                                         own way..</p>
                                 </div>
                             </li>
+
+
                         </ul>
                     </div>
                 </div>
@@ -348,11 +362,78 @@
                     </div>
                 </div>
             </div>
+            {{-- <div class="row">
+                <div class="col-12">
+                    <ul>
+                        
+                        <li class="mt-50">
+                            <div class="d-table">
+                                <span class="small-title color-primary position-relative line-primary text-center">Portal!</span>
+                                <h2 class="color-secondary mb-15 text-center">The Birth of the Portal</h2>
+                                <p>The result of Syed Zameen's vision and hard work is the cutting-edge real estate property portal that bears his name. This platform seamlessly connects buyers, sellers, and renters, providing a comprehensive range of listings that cater to diverse preferences and budgets. From houses and apartments to commercial spaces and plots of land, the portal's extensive database ensures that every user finds something that suits their requirements.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="mt-30">
+                            <div class="d-table">
+                                <span class="small-title color-primary position-relative line-primary text-center">Updates</span>
+                                <h2 class="color-secondary mb-15 text-center">Key Features and Services</h2>
+                                <p>
+                                    <b>Property Blog and Guides:</b> Beyond listings, the portal offers a treasure trove of information through its property blog and guides. Users can educate themselves about market trends, legal procedures, and investment tips.
+                                    <b>Mobile App Accessibility:</b> Recognizing the prevalence of mobile usage, the portal extends its services through a user-friendly mobile app. This allows users to access listings, notifications, and messages on the go.
+                                                                        
+                                 </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> --}}
         </div>
+    </section>
+
+
+    <section class=" featured-properties bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-title w-75 mx-auto d-table text-center mb-30">
+                        <span class="small-title color-primary position-relative line-2-primary">Portal!</span>
+
+                        <h2 class="title mb-20 color-secondary">The Birth of the Portal</h2>
+                        <span class="sub-title" style="font-size: 135%">The result of Syed Zameen's vision and hard work is the cutting-edge real estate property portal that bears his name. This platform seamlessly connects buyers, sellers, and renters, providing a comprehensive range of listings that cater to diverse preferences and budgets. From houses and apartments to commercial spaces and plots of land, the portal's extensive database ensures that every user finds something that suits their requirements.
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+    <section class=" featured-properties bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="main-title w-75 mx-auto d-table text-center mb-30">
+                        <span class="small-title color-primary position-relative line-2-primary">Updates!</span>
+
+                        <h2 class="title mb-20 color-secondary">Key Features and Services</h2>
+                        <span class="sub-title" style="font-size: 135%"><b>Property Blog and Guides:</b> Beyond listings, the portal offers a treasure trove of information through its property blog and guides. Users can educate themselves about market trends, legal procedures, and investment tips.
+                            <b>Mobile App Accessibility:</b> Recognizing the prevalence of mobile usage, the portal extends its services through a user-friendly mobile app. This allows users to access listings, notifications, and messages on the go.
+                             
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
     </section>
     <!-- Why Choose Us Start
                             =========================================================================-->
-
+        
+                            
         <section>
             <div class="container">
                 <p>OUR PORTFOLIO</p>
@@ -372,7 +453,7 @@
                     <div class=" col-3 text-center p-1">
                         <img src="{{ asset('assets\images\background\index-detail.jpeg') }}" alt="banglow image">
                     </div> --}}
-                    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators3" class="carousel slide" data-ride="carousel" style="width: 100%">
 
                         <div class="carousel-inner">
                             
@@ -678,7 +759,7 @@
                 <div class="col-md-12 col-lg-12">
                     <div class="bg-white shadow py-80">
                         <div class="row">
-                            <div class="col-md-12 col-lg-6 px-60 border-right">
+                            <div class=" col-lg-6 col-md-12 px-60 border-right">
                                 <div class="side-title pb-30">
                                     <span class="small-title color-primary position-relative line-primary">Partners</span>
                                     <h2 class="title mb-20 color-secondary">Our Brands!</h2>
@@ -686,8 +767,7 @@
                                         Syed zameen is a project of SYED REAL ESATAE ,
                                         Syed Real Estates and builders is the largest full-service real estate and property
                                         management company , They known for their quanlity work .
-
-                                        .</p>
+                                    </p>
                                 </div>
                                 <div class="owl-carousel partners mt-30">
                                     <img src="{{ asset('login-logo.png') }}" alt="Image not found!">
@@ -695,7 +775,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-md-12 col-lg-6 px-60">
+                            <div class=" col-lg-6  col-md-12 px-60">
                                 <div class="side-title pb-30 text-right mt-md-50">
                                     <span
                                         class="small-title color-primary position-relative line-right-primary">Newsletter</span>
@@ -719,26 +799,6 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-        function changecolor(id) {
-
-            if (id == "sale") {
-                document.getElementById("sale").style.border = "5px solid green";
-                document.getElementById("sale_span").style.top = "-3px";
-                document.getElementById("rent").style.border = "3px solid #2f77ad";
-                document.getElementById("rent_span").style.top = "0";
-            }
-            if (id == "rent") {
-                document.getElementById("rent").style.border = "5px solid green";
-                document.getElementById("rent_span").style.top = "-3px";
-                document.getElementById("sale").style.border = "3px solid #2f77ad";
-                document.getElementById("sale_span").style.top = "0";
-            }
-
-        }
-    </script>
 
 
     <script>
