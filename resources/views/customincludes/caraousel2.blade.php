@@ -30,7 +30,7 @@
 
 											<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 
-												<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
+												<img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
 												<div class="thumbnail-content z-index-1 color-white-a color-white">
 													<span class="thum-category category-1 bg-secondary color-white z-index-1 px-20">
@@ -102,7 +102,7 @@
 
 										<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 
-										<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
+										<img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
 
 
