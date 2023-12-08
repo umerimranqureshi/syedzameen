@@ -23,7 +23,7 @@
 
                             <div class="row">
 								@foreach($showReallatestPost as $post)
-									<div class="col-md-4 col-sm-6 mb-4">
+									<div class="col-md-4 col-sm-6 mb-2">
 
 
 										<div class="property-thumbnail mt-30">

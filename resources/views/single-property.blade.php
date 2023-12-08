@@ -41,7 +41,11 @@
 @endsection
 @section('body')
 
-
+<style>
+	.navbar-dark {
+        background-color: #000;
+    }
+</style>
 
 <section>
 	<div class="container">

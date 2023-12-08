@@ -181,7 +181,7 @@ h2 {
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 23px;
     line-height: 34px;
 }
 
@@ -212,7 +212,7 @@ select {
 }
 
 section {
-    padding: 50px 0px;
+    padding: 40px 0px;
 }
 
 *,
@@ -4309,6 +4309,27 @@ price-range #debt-amount-slider::before,
     .navbar-nav {
         padding-top: 15px
     }
+    .navbar-collapse.collapse.show{
+        background-color: #00000085;
+    }
+    .navbar-collapse.collapse.show {
+        background-color: black;
+        /* width: 104%; */
+        position: absolute;
+        z-index: 99999;
+        top: 111px;
+        left: -13px;
+        width: 100vw;
+    }
+    .navbar-collapse.collapse.show::after {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        background: #00000038;
+        content: "";
+        z-index: 999;
+    }
     .top-header,
     .owl-nav-side .owl-nav,
     .top-header-info,
@@ -4801,8 +4822,8 @@ color: #242424;
     }
     .mobile-responsive-search{
         width: 88vw;
-        z-index: 9999;
-        left: 8vw;
+        z-index: 99;
+        left: 10vw;
         margin-top: 4vh;
     }
     .adbanced-form-two.amenities-list .price_range {
@@ -4812,10 +4833,25 @@ color: #242424;
     .Ubackground{
         min-height:95vh !important;
     }
+    ul.navbar-nav{
+            position: absolute !important;
+            z-index: 99999 !important;
+            background-color: black !important;
+            color: white !important;
+            width: 100vw !important;
+            height: 90vh !important;
+    }
+    a.nav-link {
+        margin: 0 !important;
+    }
+    li.nav-item {
+        font-size: xx-large !important;
+        margin: 10px auto !important;
+    }
 }
 
 span.select2-container {
-    z-index: 99999;
+    z-index: 9999;
 }
 
 

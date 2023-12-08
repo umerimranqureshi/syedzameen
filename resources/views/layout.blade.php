@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/mainCustom.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/frontpage.css') }}">
     {{-- <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}"> --}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
     <script src="https://use.fontawesome.com/429cd5e81f.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets/css/layerslider.css') }}">
@@ -188,15 +190,15 @@
         color: #2f77ad !important;
 
     }
+    .navbar-scrolled .nav-link {
+    color: #fff !important;
+}
 
     @media(max-width:992px) {
         .navbar-link-mobile-screen {
 
             display: block;
         }
-
-
-
     }
 
     @media(min-width:992px) {
@@ -204,7 +206,12 @@
 
             display: none;
         }
-
+    }
+    /* .navbar-dark {
+        background-color: #00000026;
+    } */
+    #header{
+        z-index: 999;
     }
 </style>
 
@@ -281,7 +288,7 @@
                                             {{ Auth::user()->name }} <i class="fa fa-caret-down"
                                                 aria-hidden="true"></i>
                                         </button>
-                                        <div style="background: #000;" class="dropdown-menu"
+                                        <div style="background: #fff; z-index:99999999" class="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
                                             <a class="dropdown-item" href="{{ route('dashbored') }}">Dashbored</a>
                                             {{-- <a class="dropdown-item" href="#">Another action</a> --}}
@@ -302,16 +309,29 @@
                                     <div class=" color-gray-light mt-md-30">
                                         <div class="widget-content hover-white-primary">
                                             <ul class="quick-links d-flex">
-                                                <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><img
-                                                            src="{{ asset('5a902db97f96951c82922874-png.jpg') }}"
-                                                            style=" width: 138px;height: 36px;
-                                        border-radius: 4px;"></i></a>
-                                                </li>
-                                                <li><a
+                                                <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><i class="fab fa-apple" aria-hidden="true"></i>
+                                                </a>
+                                                    </li>
+                                        
+                                                    {{-- <li><a
                                                         href="https://play.google.com/store/apps/details?id=com.technolyte.syedzameen&hl=en&gl=US"><img
                                                             src="{{ asset('png-transparent-iphone-google-play-android.jpg') }}"
                                                             style="    width: 138px;height: 36px;    border-radius: 4px;}"></a>
                                                 </li>
+                                                 --}}
+                                                <li><a href="https://play.google.com/store/apps/details?id=com.technolyte.syedzameen&hl=en&gl=US">
+                                                    {{-- <i class="fa-brands fa-google-play"></i> --}}
+                                                    <i class="fab fa-google-play" ></i>
+                                                </a>
+                                                </li>
+                                                <li><a href="https://www.facebook.com/syedzameen07"><i class="fab fa-facebook"></i></a></li>
+                                                <li><a href="https://www.instagram.com/syedzameenpk/"><i class="fab fa-instagram"></i></a></li>
+                                                {{-- <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><img
+                                                            src="{{ asset('5a902db97f96951c82922874-png.jpg') }}"
+                                                            style=" width: 138px;height: 36px;
+                                        border-radius: 4px;"></i></a>
+                                                </li> --}}
+                                               
                                             </ul>
                                         </div>
                                     </div>
@@ -329,9 +349,9 @@
             </div>
         </div>
         <div class="navbar" id="navbar">
-            <div id="header" class="nav-header header-seven " style="width:100%">
+            <div id="header" class="nav-header header-seven navbar-dark" style="width:100%">
                 <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light px-0">
+                    <nav class="navbar navbar-expand-lg  px-0">
                         {{-- Project Logo  --}}
                         <div class="col-md-3 col-lg-4 col-8">
                             <a class="navbar-brand logo-2" href="{{ url('/') }}">
@@ -493,11 +513,11 @@
 
     <!---    Footer Start
 =========================================================================-->
-    <footer class="bg-secondary pb-50" style="margin-top: -34px; padding-top: 54px;">
+    <footer class="bg-secondary pb-10" style="margin-top: -34px; padding-top: 54px; font-size:14px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-md-4 col-lg-6">
-                    <div class="footer-logo"><a href="#"><img src="{{ asset('index-logo3.png') }}"
+                    <div class="footer-logo px-15"><a href="#"><img src="{{ asset('index-logo3.png') }}"
                                 alt="Footer Logo"></a>
                     </div>
                 </div>
@@ -514,12 +534,12 @@
                         </li>
 
                 </div>
-                <hr class="border-bottom-1 w-100 my-50">
+                <hr class="border-bottom-1 w-100 my-10">
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget color-gray-light mt-sm-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Have Any Question?</h3>
-                        <div class="widget-content color-primary">
-                            <ul class="widget-contact">
+                        <h6 class="color-white line-bottom  mb-10">Have Any Question?</h6>
+                        <div class=" color-primary">
+                            <ul class="">
                                 <li>
                                     Call
                                     <a href="tel:+923328447174" class="color-white">+(92)332-8447174</a>
@@ -541,8 +561,8 @@
 
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget color-gray-light mt-sm-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Company</h3>
-                        <div class="widget-content hover-white-primary">
+                        <h6 class="color-white line-bottom  mb-10">Company</h6>
+                        <div class=" hover-white-primary">
                             <ul class="quick-links">
                                 <!--<li><a href="#">About Us</a></li>-->
                                 <li><a href="{{ url('about-us') }}">About Us</a></li>
@@ -562,8 +582,8 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget color-gray-light mt-md-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Quick Links</h3>
-                        <div class="widget-content hover-white-primary">
+                        <h6 class="color-white line-bottom  mb-10">Quick Links</h6>
+                        <div class=" hover-white-primary">
                             <ul class="quick-links">
                                 <li><a href="{{ url('rent/commercial') }}">For Rent</a></li>
                                 <li><a href="{{ url('sale/residential') }}">For Sale</a></li>
@@ -576,16 +596,16 @@
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="footer-widget color-gray-light mt-md-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Download Applicaton</h3>
+                        <h6 class="color-white line-bottom mb-10">Download Applicaton</h6>
                         <div class="widget-content hover-white-primary">
                             <ul class="quick-links">
                                 <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><img
                                             src="{{ asset('5a902db97f96951c82922874-png.jpg') }}"
-                                            style=" width: 133px;height: 53px;"></i></a></li>
+                                            style=" width: 200px;height: 53px;"></i></a></li>
                                 <li><a
                                         href="https://play.google.com/store/apps/details?id=com.technolyte.syedzameen&hl=en&gl=US"><img
                                             src="{{ asset('png-transparent-iphone-google-play-android.jpg') }}"
-                                            style="    width: 133px;height: 53px;"></a></li>
+                                            style="    width: 200px;height: 53px;"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -598,8 +618,8 @@
             <div class="row">
                 <hr class="border-bottom-1 w-100 m-0">
                 <div class="col-md-12 col-lg-12">
-                    <div class="py-15 text-center">
-                        Copyright <a href="http://directoptimize.com" target="_blank">directoptimize.com</a> © 2023. All Rights Reserved.
+                    <div class="text-center d-flex justify-content-center" style="font-size:12px;">
+                        Copyright &nbsp;<a href="http://directoptimize.com" target="_blank"> directoptimize.com </a>&nbsp; © 2023. All Rights Reserved.
                     </div>
                 </div>
             </div>
@@ -693,7 +713,7 @@
                 success: function(res) {
 
                     $("#location").html(function() {
-                        $allOption = "";
+                        $allOption = " <option hidden selected></option>";
                         for ($i = 0; $i < res.length; $i++) {
                             $allOption += "<option value='" + res[$i].id + "'> " + res[$i].area +
                                 " </option>";

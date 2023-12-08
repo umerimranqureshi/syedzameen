@@ -48,6 +48,7 @@
         .jslider-value {
             color: white;
         }
+        
     </style>
 @endsection
 
@@ -165,7 +166,7 @@
     <!--form section
                                  ------------------>
     <section class="p-0 mobile-responsive-header" style="    margin-top: -90px;">
-        <div class=" row p-0 "  style="width:100%" >
+        <div class=" row p-0 ">
             
             <div class="col-4 p-100 Ubackground"
                 style="min-height:80vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
@@ -186,14 +187,14 @@
 
     <!-- Feautred Properties Start
                             =========================================================================-->
-    <section class="featured-properties bg-light">
+    <section class="featured-properties">
         <div class="container">
             <div class="row">
                 <div  class="col-lg-12">
                     <ul>
-                        <li class="mt-30">
+                        <li class="">
                             <div class="d-table">
-                            <span class="float-left mr-15"></span>
+                            <span class="float-left"></span>
 
                                 <h1 class="color-secondary mb-15  text-center"  style="font-size: 40px"><i style="font-size: 40px" class="fa fa-home"></i> Buy, Sell, Rent Homes & Properties</h1>
                                 <p>
@@ -204,7 +205,13 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-12">
+            </div>
+        </div>
+    </section>
+    <section class="featured-properties bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
                     <div class="main-title w-75 mx-auto d-table text-center mb-30">
                         <span class="small-title color-primary position-relative line-2-primary">Find Out the Best
                             One</span>
@@ -481,8 +488,8 @@
                                                                     <li>
                                                                         <span
                                                                             class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
-                                                                            <b style="color: black;"> View More
-                                                                            </b>
+                                                                            <h5 style="color: black;"> View More
+                                                                            </h5>
                                                                         </span>
                                                                     </li>
                                                                    
@@ -513,8 +520,8 @@
                                                                     <li>
                                                                         <span
                                                                             class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
-                                                                            <b style="color: black;"> View More
-                                                                            </b>
+                                                                            <h5 style="color: black;"> View More
+                                                                            </h5>
                                                                         </span>
                                                                     </li>
                                                                    
@@ -545,8 +552,8 @@
                                                                     <li>
                                                                         <span
                                                                             class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
-                                                                            <b style="color: black;"> View More
-                                                                            </b>
+                                                                            <h5 style="color: black;"> View More
+                                                                            </h5>
                                                                         </span>
                                                                     </li>
                                                                    
@@ -577,8 +584,8 @@
                                                                     <li>
                                                                         <span
                                                                             class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
-                                                                            <b style="color: black;"> View More
-                                                                            </b>
+                                                                            <h5 style="color: black;"> View More
+                                                                            </h5>
                                                                         </span>
                                                                     </li>
                                                                    
@@ -776,7 +783,8 @@
                                 </div>
                             </div>
                             <div class=" col-lg-6  col-md-12 px-60">
-                                <div class="side-title pb-30 text-right mt-md-50">
+                                <img src="{{asset('assets\images\background\newsletterPic.jpg')}}" alt="image" style="height:100%;  width: 100%; ">
+                                {{-- <div class="side-title pb-30 text-right mt-md-50">
                                     <span
                                         class="small-title color-primary position-relative line-right-primary">Newsletter</span>
                                     <h2 class="title mb-20 color-secondary">Get Update Now!</h2>
@@ -791,7 +799,7 @@
                                         <button class="bg-gray color-secondary" id="btn-subscribe"><i
                                                 class="fa fa-paper-plane"></i></button>
                                     </div>
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                     </div>
@@ -1017,15 +1025,15 @@
                 url: `{{ url('areas') }}/${city}`,
                 success: function(res) {
                     //console.log(res);
-                    $("#location").html(function() {
-                        $allOption = "";
-                        for ($i = 0; $i < res.length; $i++) {
-                            $allOption += "<option value='" + res[$i].id + "'> " + res[$i].area +
-                                " </option>";
-                        }
+                    // $("#location").html(function() {
+                    //     $allOption = "";
+                    //     for ($i = 0; $i < res.length; $i++) {
+                    //         $allOption += "<option value='" + res[$i].id + "'> " + res[$i].area +
+                    //             " </option>";
+                    //     }
 
-                        return $allOption;
-                    });
+                    //     return $allOption;
+                    // });
                 }
 
             });

@@ -1,91 +1,58 @@
+@inject('helper', 'App\Http\Controllers\helper')
+
 <!DOCTYPE html>
 <html lang="en">
 
 
+
 <head>
-    <!--===== Meta Tag =====-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Syed-Zameen">
+    <meta charset="utf-8" />
+    <title> Syed-Zameen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <meta content="MyraStudio" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="business, property, directory, listing, real estate, Real estate, realtor, developer, apartment, broker, real estate agency, map, company, agent, rent house,property,house,makaan,makan,ghar,home,plots ">
-    <meta name="author" content="root">
+    <!-- App favicon -->
 
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!--CSs Links
- ==================================================================-->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/color.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/mainCustom.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/frontpage.css') }}">
-    {{-- <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}"> --}}
-    <script src="https://use.fontawesome.com/429cd5e81f.js"></script>
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/css/layerslider.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/fonts/flaticon/flaticon.css') }}">
-    <!--====================================================
- Typography links
- Import Google Fonts
- ======================================================-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!-- App css -->
+    <!--<link href="{{asset('/assetsAdminPanel/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-
+    <link href="{{ asset('assetsAdminPanel/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assetsAdminPanel/css/theme.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assetsAdminPanel/css/mycustom.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assetsAdminPanel/css/custom.css') }}">
     <script src="{{ asset('assetsAdminPanel/js/jquery.min.js') }}"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-
-
+    <link rel="shortcut icon" type="image/png" href="{{asset('tabIcon.png')}}">
 
     @yield('header')
-
-
-    <!-- Title -->
-    <title>Syed-Zameen</title>
-
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('tabIcon.png') }}">
-    {{-- <link rel="icon" href="{{asset('logo-3.png')}}"> --}}
-</head>
-
-<style>
-    .ChangeDropdownHover:hover {
-        background-color: none !important;
-    }
-
-    /* #loader {
-
-        width: 100%;
-
-        background: rgba(136, 134, 133, 0.719) url('logo-3.png') no-repeat center center;
-
-        display: flex;
-        justify-content: center;
-
-    } */
+    <style>
     #preloader {
         width: 100%;
         height: 100vh;
         position: fixed;
         z-index: 99999;
-        background: #181716ce;
+        background: #181716c4;
         top: 0px;
         left: 0px;
     }
 
     .loader-img {
+
+        position: absolute;
+        position: absolute;
+        top: 37%;
+        left: 47%;
+        margin: -20px -50px;
+    }
+
+    .loader-img img {
         width: 140px;
         height: 100px;
-        position: absolute;
-        top: 27%;
-        left: 48%;
-        margin: -20px -50px;
     }
 
     #loader {
@@ -93,7 +60,7 @@
         height: 40px;
         position: absolute;
         top: 50%;
-        left: 49%;
+        left: 50%;
         margin: -20px -50px;
 
     }
@@ -101,9 +68,16 @@
     #loader div {
         width: 20px;
         height: 20px;
-        background: rgb(105, 174, 230);
+        background: rgb(230, 186, 105);
         border-radius: 50%;
         position: absolute;
+
+
+
+
+
+
+
     }
 
     #d1 {
@@ -166,45 +140,23 @@
         }
     }
 
-
-    .navbar {
-
-        background-color: transparent;
-        padding: 10px;
-        /* position: fixed; */
-        width: 100%;
-        transition: background-color 0.3s ease-in-out;
+    .circle-name-profile {
+        font-size: 20px;
+        border: 1px solid gray;
+        color: blue;
     }
+    
+     a:hover {
+  background-color: black;
+}
+    </style>
 
-    .navbar-scrolled {
-        background-color: #fff;
-    }
-
-
-    @media(max-width:992px) {
-        .navbar-link-mobile-screen {
-
-            display: block;
-        }
-
-
-
-    }
-
-    @media(min-width:992px) {
-        .navbar-link-mobile-screen {
-
-            display: none;
-        }
-
-    }
-</style>
+</head>
 
 <body>
-
     <div id="preloader">
         <div class="loader-img">
-            <img src="{{ asset('logo-3.png') }}" alt="">
+            <img src="{{asset('logo-3.png')}}" alt="">
         </div>
         <div id="loader">
 
@@ -217,508 +169,896 @@
 
         </div>
     </div>
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+        <div class="header-border"></div>
+        <header id="page-topbar">
 
 
 
-    <!-- Start Back to top
-=========================================================================-->
-    <div id="scroll" style="display: none;"><i class="fa fa-angle-up"></i></div>
-    <!-- End Back to top
-=========================================================================-->
-    <!-- Header Start
-=========================================================================-->
-    <header class="nav-on-top">
-        <div class="top-header bg-secondary" style="line-height: 50px; height:50px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-lg-5">
-                        <ul class="list-style-1 icon-primary color-white d-flex">
+            <div class="navbar-header bg-light">
 
-                            {{-- <div> --}}
+                <div class="d-flex align-items-center">
+                    <img class="brand-logo" src="{{ asset('admin_panel-logo.png') }}" alt="">
 
+                    <!--<button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect"-->
+                    <!--    id="vertical-menu-btn">-->
+                    <!--    <i class="fa fa-fw fa-bars"></i>-->
+                    <!--</button>-->
 
-                            <li class="d-flex align-items-center justify-content-center"><i class="fa fa-envelope"></i>
-                                <a href="mailto:support@syedzameen.com" class="color-white">info@syedzameen.com</a></li>
-                            {{-- <li><i class="fa fa-phone"></i> +(92)322-8447174 </li> --}}
-                            <li class="d-flex align-items-center "><a href="tel:+923328447174"><i
-                                        class="fa fa-phone"></i> </a> <a href="tel:+923328447174"
-                                    class="color-white">+(92)332-8447174</a></li>
+                    @if(Auth::user()->role=='3')
+                    <div class="dropdown d-none d-sm-inline-block">
+                        <button type="button" class="btn header-item waves-effect" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-coin" style="font-size: 20px;color:orange"></i> Coins
+                            <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu">
 
+                            <!-- item-->
+                            @if(Auth::user()->Account)
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
 
+                                <i class="mdi mdi-coin" style="color: orange"></i> {{Auth::user()->Account->coins}}
+                            </a>
+                            <a href="{{route('CoinBuy')}}" class="dropdown-item notify-item">
 
-                            {{-- </div> --}}
-
-
-                        </ul>
-                    </div>
-                    {{-- logo of side  --}}
-                    {{-- <div class="col-md-12 col-lg-3"> --}}
-                    {{-- <a class="navbar-brand logo-2" href="{{ url('/') }}">
-                            <img src="{{ asset('/index-logo.png') }}" alt="logo">
-                        </a> --}}
-
-                    <div class="col-md-12 col-lg-7">
-                        <ul class="social-media-1 social-media-1-n d-flex color-white-a float-right"
-                            style="line-height: 50px; height:50px;">
-
-                            @if (Auth::check())
-                                <li>
-                                    <div class="dropdown" id="top-nav">
-                                        <button class="btn btn-secondary dropdown-toggle ChangeDropdownHover"
-                                            type="button" id="dropdownMenuButton"
-                                            onmouseover="this.style.color='#2f77ad'"
-                                            onmouseout="this.style.color='white'" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->name }} <i class="fa fa-caret-down"
-                                                aria-hidden="true"></i>
-                                        </button>
-                                        <div style="background: #000;" class="dropdown-menu"
-                                            aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="{{ route('dashbored') }}">Dashbored</a>
-                                            {{-- <a class="dropdown-item" href="#">Another action</a> --}}
-                                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                                        </div>
-                                    </div>
-                                </li>
+                                Buy More Coins
+                            </a>
                             @else
-                                {{-- <div> --}}
-                                <li class="d-flex justify-content-right
-                                    "><a
-                                        href="{{ url('login') }}" style=" background-color:#2f77ad "><i
-                                            class="position-relative add-property "
-                                            style="font-weight: 20px; font-style:initial; color:#fff;">Add
-                                            Property</i></a>
-                                </li>
-                                <div class="col-sm-6 col-md-6 col-lg-6">
-                                    <div class=" color-gray-light mt-md-30">
-                                        <div class="widget-content hover-white-primary">
-                                            <ul class="quick-links d-flex">
-                                                <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><img
-                                                            src="{{ asset('5a902db97f96951c82922874-png.jpg') }}"
-                                                            style=" width: 138px;height: 36px;
-                                        border-radius: 4px;"></i></a>
-                                                </li>
-                                                <li><a
-                                                        href="https://play.google.com/store/apps/details?id=com.technolyte.syedzameen&hl=en&gl=US"><img
-                                                            src="{{ asset('png-transparent-iphone-google-play-android.jpg') }}"
-                                                            style="    width: 138px;height: 36px;    border-radius: 4px;}"></a>
-                                                </li>
-                                            </ul>
+                            <a href="{{route('CoinBuy')}}" class="dropdown-item notify-item">
+
+                                Buy Coins
+                            </a>
+                            @endif
+
+                        </div>
+                    </div>
+                    @endif
+                </div>
+
+                @if ($helper->checkPhoneVerification() == 0)
+                <div>
+
+                    <a href="{{ route('verificationView') }}">
+                        <p class="text text-info">please verify your phone number , to continue your add posting
+                        </p>
+
+                    </a>
+
+                </div>
+                @endif
+                <div class="d-flex align-items-center">
+
+                    {{--  <div class="dropdown d-none d-sm-inline-block ml-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-search-dropdown">
+
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- </div> --}}
+                            </form>
+                        </div>
+
+
+
+
+                    </div> --}}
+
+                    {{-- <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img class="" src="assets/images/flags/us.jpg" alt="Header Language" height="16">
+                            <span class="d-none d-sm-inline-block ml-1">English</span>
+                            <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12">
+                                <span class="align-middle">Spanish</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12">
+                                <span class="align-middle">German</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12">
+                                <span class="align-middle">Italian</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12">
+                                <span class="align-middle">Russian</span>
+                            </a>
+                        </div>
+                    </div> --}}
+
+
+
+
+
+                    {{-- <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="padding-right:17px ">
+                            <i class="mdi mdi-bell"></i>
+                            <span class="badge badge-danger badge-pill" style="left: 26px">1</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0"> Notifications </h6>
+                                    </div>
+                                    <div class="col-auto">
+                                        <a href="#!" class="small"> View All</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+
+
+
+                                <a href="#" class="text-reset notification-item">
+                                    <div class="media">
+                                        <img src="" class="mr-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="media-body">
+                                            <h6 class="mt-0 mb-1">Samuel Coverdale</h6>
+                                            <p class="font-size-12 mb-1">You have new follower on Instagram</p>
+                                            <p class="font-size-12 mb-0 text-muted"><i
+                                                    class="mdi mdi-clock-outline"></i> 2 min ago</p>
+                                        </div>
+                                    </div>
+                                </a>
+
+
+
+                            </div>
+
+
+                            <div class="p-2 border-top">
+                                <a class="btn btn-sm btn-light btn-block text-center" href="javascript:void(0)">
+                                    <i class="mdi mdi-arrow-down-circle mr-1"></i> Load More..
+                                </a>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                    <div class="dropdown d-inline-block ml-2">
+                        <button class="btn header-item  dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            @if (auth()->user()->img_path)
+                            <img class="rounded-circle header-profile-user" src="{{ asset(auth()->user()->img_path) }}"
+                                alt="Header Avatar" style="width: 50px;height:50px">
+                            @else
+                            <div class="rounded-circle header-profile-user circle-name-profile" alt="Header Avatar"
+                                style="width: 40px;height:40px">
+                                <?php $name=Auth::user()->name;echo ucfirst($name[0]);?>
+                            </div>
                             @endif
+                            <span class="d-none d-sm-inline-block ml-1">{{ auth()->user()->name }}</span>
 
-                            {{-- <li><a href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i></a></li>
-                            --}}
-
-
-                        </ul>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-bolder"
+                                href="{{ route('home') }}">
+                                <span>Home</span>
+                                <span>
+                                    <span class="badge badge-pill badge-info"></span>
+                                </span>
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-bolder"
+                                href="{{ route('editProfile') }}">
+                                <span>Profile</span>
+                                <span>
+                                    <span class="badge badge-pill badge-warning">1</span>
+                                </span>
+                            </a>
+                            {{-- <a class="dropdown-item d-flex align-items-center justify-content-between fw-bolder"
+                                href="javascript:void(0)">
+                                Settings
+                            </a>
+                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-bolder"
+                                href="javascript:void(0)">
+                                <span>Lock Account</span>
+                            </a> --}}
+                            <a class="dropdown-item d-flex align-items-center justify-content-between fw-bolder"
+                                href="{{ route('logout') }}">
+                                <span>Log Out</span>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
-        </div>
-        <div class="navbar" id="navbar">
-            <div id="header" class="nav-header header-seven bg-primary" style="width:100%">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light px-0">
-                        {{-- Project Logo  --}}
-                        <div class="col-md-3 col-lg-4 col-8">
-                            <a class="navbar-brand logo-2" href="{{ url('/') }}">
-                                <img src="{{ asset('/index-logo3.png') }}" alt="logo">
-                            </a>
-                            {{-- <li class="nav-item"><a class="nav-link"
-                                    href="{{ route('showAgencies') }}" style="font-weight: bold" >Agencies</a></li> --}}
-                        </div>
-                        <a class="navbar-brand d-none d-block-md" href="#">
-                            <img src="{{ asset('index-logo3.png') }}" style="width:130px" alt="logo"></a>
-                        <button class="toggle-btn" data-toggle="collapse" data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" aria-expanded="false"
+
+            <!--===============topbar menu start================-->
+            <div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-secondary"
+                    style="z-index: 999;position: fixed;right: 0; left: -159px;">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span style="font-size: 30px;color:rgb(226, 145, 65)"><i class="fa fa-bars"
-                                    aria-hidden="true"></i></span>
-                            <span></span>
-                            <span></span>
+                            <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown"
+                            style="margin-left:10%">
                             <ul class="navbar-nav">
-
-                                {{-- <div class="d-flex"> --}}
-
-
-                                <li class="nav-item dropdown mega-menu">
-                                    <a class="nav-link dropdown-toggle" href="{{ route('home') }}" role="button"
-                                        aria-haspopup="true" aria-expanded="false"
-                                        style="font-weight: bold; color:#2f77ad">Home</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                        style="font-weight: bold;color:#2f77ad">Rent</a>
-                                    <ul class="dropdown-menu shadow">
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('rentResidential') }}">Residential</a>
-                                        </li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('rentCommercial') }}">Commercial</a>
-                                        </li>
-                                    </ul>
+                                <li class="nav-item">
+                                    <a class="nav-link  text-light fw-bolder " aria-current="page"
+                                        href="{{ url('dashbored') }}">Dashboard</a>
                                 </li>
 
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false"style="font-weight: bold;color:#2f77ad">Buy</a>
-                                    <ul class="dropdown-menu shadow">
-                                        {{-- <div> --}}
-                                        {{-- <li><a class="dropdown-item"
-                                                        href="{{ route('saleResidentail') }}">Homes</a></li> --}}
-
-                                        <li><a class="dropdown-item" href="{{ route('plotResidentail') }}">Plots</a>
-                                        </li>
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('buyCommercial') }}">Commercial</a>
-                                        </li>
-                                    </ul>
-
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{ route('adminDeleteDisable') }}">Listings</a>
                                 </li>
-
-                                <li class="nav-item  ">
-                                    <a class="nav-link" href="{{ route('mainBlogView') }}"
-                                        style="font-weight: bold; color:#2f77ad">Blog</a>
-
+                                @endif
+                                @endif
+                                @if(Auth::check())
+                                @if(Auth::user()->role==2)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{route('userviewpost')}}">Listings</a>
                                 </li>
-                                <li class="nav-item  ">
-                                    <a class="nav-link" href="{{ route('showAgencies') }}"
-                                        style="font-weight: bold; color:#2f77ad">Agencies</a>
-
-                                </li>
-                                <li class="nav-item  ">
-                                    <a class="nav-link" href="{{ route('contactUs') }}"
-                                        style="font-weight: bold; color:#2f77ad">Contact</a>
-
-                                </li>
-                                {{-- </div> --}}
-                                <li class="nav-item navbar-link-mobile-screen">
-                                    @if (Auth::check())
-                                        <div class="dropdown ">
-                                            <button
-                                                style="p
-                                                    ing:0;color:black !important;border:none; background-color:transparent !important"
-                                                class="btn btn-secondary dropdown-toggle ChangeDropdownHover"
-                                                type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                {{ Auth::user()->name }}
-                                                <i class="fa fa-caret-down" aria-hidden="true"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item"
-                                                    href="{{ route('dashbored') }}">Dashbored</a>
-                                                {{-- <a class="dropdown-item" href="#">Another action</a> --}}
-                                                <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                                            </div>
-                                        </div>
-                                    @else
-                                        <a class="nav-link" href="{{ url('login') }}">Login</a>
-                                    @endif
-                                </li>
-                            </ul>
-                            @if (Auth::check())
-
-                                @if (Auth::user()->role == 2)
-                                    <ul class="ml-auto">
-                                        <li><a class="btn btn-secondery position-relative mr-auto"
-                                                href="{{ route('verificationView') }}">Become a seller</a>
-                                        </li>
-                                    </ul>
+                                @endif
                                 @endif
 
-                            @endif
+                                @if(Auth::check())
+                                @if(Auth::user()->role==3)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{ route('sellerview') }}">Listings</a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->type==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{ url('dealerDetails') }}">Listings</a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->type==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{ url('dealerAddSocietycreate') }}">Dealer Admin
+                                        Post</a>
+                                </li>
+                                @endif
+                                @endif
+                                
+                                 @if(Auth::check())
+                                @if(Auth::user()->type==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{ url('getAllDealerSociety') }}">All Dealer
+                                    </a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{ route('adminPost') }}">Admin
+                                        Post</a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('adminaddcity')}}">Add
+                                        City</a>
+
+
+                                </li>
+                                @endif
+                                @endif
+
+                                
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('admincityview')}}">View
+                                        City</a>
+
+
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('adminagencyindex')}}">Add
+                                        Agency</a>
+
+
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('admincategoryview')}}">View
+                                        Category</a>
+
+
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==2)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{ route('useraddpost') }}">Add
+                                        Post</a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==3)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('postadd')}}">Add Post</a>
+
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('freshesRatesView')}}">Fresh
+                                        Rates</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('allCoinRequest')}}">Coin
+                                        Request</a>
+                                </li>
+                                @endif
+                                @endif
+                                @if(Auth::check())
+                                @if(Auth::user()->role==3 || Auth::user()->role==2)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{route('allCoinRequest')}}">Coins</a>
+                                </li>
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="{{route('allPostReq')}}">Boaster
+                                        Request</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{ route('showFavPost') }}">Favourites</a>
+                                </li>
+
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light fw-bolder" href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="">
+                                        Blogs
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item fw-bolder" href="{{route('blogAdminView')}}">create
+                                                Blog</a></li>
+                                        <li><a class="dropdown-item fw-bolder" href="{{route('blogAll')}}">All Blog</a>
+                                        </li>
+                                          <li><a class="dropdown-item fw-bolder" href="{{route('adminaddmanageindex')}}">Manage Add</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder" href="/">Boost Post</a>
+                                </li>
+
+                                @endif
+                                @endif
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)    
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{route('requestToAgenst')}}">All requests
+                                            to
+                                            agents</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="{{route('showClientRequest')}}">Client
+                                            requests</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-light fw-bolder"
+                                        href="">
+                                            request an agent</a>
+                                </li>
+                                
+                                @endif
+                                @endif
+
+                                @if(Auth::check())
+                                @if(Auth::user()->role==1)
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-light fw-bolder " href="#"
+                                        id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                        aria-expanded="">
+                                        Message Center
+                                        <span class="badge bg-danger" id="messageTotal"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item fw-bolder "
+                                                href="{{route('inbox.index')}}">Inbox</a></li>
+                                        @endif
+                                        @endif
+
+                                        @if(Auth::check())
+                                        @if(Auth::user()->role==2 || Auth::user()->role==3)
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-light fw-bolder " href="#"
+                                                id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                                                aria-expanded="">
+                                                Help Line
+                                                <span class="badge bg-danger" id="messageTotal"></span>
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                <li><a class="dropdown-item fw-bolder "
+                                                        href="{{route('inbox.index')}}">Inbox</a></li>
+                                                @endif
+                                                @endif
+
+
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+
                         </div>
-
-
-                        {{-- <div class="d-flex" style="list-style-type: none; ">
-                                        <li class="nav-item"><a class="nav-link "
-                                            href="{{ route('mainBlogView') }}" style="font-weight: bold; color:#2f77ad;"onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#2f77ad';">Blog</a>
-                                    </li>
-                                    <li class="nav-item"><a class="nav-link"
-                                            href="{{ route('showAgencies') }}" style="font-weight: bold; color:#2f77ad;"onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#2f77ad'" >Agencies</a></li>
-                                     <li class="nav-item"><a class="nav-link"
-                                            href="{{ url('contactus') }}" style="font-weight: bold; color:#2f77ad;" onmouseover="this.style.color='#fff';" onmouseout="this.style.color='#2f77ad';">Contact</a>
-                                    </li>
-
-                                </div> --}}
-
-
-
-                        {{--   <li class="nav-item"><a class="nav-link" href="{{route('contactUs')}}">Contact
-                                    &
-                                    Services</a></li>
-                                    --}}
-
-
-                        {{-- </ul> --}}
-
-
-
-                        {{-- </div> --}}
-                    </nav>
-                </div>
+                    </div>
+                </nav>
 
             </div>
-        </div>
-    </header>
-    <!-- Header End ---->
 
 
 
+            <!--============================topbar menu end=============================-->
 
-    @yield('body')
+        </header>
 
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="vertical-menu">
 
+            <div data-simplebar class="h-100">
 
+                <div class="navbar-brand-box p-1">
+                    <a href="#" class="logo">
+                        <img style="height: 100%;width:100%; margin-top:20px" src="{{ asset('admin_panel-logo.png') }}"
+                            alt="">
+                        <span>
 
-    <!---    Footer Start
-=========================================================================-->
-    <footer class="bg-secondary pb-50" style="margin-top: -34px; padding-top: 54px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-6">
-                    <div class="footer-logo"><a href="#"><img src="{{ asset('index-logo3.png') }}"
-                                alt="Footer Logo"></a>
-                    </div>
+                        </span>
+                    </a>
                 </div>
-                <div class="col-sm-8 col-md-8 col-lg-6">
-                    <ul class="social-media-2 border-white large color-white-a float-right">
-                        <li class="mr-20 color-white mt-50"><strong>Follow Us:</strong></li>
-                        <li><a href="https://www.facebook.com/syedzameen07"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="https://twitter.com/SyedZameenPK"><i class="fa fa-twitter"></i></a></li>
-                        {{-- <li><a href="#"><i class="fa fa-behance"></i></a></li> --}}
-                        <li><a href="https://www.instagram.com/syedzameenpk/"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/syed-zameenpk-5b4a1b208/"><i
-                                    class="fa fa-linkedin"></i></a></li>
-                        <li><a href="https://www.youtube.com/@syedrealestate612"><i class="fa fa-youtube"></i></a>
+
+
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+                    <!-- Left Menu Start -->
+                    <ul class="metismenu list-unstyled" id="side-menu">
+                        <li class="menu-title">Property Management</li>
+
+                        <li>
+                            <a href="{{ url('dashbored') }}" class="waves-effect"><i
+                                    class="mdi mdi-home-analytics"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Dashboard</span></a>
                         </li>
 
-                </div>
-                <hr class="border-bottom-1 w-100 my-50">
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="footer-widget color-gray-light mt-sm-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Have Any Question?</h3>
-                        <div class="widget-content color-primary">
-                            <ul class="widget-contact">
-                                <li>
-                                    Call
-                                    <a href="tel:+923328447174" class="color-white">+(92)332-8447174</a>
-                                </li>
-                                <li>
-                                    Email
-                                    <a href="mailto:support@syedzameen.com"
-                                        class="color-white">Support@syedzameen.com</a>
-                                </li>
-                                <li>
-                                    Address
-                                    <a href="https://maps.google.com/?q=28F+1st+Floor+commercial+Area+DHA,+Phase+1+Lahore"
-                                        class="color-white">28F 1st Floor commercial Area DHA, Phase 1 Lahore</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                        @if (Auth::user()->role == 3 && $helper->checkPhoneVerification() == 1)
 
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="footer-widget color-gray-light mt-sm-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Company</h3>
-                        <div class="widget-content hover-white-primary">
-                            <ul class="quick-links">
-                                <!--<li><a href="#">About Us</a></li>-->
-                                <li>About Us</li>
-                                <li><a href="#">Contact Us</a></li>
-                                {{-- <li><a href="#">Jobs</a></li> --}}
-                                <li>Jobs</li>
-                                <li>Help & Support</li>
-                                <li>Advertise on Zameen</li>
-                                <li>Terms and Use</li>
-                                {{-- <li><a href="#">Help & Support</a></li> --}}
-                                {{-- <li><a href="#">Advertise On Zameen</a></li> --}}
-                                {{-- <li><a href="#">Terms Of Use</a></li> --}}
-                                {{-- <li><a href="{{route('contactUs')}}">Contact</a></li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="footer-widget color-gray-light mt-md-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Quick Links</h3>
-                        <div class="widget-content hover-white-primary">
-                            <ul class="quick-links">
-                                <li><a href="{{ url('rent/commercial') }}">For Rent</a></li>
-                                <li><a href="{{ url('sale/residential') }}">For Sale</a></li>
-                                <li><a href="{{ url('commercial') }}">Commercial</a></li>
-                                <li><a href="{{ route('showAgencies') }}">Agencies</a></li>
+                        <li>
+
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                                    class="mdi mdi-table-merge-cells"></i><span>Posts</span></a>
+                            <ul class="sub-menu" aria-expanded="false">
+
+                                <li><a href="{{ url('post/add') }}" class="waves-effect"><i
+                                            class="feather-upload-cloud"></i><span
+                                            class="badge badge-pill badge-primary float-right"></span><span>Post New
+                                            Add</span></a></li>
+                                <li>
+                                    <a href="{{ url('all/post') }}" class="waves-effect"><i
+                                            class="mdi mdi-table-edit"></i><span
+                                            class="badge badge-pill badge-primary float-right"></span><span>All
+                                            Post</span></a>
+                                </li>
+
+
 
                             </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-3">
-                    <div class="footer-widget color-gray-light mt-md-30">
-                        <h3 class="color-white line-bottom pb-15 mb-20">Download Applicaton</h3>
-                        <div class="widget-content hover-white-primary">
-                            <ul class="quick-links">
-                                <li><a href="https://apps.apple.com/pk/app/syed-zameen/id1610750346"><img
-                                            src="{{ asset('5a902db97f96951c82922874-png.jpg') }}"
-                                            style=" width: 133px;height: 53px;"></i></a></li>
-                                <li><a
-                                        href="https://play.google.com/store/apps/details?id=com.technolyte.syedzameen&hl=en&gl=US"><img
-                                            src="{{ asset('png-transparent-iphone-google-play-android.jpg') }}"
-                                            style="    width: 133px;height: 53px;"></a></li>
+
+                        </li>
+
+
+                        <li>
+                            <a href="{{ route('PricingView') }}" class="waves-effect"><i
+                                    class="fas fa-dollar-sign"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Pricing
+                                </span></a>
+                        </li>
+
+
+
+
+                        <li>
+                            <a href="{{ route('agency') }}" class="waves-effect"><i class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Add/Edit
+                                    Agency</span></a>
+                        </li>
+
+                        <li>
+                            <a href="" class="waves-effect"><i class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>All requests to
+                                    agents
+                                </span></a>
+                        </li>
+
+                        <li>
+                            <a href="" class="waves-effect"><i class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Client requests
+                                </span></a>
+                        </li>
+
+                        @endif
+
+                        @if (Auth::user()->role == 3 || Auth::user()->role == 2 || Auth::user()->role == 1)
+
+                        <li>
+                            <a href="{{ route('showFavPost') }}" class="waves-effect"><i class="mdi mdi-heart"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Favourites</span></a>
+                        </li>
+                        @endif
+
+
+                        @if (Auth::user()->role == 1)
+                        <li>
+                            <a href="{{ route('adminPost') }}" class="waves-effect"><i
+                                    class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>admin post
+                                </span></a>
+                        </li>
+
+                        {{-- <li>
+                            <a href="{{ route('blogAdminView') }}" class="waves-effect"><i
+                            class="mdi mdi-table-edit"></i><span
+                            class="badge badge-pill badge-primary float-right"></span><span>Write Blog !
+                        </span></a>
+
+
+                        </li> --}}
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                                    class="mdi mdi-table-merge-cells"></i><span>Blogs</span></a>
+                            <ul class="sub-menu" aria-expanded="false">
+
+                                <li><a href="{{route('blogAdminView')}}"><span> Create Blog</span></a></li>
+
+                                <li><a href="{{route('blogAll')}}">All Blog</a></li>
+
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+
+
+
+                        @endif
+
+                        @if (Auth::user()->role == 1)
+                        <li>
+                            <a href="{{ route('adminDeleteDisable') }}" class="waves-effect"><i
+                                    class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Delete/Disable
+                                    post
+                                </span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('freshesRatesView')}}" class="waves-effect"><i
+                                    class="mdi mdi-fire"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Fresh Rates
+                                </span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('allCoinRequest')}}" class="waves-effect"><i class="mdi mdi-coin"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Coin Request
+                                </span></a>
+                        </li>
+                        <li>
+                            <a href="{{route('allPostReq')}}" class="waves-effect"><i
+                                    class="mdi mdi-arrow-up-bold-circle"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>Boaster Request
+                                </span></a>
+                        </li>
+                        @endif
+
+                        @if (Auth::user()->role == 2)
+                        <li>
+                            <a href="{{ route('userMoreInfo') }}" class="waves-effect"><i
+                                    class="mdi mdi-table-edit"></i><span
+                                    class="badge badge-pill badge-primary float-right"></span><span>become a seller
+                                </span></a>
+                        </li>
+                        @endif
+
+
+
+
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect"><i
+                                    class="mdi mdi-table-merge-cells"></i><span>Message Center</span>
+                                <span class="badge badge-danger" id="messageTotal"></span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+
+                                <li><a href="{{route('inbox.index')}}"><span>Inbox</span></a></li>
+
+                                <!-- <li><a href="#">Sent Messages</a></li> -->
+
+                            </ul>
+                        </li>
+
+                        @if(Auth::user()->role==1)
+                        <li class="nav-item">
+                            <a class="nav-link text-light fw-bolder" href="">Add City</a>
+
+                        </li>
+                        @endif
+
+
+
+                    </ul>
                 </div>
+                <!-- Sidebar -->
             </div>
         </div>
-    </footer>
-    <div class="copyright bg-secondary color-white">
-        <div class="container">
-            <div class="row">
-                <hr class="border-bottom-1 w-100 m-0">
-                <div class="col-md-12 col-lg-12">
-                    <div class="py-15 text-center">
-                        Copyright  <a href="http://directoptimize.com" target="_blank">directoptimize.com</a> 2023. All Rights Reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Left Sidebar End -->
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        @yield('body')
+        <!-- end main content-->
+
     </div>
-    <!-- Footer End-->
-    <!-- jquery Links
-==================================================================-->
-    <script src="{{ asset('assets/js/jquery-v3.4.1.js') }}"></script>
-    <script src="{{ asset('assets/js/greensock.js') }}"></script>
-    <script src="{{ asset('assets/js/layerslider.transitions.js') }}"></script>
-    <script src="{{ asset('assets/js/layerslider.kreaturamedia.jquery.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/tmpl.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.dependClass-0.1.js') }}"></script>
-    <script src="{{ asset('assets/js/draggable-0.1.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.slider.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('#slider').layerSlider({
-                sliderVersion: '6.0.0',
-                type: 'fullsize',
-                responsiveUnder: 0,
-                maxRatio: 1,
-                hideUnder: 0,
-                hideOver: 100000,
-                pauseOnHover: 'disabled',
-                skin: 'outline',
-                showBarTimer: false,
-                showCircleTimer: false,
-                sliderFadeInDuration: 800,
-                tnContainerWidth: '100%',
-                tnWidth: 170,
-                tnHeight: 100,
-                skinsPath: '{{ asset('assets/images/slider/skins/') }}',
-                height: 600,
-                width: 1000
-            });
-        });
+    <!-- END layout-wrapper -->
+
+    <!-- Overlay-->
+    <div class="menu-overlay"></div>
+
+
+    <!-- jQuery  -->
+
+    <!--<script src="{{ asset('assetsAdminPanel/js/bootstrap.bundle.min.js') }}"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script>
-        $(window).on('load', function() {
-
-
-            $('#preloader').show();
-
-        });
-
-        $(document).ready(() => {
-            $('#preloader').delay(100).fadeOut('slow');
-            setTimeout(function() {
-                $('#preloader').remove();
-            }, 500);
-        });
-
-
-
-        // $(document).ready(()=>{
-        //     $('div#loading').removeAttr('id');
-        // });
-
-        document.onkeydown = function(e) {
-            if (e.keyCode == 123) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                return false;
-            }
-
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-                return false;
-            }
-        }
-    </script>
-
-    <script>
-        function getAreaFromCity(city = "lahore") {
-
-            $.ajax({
-                url: `{{ url('areas/') }}/${city}`,
-                success: function(res) {
-
-                    $("#location").html(function() {
-                        $allOption = "";
-                        for ($i = 0; $i < res.length; $i++) {
-                            $allOption += "<option value='" + res[$i].id + "'> " + res[$i].area +
-                                " </option>";
-
-                        }
-                        // console.log();
-                        return $allOption;
-                    });
+    <script src="{{ asset('assetsAdminPanel/js/metismenu.min.js') }}"></script>
+    <script src="{{ asset('assetsAdminPanel/js/waves.js') }}"></script>
+    <script src="{{ asset('assetsAdminPanel/js/simplebar.min.js') }}"></script>
 
 
 
 
-                }
+    <!-- Chart Custom Js-->
+    <script src="{{ asset('assetsAdminPanel/pages/knob-chart-demo.js') }}"></script>
 
 
 
-            });
+    <!-- Custom Js -->
+    <script src="{{ asset('assetsAdminPanel/pages/dashboard-demo.js') }}"></script>
 
-        }
+    <!-- App js -->
+    <script src="{{ asset('assetsAdminPanel/js/theme.js') }}"></script>
+    @yield('javascript')
 
 
-        $(document).ready(function() {
-            getAreaFromCity();
-        });
 
-        window.addEventListener("scroll", function() {
-            const navbar = document.getElementById("navbar");
-            const scrolled = window.scrollY > 0;
-            if (scrolled) {
-                navbar.classList.add("navbar-scrolled");
-            } else {
-                navbar.classList.remove("navbar-scrolled");
-            }
-        });
-    </script>
 </body>
 
 
+
 </html>
+<script src="{{ asset('js/app.js') }}"></script>
+<script language=Javascript>
+var publicUrl = "{{asset('')}}";
+
+var AuthUser = "{{Auth::id()}}";
+
+AuthUser = parseInt(AuthUser);
+
+
+
+
+
+
+$(document).ready(function() {
+
+    $.ajax({
+
+        url: "{{url('/ajax/total/message/count')}}",
+
+        success: function(res) {
+
+            $("#messageTotal").text(res);
+        },
+
+    });
+});
+
+
+
+$(document).ready(function() {
+
+    window.Echo.private('notificationNum.{{Auth::id()}}')
+        .listen('notificationEvent', (e) => {
+            console.log(e, "ss");
+            $("#messageTotal").text(e.notification.unreadMsg);
+
+
+            $newChat = true;
+
+            $(".userChatMessage").each(function() {
+
+                $friend_id = $(this).data("user-id");
+
+                var currentDomElement = $(this);
+
+                $.each(e.notification.data, function($i, $noti) {
+
+
+                    if ($friend_id == $noti.sender_id) {
+                        console.log($noti.message);
+                        currentDomElement.remove();
+                        $html = "";
+                        $html += ` <div href="javascript:void(0)" data-user-id="${$friend_id}"
+                                                                class="list-group-item list-group-item-action border-0 userChatMessage">
+                                                                <div class="badge bg-success float-right users_inbox_notification"
+                                                                    data-user-id="${$friend_id}">new message</div>
+                                                                <div data-user-id="${$friend_id}" class="d-flex align-items-start sidebar-info">
+
+                                                                    <img src="${publicUrl + $noti.chat_of_user.img_path}" onerror="imgError(this);" class="rounded-circle mr-1"
+                                                                        alt="" width="40" height="40">
+                                                                    <div class="flex-grow-1 ml-3 nameDiv">
+                                                                        ${$noti.chat_of_user.name}
+                                                                        <div data-user-id="${$friend_id}" class="small inboxLatestNoti">
+                                                                            ${$noti.message}</div>
+                                                                    </div>
+                                                                </div>
+                                        </div>`;
+
+                        $("#sideInboxBar").prepend($html);
+
+                        $newChat = false;
+                    }
+                }); //notiEachEnd
+            }); //userMessageClass
+
+            $.each(e.notification.data, function($i, $noti) {
+                if ($newChat == true) {
+                    console.log("new true");
+                    $html = "";
+                    $html += ` <div href="javascript:void(0)" data-user-id="${$noti.sender_id}"
+                                                                class="list-group-item list-group-item-action border-0 userChatMessage">
+                                                                <div class="badge bg-success float-right users_inbox_notification"
+                                                                    data-user-id="${$noti.sender_id}">new message</div>
+                                                                <div data-user-id="${$noti.sender_id}" class="d-flex align-items-start sidebar-info">
+
+                                                                    <img src="${publicUrl + $noti.chat_of_user.img_path}" onerror="imgError(this);" class="rounded-circle mr-1"
+                                                                        alt="" width="40" height="40">
+                                                                    <div class="flex-grow-1 ml-3 nameDiv">
+                                                                        ${$noti.chat_of_user.name}
+                                                                        <div data-user-id="${$noti.sender_id}" class="small inboxLatestNoti">
+                                                                            ${$noti.message}</div>
+                                                                    </div>
+                                                                </div>
+                                        </div>`;
+                    $("#sideInboxBar").prepend($html);
+                    console.log("else");
+                }
+            }); //eachEnd
+
+        });
+
+
+
+});
+
+$(document).ready(function() {
+
+
+    window.Echo.private('notification.{{Auth::id()}}')
+        .listen('ChatNotificationEvent', (e) => {
+            $box = $("#conversationBox");
+            $chat = e.data;
+            $html = "";
+            if ($box.data("sender-id") == $chat.sender_id) {
+                $html +=
+                    `<div class="chat-message-left pb-4">
+                                        <div>
+                                            <img src="${publicUrl + $chat.img_path}"
+                                                class="rounded-circle mr-1"  width="40" height="40">
+                                            <div class="text-muted small text-nowrap mt-2">${dateParse($chat.created_at).time}</div>
+                                            <div class="text-muted small text-nowrap mt-2">${dateParse($chat.created_at).date}</div>
+                                        </div>
+                                        <div class="flex-shrink-1 bg-light rounded py-2 px-3 ml-3">
+                                            <div class="font-weight-bold mb-1">${$chat.name}</div>
+                                            ${$chat.message}
+                                        </div>
+                        </div>`;
+
+                $box.append($html);
+            }
+
+
+        });
+
+});
+
+
+
+//profileimage code
+$(window).on('load', function() {
+    $('#preloader').show();
+});
+
+$(document).ready(() => {
+
+    $('#preloader').delay(100).fadeOut('slow');
+    setTimeout(function() {
+        $('#preloader').remove();
+    }, 500);
+});
+</script>

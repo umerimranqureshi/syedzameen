@@ -14,17 +14,27 @@
     <div class="row ">
         <div class="form-group pt-15 col-lg-3 col-md-6 col-sm-12 ">
             <div class="select-wrapper position-relative">
+                <i class="fa fa-search position-absolute" style="    z-index: 9999999;
+                right: 10px;
+                top: 32%;"></i>
+
                 <select id="city" name="city" class="select form-control select2">
+                    <option value="" hidden selected disabled>--City--</option>
                     @foreach ($cities as $citi)
                         <option value="{{ $citi->city }}">{{ $citi->city }}</option>
                     @endforeach
                 </select>
             </div>
         </div>
+        {{-- {{dd($location)}} --}}
+
         <div class="form-group pt-15  col-lg-3 col-md-6 col-sm-12 ">
             <div class="select-wrapper position-relative">
+                <i class="fa fa-search position-absolute" style="    z-index: 9999999;
+                right: 10px;
+                top: 32%;"></i>
                 <select id="location" name="area" class="select form-control select2 ">
-                    {{-- <option value="null">Select Location</option> --}}
+                    <option value="" hidden selected disabled>--Location--</option>
                     @foreach ($location as $locations)
                         <option value="{{ $locations->area }}">{{ $locations->area }}</option>
                     @endforeach
@@ -281,7 +291,7 @@
             success: function(res) {
                 //console.log(res);
                 $("#location").html(function() {
-                    $allOption = "";
+                    $allOption = "<option value="" hidden selected disabled>--Location--</option>";
                     for ($i = 0; $i < res.length; $i++) {
                         $allOption += "<option value='" + res[$i].id + "'> " + res[$i].area +
                             " </option>";
