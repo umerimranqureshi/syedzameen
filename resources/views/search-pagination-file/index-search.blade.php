@@ -33,7 +33,7 @@
                 <i class="fa fa-search position-absolute" style="    z-index: 9999999;
                 right: 10px;
                 top: 32%;"></i>
-                <select id="location" name="area" class="select form-control select2 ">
+                <select id="location" name="city_area" class="select form-control select2 ">
                     <option value="" hidden selected disabled>--Location--</option>
                     @foreach ($location as $locations)
                         <option value="{{ $locations->area }}">{{ $locations->area }}</option>

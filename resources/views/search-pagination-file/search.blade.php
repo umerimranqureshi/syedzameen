@@ -23,7 +23,7 @@
         </div>
         <div class="form-group col-lg-3 col-md-12 col-12 pt-15">
             <div class="select-wrapper position-relative">
-                <select id="location" name="area" class="select form-control select2 ">
+                <select id="location" name="city_area" class="select form-control select2 ">
                     {{-- <option value="null">Select Location</option> --}}
                     @foreach ($location as $locations)
                         <option value="{{ $locations->area }}">{{ $locations->area }}</option>

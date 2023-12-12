@@ -93,7 +93,7 @@ class mainController extends Controller
             ->join('city_and_areas', 'posts.city_area_id', '=', 'city_and_areas.id')
             ->join('property_categories', 'posts.property_categorie_id', '=', 'property_categories.id')
             ->skip($latestPostLimit)->take($latestPostLimit)->reorder('posts.created_at', 'DESC')
-            ->select('posts.*', 'property_categories.*', 'city_and_areas.*',  'posts.id as id')
+            ->select('posts.*', 'property_categories.*', 'city_and_areas.*', 'posts.id as id')
             ->get();
 
 
@@ -141,7 +141,7 @@ class mainController extends Controller
         $location = DB::table("city_and_areas")->distinct()->get("area");
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
 
-        return view('rent.residential', compact("allRCP", "subtypee", "cities", "favPost","location"));
+        return view('rent.residential', compact("allRCP", "subtypee", "cities", "favPost", "location"));
     }
 
     public function rentCommercialView()
@@ -154,7 +154,7 @@ class mainController extends Controller
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
         // dd($allRCP);
 
-        return view('rent.commercial', compact('allRCP', "subtypee", "cities", "favPost" ,"location"));
+        return view('rent.commercial', compact('allRCP', "subtypee", "cities", "favPost", "location"));
     }
 
     public function saleResidentialView()
@@ -167,7 +167,7 @@ class mainController extends Controller
         $favPost = AddToFavorite::where('user_id', Auth::id())->get();
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
 
-        return view('sale.residential', compact("allRCP", "subtypee", "cities", "favPost" ,"location"));
+        return view('sale.residential', compact("allRCP", "subtypee", "cities", "favPost", "location"));
     }
 
     public function saleCommercialView()
@@ -180,7 +180,7 @@ class mainController extends Controller
         $favPost = AddToFavorite::where('user_id', Auth::id())->get();
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
         // dd($allRCP);
-        return view('sale.commercial', compact('allRCP', "cities", "subtypee", "favPost","location"));
+        return view('sale.commercial', compact('allRCP', "cities", "subtypee", "favPost", "location"));
     }
 
 
@@ -663,27 +663,27 @@ class mainController extends Controller
 
         $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->latest()->limit(6)->get();
         //   dd($latestPost);
-       foreach($latestPost as $post) {
-    $val = $post->price;
-    if (is_numeric($val)) { // Check if $val is numeric
-        if ($val >= 10000000) {
-            $val = ($val / 10000000);
-            $formattedNum = number_format($val, 2);
-            $final_price = $formattedNum . ' Crore';
-        } else if ($val >= 100000) {
-            $val = ($val / 100000);
-            $formattedNum = number_format($val, 2);
-            $final_price = $formattedNum . ' Lakh';
-        } else if ($val >= 1000) {
-            $val = ($val / 1000);
-            $formattedNum = number_format($val, 2);
-            $final_price = $formattedNum . ' Thousand';
-        } else if ($val >= 1) {
-            $final_price = $val;
+        foreach ($latestPost as $post) {
+            $val = $post->price;
+            if (is_numeric($val)) { // Check if $val is numeric
+                if ($val >= 10000000) {
+                    $val = ($val / 10000000);
+                    $formattedNum = number_format($val, 2);
+                    $final_price = $formattedNum . ' Crore';
+                } else if ($val >= 100000) {
+                    $val = ($val / 100000);
+                    $formattedNum = number_format($val, 2);
+                    $final_price = $formattedNum . ' Lakh';
+                } else if ($val >= 1000) {
+                    $val = ($val / 1000);
+                    $formattedNum = number_format($val, 2);
+                    $final_price = $formattedNum . ' Thousand';
+                } else if ($val >= 1) {
+                    $final_price = $val;
+                }
+                $post->price = $final_price;
+            }
         }
-        $post->price = $final_price;
-    }
-}
 
 
         ////////add views to post////////
@@ -759,7 +759,7 @@ class mainController extends Controller
         //     }
         // }
 
-        return view('single-property', compact('post',  'alreadyHaveReq', 'price', 'favPost', 'latestPost', 'favAllPost'));
+        return view('single-property', compact('post', 'alreadyHaveReq', 'price', 'favPost', 'latestPost', 'favAllPost'));
     }
 
 
@@ -855,8 +855,8 @@ class mainController extends Controller
     }
 
     public function sendCodeToMobile($signUpMobileNo = null)
-
-    {;
+    {
+        ;
         $username = '923248430329';
         $password = "umair786";
         $reciverMobile = ($signUpMobileNo) ? $signUpMobileNo : Auth::user()->mobile_number;
@@ -951,7 +951,7 @@ class mainController extends Controller
         ///below variable is created  for changing view without creating new file
 
         $view = $diffView;
-        return   view("forgot-password", compact("view"));
+        return view("forgot-password", compact("view"));
     }
 
     public function forgotPasswordPost(Request $req)
@@ -1077,32 +1077,29 @@ class mainController extends Controller
     }
 
     //filteration
-   public function propertySearch(Request $req)
+    public function propertySearch(Request $req)
     {
-
-         $req->validateWithBag("addPostError", [
-                "purpose" => "required"
-            ],
+        // dd($req->all());
+        $req->validateWithBag("addPostError", [
+            "purpose" => "required"
+        ],
             [
                 'purpose.required' => 'Select One from Sale Or Rent',
             ]
         );
-
-        
-        if($req->sub_type== "not_commercial")
-        {
-             $propertyAllFields = PropertyCategorie::where("purpose", $req->purpose)
-            ->where("property_type", 'residential')
-            ->where("property_sub_type", $req->sub_typee)
-            ->first();
-        }
-        if($req->sub_typee== "not_residential")
-        {
+        if ($req->sub_type == "not_commercial") {
             $propertyAllFields = PropertyCategorie::where("purpose", $req->purpose)
-            ->where("property_type", 'commercial')
-            ->where("property_sub_type", $req->sub_type)
-            ->first();
+                ->where("property_type", 'residential')
+                ->where("property_sub_type", $req->sub_typee)
+                ->first();
         }
+        if ($req->sub_typee == "not_residential") {
+            $propertyAllFields = PropertyCategorie::where("purpose", $req->purpose)
+                ->where("property_type", 'commercial')
+                ->where("property_sub_type", $req->sub_type)
+                ->first();
+        }
+        $propertyAllField_id = $propertyAllFields->id ?? null;
         $search = $req['search'] ?? "";
 
         $search2 = $req->input('search2');
@@ -1113,29 +1110,42 @@ class mainController extends Controller
 
         if ($req->search2) {
             $allRCP = Post::with(["cityAndArea", "propertyCate", "postViews", "postImagesOne"])
-                ->where('property_title', 'like',  "%{$search2}%")
+                ->where('property_title', 'like', "%{$search2}%")
                 ->where('disable', '0')->paginate(15);
         } else {
             if ($req->beds == "null") {
                 $allRCP = Post::with(["cityAndArea", "propertyCate", "postViews", "postImagesOne"])
-                    ->where('city_area_id', '=',  "$req->city_area")
-                    ->where('property_categorie_id', '=',  "$propertyAllFields->id")
-                    ->whereBetween("land_area", [$req->min_area, $req->max_area])
-                    ->whereBetween("price", [$req->min_price, $req->max_price])
-                    ->where('disable', '0')
-                    ->paginate(15);
+                    ->where('city_area_id', (int) $req->city_area)
+                    ->where('disable', '0');
+                    
+                if ($propertyAllField_id != null) {
+                    $allRCP = $allRCP->where('property_categorie_id', "$propertyAllField_id");
+                }
+                if ($req->min_area != null || $req->max_area != null) {
+                    $allRCP = $allRCP->whereBetween("land_area", [$req->min_area, $req->max_area]);
+                }
+                if ($req->min_price != null || $req->max_price != null) {
+                    $allRCP = $allRCP->whereBetween("price", [$req->min_price, $req->max_price]);
+                }
+                $allRCP = $allRCP->paginate(15);
             } else {
                 $allRCP = Post::with(["cityAndArea", "propertyCate", "postViews", "postImagesOne"])
-
-                    ->where('bedrooms', '=',  "$req->beds")
-                    ->where('city_area_id', '=',  "$req->city_area")
-                    ->where('property_categorie_id', '=',  "$propertyAllFields->id")
-                    ->whereBetween("land_area", [$req->min_area, $req->max_area])
-                    ->whereBetween("price", [$req->min_price, $req->max_price])
-                    ->where('disable', '0')
-                    ->paginate(15);
+                    ->where('bedrooms', '=', "$req->beds")
+                    ->where('city_area_id', (int) $req->city_area)
+                    ->where('disable', '0');
+                if ($propertyAllField_id != null) {
+                    $allRCP = $allRCP->where('property_categorie_id', "$propertyAllField_id");
+                }
+                if ($req->min_area != null || $req->max_area != null) {
+                    $allRCP = $allRCP->whereBetween("land_area", [$req->min_area, $req->max_area]);
+                }
+                if ($req->min_price != null || $req->max_price != null) {
+                    $allRCP = $allRCP->whereBetween("price", [$req->min_price, $req->max_price]);
+                }
+                $allRCP = $allRCP->paginate(15);
             }
         }
+        // dd($allRCP);
         $cities = DB::table("city_and_areas")->distinct()->get("city");
         $location = DB::table("city_and_areas")->distinct()->get("area");
         $subtypee = DB::table("property_categories")->distinct()->get("property_sub_type");
@@ -1184,7 +1194,7 @@ class mainController extends Controller
 
             if ($post->sold == "1") {
                 $post->sold = 0;
-            } else if ($post->sold == null  || $post->sold == "0") {
+            } else if ($post->sold == null || $post->sold == "0") {
                 //dd("when sold is null ");
                 $post->sold = "1";
             }
@@ -1199,22 +1209,22 @@ class mainController extends Controller
 
         return view("adminPanel.blog");
     }
-    
-    
-     public function upload(Request $request)
+
+
+    public function upload(Request $request)
     {
-        if($request->hasFile('upload')) {
+        if ($request->hasFile('upload')) {
             $originName = $request->file('upload')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
             $extension = $request->file('upload')->getClientOriginalExtension();
-            $fileName = $fileName.'_'.time().'.'.$extension;
+            $fileName = $fileName . '_' . time() . '.' . $extension;
             $request->file('upload')->move(public_path('contentss'), $fileName);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('images/'.$fileName); 
-            $msg = 'Image successfully uploaded'; 
+            $url = asset('images/' . $fileName);
+            $msg = 'Image successfully uploaded';
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-               
-            @header('Content-type: text/html; charset=utf-8'); 
+
+            @header('Content-type: text/html; charset=utf-8');
             echo $response;
         }
     }
