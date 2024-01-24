@@ -325,3 +325,6 @@ Route::get('/contactus', function () {
 Route::get('/about-us', function () {
         return view('aboutus');
     });
+    Route::get('/term-and-condition', function () {
+        return view('termAndCondition');
+    });

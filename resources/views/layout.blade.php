@@ -566,12 +566,13 @@
                             <ul class="quick-links">
                                 <!--<li><a href="#">About Us</a></li>-->
                                 <li><a href="{{ url('about-us') }}">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{ url('contactus') }}">Contact Us</a></li>
                                 {{-- <li><a href="#">Jobs</a></li> --}}
                                 <li>Jobs</li>
                                 <li>Help & Support</li>
                                 <li>Advertise on Zameen</li>
-                                <li>Terms and Use</li>
+                                <li></li>
+                                <li><a href="{{ url('term-and-condition') }}">Terms and Conditions</a></li>
                                 {{-- <li><a href="#">Help & Support</a></li> --}}
                                 {{-- <li><a href="#">Advertise On Zameen</a></li> --}}
                                 {{-- <li><a href="#">Terms Of Use</a></li> --}}

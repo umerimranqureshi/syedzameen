@@ -25,7 +25,7 @@ class Post extends Migration
 
 
             $table->bigInteger('city_area_id')->nullable();
-            //$table->string('location')->nullable();
+            $table->string('location')->nullable();
             $table->string('address');
             $table->string('contact_person_name');
             $table->string('mobile_number');
@@ -37,6 +37,7 @@ class Post extends Migration
             $table->enum('post_boaster', ['normal', 'hot', 'superhot']);
             $table->string('video_link')->nullable();
             $table->string('amenities')->nullable();
+            $table->string('year')->nullable();
 
             $table->foreign('user_id')
                 ->references('id')

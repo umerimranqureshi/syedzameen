@@ -166,16 +166,16 @@
     <!--form section
                                  ------------------>
     <section class="p-0 mobile-responsive-header" style="    margin-top: -90px;">
-        <div class=" row p-0 ">
+        <div class=" row p-0 ml-0 mr-0  ">
             
             <div class="col-4 p-100 Ubackground"
-                style="min-height:80vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
+                style="min-height:100vh; background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('{{ asset('assets/images/background/backgroung-left.jpeg') }}'); ">
                 <div class="position-absolute mobile-responsive-search" >
                     @include('search-pagination-file.index-search')
                 </div>
             </div>
             <div class="col-8 p-100 Ubackground"
-                style="min-height:80vh;background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('{{ asset('assets/images/background/background-right.jpeg') }}');">
+                style="min-height:100vh;background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,  url('{{ asset('assets/images/background/background-right.jpeg') }}');">
             </div>
         </div>
     </section>

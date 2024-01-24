@@ -113,7 +113,7 @@ class SecondMain extends Controller
     public function adminPostAdd(Request $req)
     {
 
-        //    dd($req->all());
+           dd($req->all());
 
         $req->validateWithBag("addPostError", [
 

@@ -2,10 +2,11 @@
     display: none!important;
 }
 
-#main-search-form {
-    /* padding: 15%; */
+#home-page-main-search-form .bg-black {
+    padding: 20px;
+    background-color: #00000066;
+    border-radius: 25px;
 }
-
 .featured-properties {
     /* margin-top: -110px; */
 }

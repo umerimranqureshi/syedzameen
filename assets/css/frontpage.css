@@ -2,7 +2,7 @@
     display: none!important;
 }
 
-#home-page-main-search-form {
+#home-page-main-search-form .bg-black {
     padding: 20px;
     background-color: #00000066;
     border-radius: 25px;
