@@ -4869,9 +4869,7 @@ span.select2-container {
     /* top: -3px; */
 }
 
-.jslider-value-to{
-    visibility: visible;
-    left: auto;
-    margin-left: 0px;
-    right: 0px;
+.jslider-value-to {
+    left: auto !important;
+    right: 0 !important;
 }
