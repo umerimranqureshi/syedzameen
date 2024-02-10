@@ -128,7 +128,7 @@
 			</div>
 			<div class="col-md-12 col-lg-6">
 				<div class="color-white">
-					<p>Syed Real Estates and builders is the largest full-service real estate and property management company. We offer expertise in the marketing and sale of a wide range of properties, including residential real estate, farms and lifestyle blocks, as well as commercial and industrial properties that we hope may interest you..</p>
+					<p>Syed Zameen and builders is the largest full-service real estate and property management company. We offer expertise in the marketing and sale of a wide range of properties, including residential real estate, farms and lifestyle blocks, as well as commercial and industrial properties that we hope may interest you..</p>
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-12">
@@ -189,20 +189,20 @@
 					<div class="row">
 						<div class="col-md-12 col-lg-6">
 							<ul class="list-by-tag hover-secondery-primary">
-								<li><a href="#">United States <span>57</span></a></li>
-								<li><a href="#">France <span>36</span></a></li>
-								<li><a href="#">United Kingdom <span>42</span></a></li>
-								<li><a href="#">China <span>37</span></a></li>
-								<li><a href="#">Spain <span>25</span></a></li>
+								<li><a style="color: black;" href="#">United States <span>57</span></a></li>
+								<li><a style="color: black;" href="#">France <span>36</span></a></li>
+								<li><a style="color: black;" href="#">United Kingdom <span>42</span></a></li>
+								<li><a style="color: black;" href="#">China <span>37</span></a></li>
+								<li><a style="color: black;" href="#">Spain <span>25</span></a></li>
 							</ul>
 						</div>
 						<div class="col-md-12 col-lg-6">
 							<ul class="list-by-tag hover-secondery-primary">
-								<li><a href="#">Italy <span>22</span></a></li>
-								<li><a href="#">Germany <span>36</span></a></li>
-								<li><a href="#">Australia <span>47</span></a></li>
-								<li><a href="#">Brazil <span>25</span></a></li>
-								<li><a href="#">Hungary <span>18</span></a></li>
+								<li><a style="color: black;" href="#">Italy <span>22</span></a></li>
+								<li><a style="color: black;" href="#">Germany <span>36</span></a></li>
+								<li><a style="color: black;" href="#">Australia <span>47</span></a></li>
+								<li><a style="color: black;" href="#">Brazil <span>25</span></a></li>
+								<li><a style="color: black;" href="#">Hungary <span>18</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -218,20 +218,20 @@
 					<div class="row">
 						<div class="col-md-12 col-lg-6">
 							<ul class="list-by-tag hover-secondery-primary">
-								<li><a href="#">Bangkok <span>33</span></a></li>
-								<li><a href="#">Paris <span>42</span></a></li>
-								<li><a href="#">London <span>38</span></a></li>
-								<li><a href="#">Dubai <span>47</span></a></li>
-								<li><a href="#">Kuala Lumpur <span>25</span></a></li>
+								<li><a style="color: black;" href="#">Bangkok <span>33</span></a></li>
+								<li><a style="color: black;" href="#">Paris <span>42</span></a></li>
+								<li><a style="color: black;" href="#">London <span>38</span></a></li>
+								<li><a style="color: black;" href="#">Dubai <span>47</span></a></li>
+								<li><a style="color: black;" href="#">Kuala Lumpur <span>25</span></a></li>
 							</ul>
 						</div>
 						<div class="col-md-12 col-lg-6">
 							<ul class="list-by-tag hover-secondery-primary">
-								<li><a href="#">Istanbul <span>21</span></a></li>
-								<li><a href="#">Tokyo <span>44</span></a></li>
-								<li><a href="#">Antalya <span>24</span></a></li>
-								<li><a href="#">Barcelona <span>12</span></a></li>
-								<li><a href="#">Las Vegas <span>39</span></a></li>
+								<li><a style="color: black;" href="#">Istanbul <span>21</span></a></li>
+								<li><a style="color: black;" href="#">Tokyo <span>44</span></a></li>
+								<li><a style="color: black;" href="#">Antalya <span>24</span></a></li>
+								<li><a style="color: black;" href="#">Barcelona <span>12</span></a></li>
+								<li><a style="color: black;" href="#">Las Vegas <span>39</span></a></li>
 							</ul>
 						</div>
 					</div>
@@ -251,7 +251,7 @@
 				<h2 class="color-secondary">Great Experience For Real Estate Property Selling</h2>
 			</div>
 			<div class="col-md-12 col-lg-4 align-self-center">
-				<a class="btn btn-secondery float-right mt-lg-30" href="#">Contact With Us</a>
+				<a class="btn btn-secondery mt-lg-30" style="background: black; color:blue;" href="#">Contact With Us</a>
 			</div>
 		</div>
 	</div>

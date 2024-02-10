@@ -82,18 +82,17 @@
 					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 						<div class="row">
 
-
 							@foreach ($featureAgencies as $agency)
 							<div class="col-md-12 col-lg-6">
 								<div class="agencies mt-30 py-40 px-30 bg-white hover-secondery-primary">
-									<a href="#"><img src="{{asset($agency->logo)}}" alt="image"
+									<a href="#"><img src="{{ asset('image/' . $agency->image) }}"  alt="image"
 											style="height:120px;width:100%"></a>
 									<div class="agencies-content mt-10">
 										<a href="{{route('agencySinglePage',['id'=>$agency->id])}}">
-											<h4>{{$agency->name}}</h4>
+											<h4 style="color: #007bff;">{{$agency->name}}</h4>
 										</a>
-										<span class="mt-5 mb-30 d-block">{{$agency->address}}.</span>
-										<ul class="d-table">
+										<span class="mt-5 mb-30 d-block">{{$agency->url}}.</span>
+										{{-- <ul class="d-table">
 											<li>
 												<div
 													class="position-relative bg-secondary color-white py-5 px-10 d-inline-block">
@@ -108,7 +107,7 @@
 												</div>
 											</li>
 
-										</ul>
+										</ul> --}}
 									</div>
 								</div>
 							</div>
@@ -253,13 +252,110 @@
 						</li>
 					</ul>
 				</div> --}}
-				<div class="sidebar-widget bg-white mt-50 shadow py-40 px-30">
+                    <!--------------------------- Message Box Start--------------------------->
+
+                    <!--------------------------- Message Box  end--------------------------->
+
+
+
+                    <div class="sidebar-widget bg-white mt-50 shadow py-40 px-30"
+                        style="    position: sticky; top: 115px;">
+                        <h3 class="color-secondary line-bottom pb-15 mb-20">Latest Properties</h3>
+
+                        <div class="owl-carousel slide-1 owl-dots-none">
+                            {{-- {{dd($latestPost)}} --}}
+                            @foreach ($latestPost as $postL)
+
+
+                                <div class="property-item">
+                                    <div class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                        <a class="color-secondary mb-5 color-primary"
+                                            href="{{ route('singlePage', ['title' => str_replace(' ', '-', $postL->property_title), 'id' => $postL->id]) }}">
+                                            <img src="{{ asset('mainimage/' . $postL->mainimage) }}"
+                                                style="height: 200px">
+                                        </a>
+                                        <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New
+                                            @if ($postL->post_boaster == 'hot' || $postL->post_boaster == 'superhot')
+
+                                                <i style="color:{{ $postL->post_boaster == 'superhot' ? 'rgba(238, 14, 14, 0.932)' : 'rgba(255, 0, 179, 0.877)' }} ;
+														font-size:17px"
+                                                    class="fa fa-fire"> </i>
+                                            @endif
+
+                                        </span>
+                                        <ul class="hover-option position-absolute icon-primary z-index-1">
+                                            <li>
+                                                <a data-toggle="tooltip" data-placement="top"
+                                                    @foreach ($favPost as $fav) @if ($fav->user_id == Auth::id() && $postL->favPostUser->count() > 0 && $fav->post_id == $postL->id)
+												class="bg-danger fav-heart"
+												title="remove wishlist"
+
+
+												@endif @endforeach
+                                                    @if ($postL->favUserPost == null) class="fav-heart"
+												title="wishlist" @endif
+                                                    href="{{ route('favPost', ['id' => $postL->id]) }}"><i
+                                                        class="fa fa-heart-o" aria-hidden="true"></i></a>
+                                            </li>
+
+
+                                        </ul>
+                                        <div class="meta-property icon-primary color-primary z-index-1">
+                                            <ul>
+                                                <a class="color-secondary mb-5" style="color: primary !important"
+                                                    href="{{ route('singlePage', ['title' => str_replace(' ', '-', $postL->property_title), 'id' => $postL->id]) }}">
+                                                    <li><i class="fa fa-calendar"></i>{{ $postL->created_at }}
+                                                    </li>
+                                                    <li><i class="fa fa-user"></i> {{ $postL->user->name }}</li>
+                                                </a>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="property-content bg-primary pt-30 pb-50">
+                                        <a class="color-secondary mb-5 color-primary"
+                                            href="{{ route('singlePage', ['title' => str_replace(' ', '-', $postL->property_title), 'id' => $postL->id]) }}">
+                                            <h5>{{ $postL->property_title }}</h5>
+                                        </a>
+                                        <a class="color-secondary mb-5 color-primary"
+                                            href="{{ route('singlePage', ['title' => str_replace(' ', '-', $postL->property_title), 'id' => $postL->id]) }}">
+                                            <span class="address icon-primary f-14"><i
+                                                    class="fa fa-map-marker"></i>{{ $postL->address }}</span>
+                                            <ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
+                                                <li><i
+                                                        class="fa fa-plus-square "></i>{{ $postL->land_area . ' ' . $postL->unit }}
+                                                </li>
+                                                <li><i class="fa fa-bed"></i>{{ $postL->bedrooms }} bedrooms</li>
+                                                <li><i class="fa fa-bath"></i>{{ $postL->bathrooms }} bathrooms
+                                                </li>
+                                                <li><i class="fa fa-home"></i>1 Garage</li>
+                                            </ul>
+                                        </a>
+                                        <div class="property-cost color-primary list-half w-100">
+                                            <ul>
+                                                <li>{{ $postL->propertyCate->purpose }}</li>
+                                                <li>
+                                                    <p style="font-size: 17px;
+														font-weight: 900;">
+                                                        {{ ' ' . $postL->price }}</p>
+                                                    <sub>{{ $postL->propertyCate->purpose == 'rent' ? 'Monthly' : '' }}</sub>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+
+                    </div>
+
+
+				{{-- <div class="sidebar-widget bg-white mt-50 shadow py-40 px-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Latest Properties</h3>
 					<div class="owl-carousel slide-1 owl-dots-none">
-
 						@foreach ($latestPost as $post)
 						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
+							<div class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 								<img src="{{$post->postImagesOne?asset('propertyImages/'.$post->postImagesOne->img_path):asset('houseLog.jpg') }}"
 									alt="image" style="height:200px">
 								<span
@@ -319,7 +415,7 @@
 						@endforeach
 
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</div>

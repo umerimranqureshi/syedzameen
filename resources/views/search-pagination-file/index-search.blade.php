@@ -53,8 +53,8 @@
             {{-- {{dd($location)}} --}}
 
             <div class="form-group pt-15  col-lg-4 col-md-6 col-sm-12 ">
-                <div class="select-wrapper position-relative">
-                    <i class="fa fa-search position-absolute" style="    z-index: 9999999;
+                <div class="select-wrapper position-relative" id="selectWrapper">
+                    <i class="fa fa-search position-absolute" style="z-index: 9999999;
                     right: 10px;
                     top: 32%;"></i>
                     <select id="location" name="city_area" class="select form-control select2 ">
@@ -74,9 +74,11 @@
                 {{-- <a class="btn" style="border: 1px solid; background:lightgreen; " data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                     more
                 </a> --}}
-                <a class="btn select-wrapper position-relative h-100 " type="button" data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color: #fff; border-radius:10px; padding:20px;"></a>
+                <a class="btn select-wrapper position-relative h-100 " hidden id="collapseData" type="button" data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="background-color: #fff; border-radius:10px; padding:20px;"></a>
             </div>
         </div>
+                
+        
         <div class="collapse" id="collapseExample">
             <div class="row ">
                 <div class="form-group pt-15   col-lg-4 col-md-6 col-sm-12">
@@ -284,6 +286,27 @@
             }
 
             $(targetBox).show();
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var selectWrapper = document.getElementById('selectWrapper');
+        var collapseData = document.getElementById('collapseData');
+
+        // Flag to keep track of whether collapseData has been clicked
+        var collapseClicked = false;
+
+        // Add click event listener to the select wrapper
+        selectWrapper.addEventListener('click', function () {
+            // Check if collapseData has already been clicked
+            if (!collapseClicked) {
+                // Trigger a click event on the collapse data element
+                collapseData.click();
+
+                // Update the flag to indicate that collapseData has been clicked
+                collapseClicked = true;
+            }
         });
     });
 </script>

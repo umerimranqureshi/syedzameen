@@ -26,7 +26,7 @@
                                     <div class="property-thumbnail mt-30">
 
                                         <div
-                                            class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                            class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
                                             <img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
 
@@ -63,10 +63,11 @@
                                                     <div class="thumbnail-title z-index-1 position-relative">
 
 
-                                                        <span
-                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt">
-                                                            <b style="color: black;"> RS
-                                                            </b></span>
+                                                    <span
+														class="thumbnail-price bg-dark color-secondary px-15 mb-10 d-table"> RS
+														{{$post->price}}
+                                                    </span>
+
                                                         <a class="color-secondary mb-5"
                                                             href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
                                                             <h4> 
@@ -122,7 +123,7 @@
                                     <div class="property-thumbnail mt-30">
 
                                         <div
-                                            class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                            class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 
                                             <img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
@@ -152,10 +153,11 @@
                                                     <div class="thumbnail-title z-index-1 position-relative">
 
 
-                                                        <span
-                                                            class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt2">
-                                                            <b style="color: black;"> RS
-                                                            </b></span>
+                                                    <span
+														class="thumbnail-price bg-dark color-secondary px-15 mb-10 d-table"> RS
+														{{$post->price}}
+                                                    </span>
+
                                                         <a class="color-secondary mb-5"
                                                             href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
 

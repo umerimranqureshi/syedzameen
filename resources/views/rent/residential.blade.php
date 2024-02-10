@@ -83,7 +83,7 @@
 							@foreach ($allRCP as $post)
 							<div class="col-md-12 col-lg-6 col-xl-4">
 								<div class="property-thumbnail mt-30">
-									<div class="property-img position-relative overflow-hidden overlay-secondary-4">
+									<div class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 									
 										<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image"  style="height:300px;width:450px">
 
@@ -150,7 +150,10 @@
 													@endif
 
 
-												<span class="text-success convrt2"> <b>Price </b> </span>
+													<span
+														class="thumbnail-price bg-dark color-secondary px-15 mb-10 d-table"> RS
+														{{$post->price}}</span>
+														
 													<a class="color-secondary mb-5"
 														href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$post->id])}}">
 														<h4>{{$post->property_title}}</h4>

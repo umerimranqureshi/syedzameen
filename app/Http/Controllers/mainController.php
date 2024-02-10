@@ -661,7 +661,7 @@ class mainController extends Controller
     public function singlePageAddView($title, $id)
     {
 
-        $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->latest()->limit(6)->get();
+        $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->latest()->limit(6)->get();
         //   dd($latestPost);
         foreach ($latestPost as $post) {
             $val = $post->price;
@@ -773,7 +773,6 @@ class mainController extends Controller
     }
     public function agencyView()
     {
-
         $recordExistsOrNot = Agencie::where("user_id", Auth::id())->first();
         $cities = DB::table("city_and_areas")->distinct()->get("city");
         $check = true;
@@ -1157,21 +1156,21 @@ class mainController extends Controller
 
     public function searchAgency(Request $req)
     {
-        $featureAgencies = new Agencie();
+        $featureAgencies = new Adminagencies();
 
         if ($req->agency_name != "" && $req->agency_name != null) {
             //dd($req->agency_name);
             $featureAgencies = $featureAgencies->where("name", "LIKE", "%$req->agency_name%");
         }
-        if ($req->city != "null" && $req->city != null) {
-            $featureAgencies = $featureAgencies->where("city", $req->city);
-        }
+        // if ($req->city != "null" && $req->city != null) {
+        //     $featureAgencies = $featureAgencies->where("city", $req->city);
+        // }
 
-        $featureAgencies = $featureAgencies->paginate('3');
+        $featureAgencies = $featureAgencies->paginate('4');
 
         //dd($featureAgencies);
         $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])
-            ->where('admin_post', null)
+            
             ->latest()
             ->limit(6)
             ->get();

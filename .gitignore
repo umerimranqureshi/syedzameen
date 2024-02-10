@@ -21,3 +21,12 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+# do not upload images 
+blogImages/
+dealerimage/
+mainimage/
+profileImage/
+profilePic/
+propertyImages/
+image/

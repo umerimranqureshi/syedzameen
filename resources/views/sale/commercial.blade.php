@@ -79,7 +79,7 @@
 						@foreach ($allRCP as $post)
 						<div class="col-md-12 col-lg-6 col-xl-4">
 							<div class="property-thumbnail mt-30">
-								<div class="property-img position-relative overflow-hidden overlay-secondary-4">
+								<div class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 								
 									<img src="{{$post->mainimage?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 									

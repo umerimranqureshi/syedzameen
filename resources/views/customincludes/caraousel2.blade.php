@@ -28,7 +28,7 @@
 
 										<div class="property-thumbnail mt-30">
 
-											<div class="property-img position-relative overflow-hidden overlay-secondary-4">
+											<div class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 
 												<img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 
@@ -100,7 +100,7 @@
 
 									<div class="property-thumbnail mt-30">
 
-										<div class="property-img position-relative overflow-hidden overlay-secondary-4">
+										<div class="property-img position-relative overflow-hidden overlay-secondary-4" style="border-radius: 1.5rem;">
 
 										<img src="{{$post->mainimage?(file_exists('mainimage/'.$post->mainimage)?asset('mainimage/'.$post->mainimage):asset('houseLog.jpg')):asset('houseLog.jpg') }}" alt="image" style="height:300px ">
 

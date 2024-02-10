@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AddSociety;
 use App\Models\AddToFavorite;
+use App\Models\Adminagencies;
 use App\Models\Agencie;
 use App\Models\Fresh;
 use App\Models\User;
@@ -113,7 +114,7 @@ class SecondMain extends Controller
     public function adminPostAdd(Request $req)
     {
 
-           dd($req->all());
+        //    dd($req->all());
 
         $req->validateWithBag("addPostError", [
 
@@ -128,12 +129,13 @@ class SecondMain extends Controller
             "mainimage" => "required",
 
         ]);
+        // dd("chk");
 
         $propertyAllFields = PropertyCategorie::where("purpose", $req->purpose)
             ->where("property_type", $req->property_type)
             ->where("property_sub_type", $req->sub_type)
             ->first();
-
+// dd($propertyAllFields);
         ///////converting every unit into marla ///////
 
         switch ($req->unit) {
@@ -193,7 +195,7 @@ class SecondMain extends Controller
         //     $mobb .=$mob;
            
         // }
-
+            // dd("ssss");
 
         $postCreated = Post::create([
             "property_title" => $req->property_title,
@@ -310,11 +312,9 @@ class SecondMain extends Controller
 
     public function showAgencies()
     {
-
-        $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->where('admin_post', null)->latest()->limit(6)->get();
-        // dd($latestPost);
-        $featureAgencies = Agencie::with('user.post')->paginate('2');
-        //   dd($featureAgencies);
+        // ->where('admin_post', null)
+        $latestPost = Post::with(["postImagesOne", "postViews", "propertyCate", "agencies", "favPostUser", "user"])->latest()->limit(6)->get();
+        $featureAgencies = Adminagencies::paginate('4');
         $favPost = AddToFavorite::where('user_id', Auth::id())->get();
         $cities = DB::table("city_and_areas")->distinct()->get("city");
 

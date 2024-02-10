@@ -627,7 +627,6 @@ class frontsideController extends Controller {
     public function Agencyindex()
     {
         $Agencies = Adminagencies::latest()->get();
-    
         return view('adminPanel.Agencyindex', compact('Agencies'));
 
     }

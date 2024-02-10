@@ -535,7 +535,7 @@
                                         <div class="col-md-3 col-sm-6 m-0 p-0">
                                             <div class="property-thumbnail m-0 p-0">
                                                 <div
-                                                    class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                    class="property-img position-relative overflow-hidden overlay-secondary-4" >
                                                     <img src="{{asset('assets\images\background\rentResidential.jpeg')}}" alt="image" style="height:500px;  width: auto;">
                                                     <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                         
@@ -733,14 +733,16 @@
                             <div class="agent-profile">
                                 <div class="overflow-hidden">  <img src="{{ asset('image/' . $agency->image) }}"  alt="image">
                                 </div>
-                                <div class="agent-profile-content hover-secondery-primary py-20 px-20 bg-gray d-flex">
-                                    <a class="mb-5 d-block" href="">
-                                        <h5>{{ $agency->name }}</h5>
-                                    </a>
-                                    <span class="color-gray"></span>
-                                    <a class="btn-round bg-secondary" href=""><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
+                                <a href="{{ $agency->url }}">
+                                    <div class="agent-profile-content hover-secondery-primary py-20 px-20 bg-gray d-flex">
+                                        <span class="mb-5 d-block" href="">
+                                            <h5>{{ $agency->name }}</h5>
+                                        </span>
+                                        <span class="color-gray"></span>
+                                        <span class="btn-round bg-secondary" href=""><i
+                                                class="fa fa-angle-right"></i></span>
+                                    </div>
+                                </a>
                             </div>
                         @endforeach
 
