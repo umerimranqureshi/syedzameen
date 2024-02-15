@@ -94,8 +94,12 @@
 							<div class="side-title pb-30">
 								<span class="small-title color-primary position-relative line-primary">Partners</span>
 								<h2 class="title mb-20 color-secondary">Our Popular Fellows!</h2>
-								<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
-							</div>
+								<p>Syed Zameen By SYED REAL ESTATE .
+									Syed zameen is a project of SYED REAL ESATAE ,
+									Syed Real Estates and builders is the largest full-service real estate and property
+									management company , They known for their quanlity work .
+
+									.</p>							</div>
 							<div class="owl-carousel partners mt-30">
 								<img src="images/partner/1.png" alt="Image not found!">
 								<img src="images/partner/2.png" alt="Image not found!">
@@ -109,7 +113,7 @@
 							<div class="side-title pb-30 text-right mt-md-50">
 								<span class="small-title color-primary position-relative line-right-primary">Newsletter</span>
 								<h2 class="title mb-20 color-secondary">Get Update Now!</h2>
-								<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
+								<p><p>Wait a bit ! before leaving add your email we will notify you about new property and much more .</p>.</p>
 							</div>
 							<form class="news-letter bg-gray mt-30">
 								<div class="form-group position-relative">

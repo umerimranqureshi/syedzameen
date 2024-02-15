@@ -88,26 +88,11 @@
 									<a href="#"><img src="{{ asset('image/' . $agency->image) }}"  alt="image"
 											style="height:120px;width:100%"></a>
 									<div class="agencies-content mt-10">
-										<a href="{{route('agencySinglePage',['id'=>$agency->id])}}">
+										<a href="{{$agency->url}}" target="blank">
 											<h4 style="color: #007bff;">{{$agency->name}}</h4>
 										</a>
 										<span class="mt-5 mb-30 d-block">{{$agency->url}}.</span>
-										{{-- <ul class="d-table">
-											<li>
-												<div
-													class="position-relative bg-secondary color-white py-5 px-10 d-inline-block">
-													Properties <span
-														class="number">{{$agency->user->post->count()}}</span>
-												</div>
-											</li>
-											<li>
-												<div
-													class="position-relative bg-secondary color-white py-5 px-10 d-inline-block">
-													{{$agency->user->mobile_number}}
-												</div>
-											</li>
-
-										</ul> --}}
+										
 									</div>
 								</div>
 							</div>

@@ -41,17 +41,18 @@
 				<div class="main-title w-75 mx-auto d-table text-center mb-30">
 					<span class="small-title color-primary position-relative line-2-primary">What We Do?</span>
 					<h2 class="title mb-20 color-secondary">Our Services</h2>
-					<span class="sub-title">Congue commodo ipsum, risus urna nisi. Primis velit turpis sollicitudin. Felis aptent sagittis aliquet turpis et tristique montes vestibulum rutrum. Scelerisque viverra ac ridiculus enim. Curabitur.</span>
+					<span class="sub-title">Ready to embark on your real estate journey? Contact Syed Zameen Real Estate today, and let us turn your real estate aspirations into reality. We look forward to being your trusted partner in all your real estate endeavors. The best property website to buy and sell properties.</span>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-4">
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-house"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Buying Properties</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Buying Properties</h4></a>
+						<p> Looking to buy in properties? Syed Zameen offers a wide range of properties for sale. Explore our selection and find your perfect investment opportunity today!
+						</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -59,10 +60,10 @@
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-deal"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Selling Properties</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Selling Properties</h4></a>
+						<p> Looking to sell your property? Syed Zameen specializes in apartments, farmhouses, and furnished homes. List your property with us for a hassle-free selling experience.</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -70,10 +71,10 @@
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-sale"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Rental Properties</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Rental Properties</h4></a>
+						<p>Searching for a new place to call home? Syed Zameen offers a wide range of rental properties including apartments, farmhouses, and furnished homes. Find your perfect home today!</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -81,10 +82,10 @@
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-money"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Legal Investment</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Legal Investment</h4></a>
+						<p> Syed Zameen offers comprehensive services to both buyers and sellers, guaranteeing a smooth and efficient real estate transaction. Top-notch services for buyers and sellers at Syed Zameen.</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -92,10 +93,10 @@
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-checklists"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Property Listing</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Property Listing</h4></a>
+						<p> Find your dream property with ease at Syed Zameen's comprehensive listing platform, offering a variety of options to suit every requirement.</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -103,10 +104,10 @@
 				<div class="service-item bg-white px-30 py-40 mt-30">
 					<div class="service-info hover-secondery-primary">
 						<span class="flat-large icon-primary"><i class="flaticon-research"></i></span>
-						<a class="my-20 d-table" href="service-details.html"><h4>Market Analysis</h4></a>
-						<p>Metus rhoncus hendrer tellus lacinia aptent justo urna. Leo conseq dapibus ipsum eleif massa enim potenti at magnis orci molesti praesent ultrices elementum.</p>
+						<a class="my-20 d-table" style="color: black;" href="#"><h4>Market Analysis</h4></a>
+						<p>Discover the power of data-driven market analysis at Syed Zameen and unlock new opportunities for growth and success.</p>
 						<hr class="border-top-1">
-						<a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a>
+						<!-- <a class="btn-round bg-secondary" href="service-details.html"><i class="fa fa-angle-right"></i></a> -->
 					</div>
 				</div>
 			</div>
@@ -183,7 +184,7 @@
 				<div class="side-title pb-30">
 					<span class="small-title color-primary position-relative line-primary">Most</span>
 					<h2 class="title mb-20 color-secondary">Popular Country</h2>
-					<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
+					<!-- <p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p> -->
 				</div>
 				<div class="py-40 px-30 mt-30 bg-white shadow">
 					<div class="row">
@@ -212,7 +213,7 @@
 				<div class="side-title pb-30 mt-md-30 text-right">
 					<span class="small-title color-primary position-relative line-right-primary">Most</span>
 					<h2 class="title mb-20 color-secondary">Popular Cities</h2>
-					<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
+					<!-- <p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p> -->
 				</div>
 				<div class="py-40 px-30 mt-30 bg-white shadow">
 					<div class="row">
@@ -244,76 +245,202 @@
 ==================================================================-->
 <!-- Banner Start
 ==================================================================-->
-<div class="bg-primary banner-4" style="padding: 80px 0;">
+{{-- <div class="bg-primary banner-4" style="padding: 80px 0;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-lg-8">
 				<h2 class="color-secondary">Great Experience For Real Estate Property Selling</h2>
 			</div>
 			<div class="col-md-12 col-lg-4 align-self-center">
-				<a class="btn btn-secondery mt-lg-30" style="background: black; color:blue;" href="#">Contact With Us</a>
+				<a class="btn btn-secondery mt-lg-30"  href="#">Contact With Us</a>
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
+
+<section class="overlay-secondary overflow-hidden" style="background: url(images/background/memphis.html);">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-lg-8">
+				<h2 class="color-white">Great Experience For Real Estate Property Selling</h2>
+			</div>
+			<div class="col-md-12 col-lg-4 align-self-center">
+				<a class="btn btn-primary mt-lg-30"  style="background: white; color:blue;" href="#"><b>Contact With Us</b></a>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- Banner End
 ==================================================================-->
 <!-- Find the best Place Start
 ==================================================================-->
-<section class="bg-light">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<div class="main-title w-75 mx-auto d-table text-center mb-30">
-					<span class="small-title color-primary position-relative line-2-primary">What Are You Looking For?</span>
-					<h2 class="title mb-20 color-secondary">Find the Best Places to you.</h2>
-					<span class="sub-title">Congue commodo ipsum, risus urna nisi. Primis velit turpis sollicitudin. Felis aptent sagittis aliquet turpis et tristique montes vestibulum rutrum. Scelerisque viverra ac ridiculus enim. Curabitur.</span>
-				</div>
-			</div>
-			<div class="col-lg-12">
-				<div class="all-property mt-30">
-					<div class="row">
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary">
-								<span class=""><i class="flaticon-house-2"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>Apartment</h6></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary" style="margin-top: 90px">
-								<span class=""><i class="flaticon-rental"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>Building</h6></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary" style="margin-top: 180px">
-								<span class=""><i class="flaticon-interior-design"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>Condominium</h6></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary" style="margin-top: 180px">
-								<span class=""><i class="flaticon-hotel"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>House</h6></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary" style="margin-top: 90px">
-								<span class=""><i class="flaticon-house"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>Office</h6></a>
-							</div>
-						</div>
-						<div class="col-md-6 col-lg-2">
-							<div class="property-item-type-2 bg-white py-40 px-30 flat-medium icon-primary text-center shadow hover-secondery-primary">
-								<span class=""><i class="flaticon-rental"></i></span>
-								<a class="mt-20 d-block" href="#"><h6>Shop</h6></a>
-							</div>
-						</div>
-					</div>
-				</div>
+<section class="section novi-background section-sm">
+
+    <style>
+        /* CSS for Contact Section */
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-sm {
+            padding: 30px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .layout-bordered {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .layout-bordered-item {
+            flex-basis: 33.33%;
+            /* Set the width to 33.33% to display three blocks inline */
+            max-width: 33.33%;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: black;
+            /* Change the icon color to black */
+        }
+
+        .list-0 {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .list-0 li {
+            margin-bottom: 10px;
+            color: black;
+            /* Change the text color to black */
+        }
+
+        .link-default {
+            /* color: #007bff; */
+            color: black;
+        }
+
+        .link-default:hover {
+            text-decoration: none;
+        }
+
+        .icon-lg {
+            font-size: 60px;
+        }
+
+        .mdi {
+            background-color: transparent;
+        }
+
+        .text-primary {
+            color: black;
+            /* Change the text color to black */
+        }
+
+        .layout-bordered-item-inner {
+            /* position: relative; */
+            transition: 0.4s;
+        }
+
+        .wow-outer {
+            position: relative;
+        }
+
+        .slideInUp {
+            animation-name: slideInUp;
+            animation-duration: 0.7s;
+            visibility: visible !important;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .icons {
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: #2f77ad;
+        }
+    </style>
+	
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="main-title w-50 mx-auto d-table text-center mb-20 mt-30">
+				<h2 class="title mb-20 color-secondary">Contact Us</h2>
+					<span class="sub-title">Ready to embark on your real estate journey? Contact Syed Zameen Real Estate today, and let us turn your real estate aspirations into reality. We look forward to being your trusted partner in all your real estate endeavors. The best property website to buy and sell properties.</span>
+
 			</div>
 		</div>
 	</div>
+
+    <div class="container">
+		
+			
+		
+        <div class="layout-bordered">
+			
+            <div class="layout-bordered-item wow-outer">
+                <div class="layout-bordered-item-inner wow slideInUp">
+                    <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary">
+                    </div>
+                    <div class="icons"><i class="fa fa-map-marker"></i></div>
+                    <a class="link-default" href="#">28F 1st Floor commercial Area DHA, Phase 1 Lahore</a>
+
+                    <div class="icon novi-icon icon-lg mdi mdi-map-marker text-primary mt-50"></div>
+                    <div class="icons"><i class="fa fa-map-marker"></i></div>
+                    <a class="link-default" href="#"> 2nd floor 47-MB<br>(Main Boulevard) Phase 6 DHA Lahore</a>
+
+                </div>
+            </div>
+
+            <div class="layout-bordered-item wow-outer">
+                <div class="layout-bordered-item-inner wow slideInUp">
+                    <div class="icon novi-icon icon-lg mdi mdi-email text-primary"></div>
+                    <div class="icons"><i class="fa fa-envelope"></i></div>
+                    <a class="link-default"
+                        href="mailto:syedrealestateandbuilders@gmail.com">syedrealestateandbuilders@gmail.com</a>
+                    <a class="link-default" href="mailto:syedrealestateandbuilders@gmail.com">
+                        info@syedrealestates.com</a>
+
+                </div>
+            </div>
+
+            <div class="layout-bordered-item wow-outer">
+                <div class="layout-bordered-item-inner wow slideInUp">
+                    <div class="icon novi-icon icon-lg mdi mdi-phone text-primary"></div>
+                    <ul class="list-0">
+                        <div class="icons"><i class="fa fa-phone"></i></div>
+                        <li><a class="link-default" href="tel:#">+(92)-332-8447174</a></li>
+                        <li><a class="link-default" href="tel:#">+(
+                                92)-324-8430329</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 <!-- Find the best Place End
 ==================================================================-->

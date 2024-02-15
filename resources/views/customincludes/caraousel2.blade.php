@@ -59,9 +59,12 @@
 													<div class="hover-content py-30 px-20 overlay-hover-gradient">
 														<div class="thumbnail-title z-index-1 position-relative">
 
+														@php
+															$formattedPrice = formatPrice($post->price);
+														@endphp
 
 															<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt3">
-																<b  style="color: black;"> RS
+																<b  style="color: black;"> RS {{$formattedPrice}}
 																</b></span>
 															<a class="color-secondary mb-5" href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
 															<h4>	
@@ -131,8 +134,11 @@
 												<div class="hover-content py-30 px-20 overlay-hover-gradient">
 													<div class="thumbnail-title z-index-1 position-relative">
 
+													@php
+                                                    $formattedPrice = formatPrice($post->price);
+                                                    @endphp
 
-														<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt4"><b style="color: black;"> RS
+														<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table convrt4"><b style="color: black;"> RS {{$formattedPrice}}
 															</b></span>
 														<a class="color-secondary mb-5" href="{{route('singlePage',[str_replace(' ', '-', $post->property_title), $post->id] )}}">
 														<h4>	

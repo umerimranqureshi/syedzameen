@@ -150,10 +150,16 @@
 													@endif
 
 
+													
+													@php
+													$formattedPrice = formatPrice($post->price);
+													@endphp
+
 													<span
 														class="thumbnail-price bg-dark color-secondary px-15 mb-10 d-table"> RS
-														{{$post->price}}</span>
-														
+														{{$formattedPrice}}
+													</span>
+													
 													<a class="color-secondary mb-5"
 														href="{{route('singlePage',['title'=>str_replace(' ', '-', $post->property_title),'id'=>$post->id])}}">
 														<h4>{{$post->property_title}}</h4>
@@ -178,6 +184,30 @@
 								</div>
 							</div>
 							@endforeach
+
+
+							@php
+								function formatPrice($price) 
+								{
+									if ($price >= 10000000) 
+									{
+										return round($price / 10000000, 2) . ' Crore';
+									} 
+									elseif ($price >= 100000) 
+										{
+											return round($price / 100000, 2) . ' Lac';
+										} 
+									elseif ($price >= 1000) 
+										{
+											return round($price / 1000, 2) . ' Thousand';
+										} 
+									else
+										{
+											return $price;
+										}
+								}
+								@endphp
+
 
 							<div class="col-lg-12">
 								<div class="mx-auto d-table">
