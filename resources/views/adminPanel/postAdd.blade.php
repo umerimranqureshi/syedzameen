@@ -916,70 +916,65 @@
                                                                         @endif
 
 
-
                                                                         <h5 class="mt-2 mb-2">Mobile number</h5>
-
-                                                                        <div class="form-group validate-input w-100 position-relative">
-
-                                                                            <input id="mobile_number" name="mobile_number" value=" {{ auth()->user()->mobile_number }}" value="{{ old('mobile_number', isset($posts) ? $posts->mobile_number : '') }}" type="text" class="form-control" aria-label="Text input with dropdown button">
-
-
-                                                                            <span class="data-placeholder" data-placeholder="92**********"></span>
-                                                                            <label id="error_mobile"></label>
-                                                                            @if($errors->register->has('mobile_number'))
-
-                                                                            <span style="font-size: 15px" class="text text-danger" id="server_error">{{$errors->register->first('mobile_number')}}</span>
-
-
-                                                                            @endif
-                                                                            @if(session('msg'))
-                                                                            <span style="font-size: 15px" class="text text-danger" id="server_error">{{session('msg')}}</span>
-                                                                            @endif
-
-
-                                                                        </div>
-
+                                                                        <input class="form-control" placeholder="+92xxxxxxxxxx" id="mobile_number" name="mobile_number" type="text" value="+92">
                                                                         <span class=" bg-warning text-dark" id="error-mobile"></span>
+                                                                        @if ($errors->hasBag('addPostError'))
+                                                                            <p class="text-danger">
+                                                                                {{ $errors->addPostError->first('mobile_number')}}
+                                                                            </p>
+                                                                        @endif
 
+                                                                        <script>
+                                                                            $(document).ready(function() {
+                                                                                $("#mobile_number").on("input", function() { // Use "input" event for better handling of pasted text
+                                                                                    var inputValue = $(this).val();
+                                                                                    var regex = /^\+92\d{10}$/; // Regex for +92 followed by 9 digits
+
+                                                                                    if (regex.test(inputValue)) {
+                                                                                        $('#error-mobile').text("");
+                                                                                    } else {
+                                                                                        $('#error-mobile').text("Phone number is not valid");
+                                                                                    }
+                                                                                });
+                                                                            });
+                                                                        </script>
 
 
                                                                         <!-- <h5 class="mt-2 mb-2">Mobile number</h5>
 
-<div class="input-group mb-3">
-    <select style="border-style: solid; border-width: 1px;">
-        <option style="background-image:url(https://img.icons8.com/color/32/000000/pakistan.png);">
-            +92</option>
-    </select>
-    <input id="mobile_number" name="mobile_number" value=" {{ auth()->user()->mobile_number }}" value="{{ old('mobile_number', isset($posts) ? $posts->mobile_number : '') }}" type="text" class="form-control" aria-label="Text input with dropdown button">
-</div> -->
+                                                                                <div class="input-group mb-3">
+                                                                                    <select style="border-style: solid; border-width: 1px;">
+                                                                                        <option style="background-image:url(https://img.icons8.com/color/32/000000/pakistan.png);">
+                                                                                            +92</option>
+                                                                                    </select>
+                                                                                    <input id="mobile_number" name="mobile_number" value=" {{ auth()->user()->mobile_number }}" value="{{ old('mobile_number', isset($posts) ? $posts->mobile_number : '') }}" type="text" class="form-control" aria-label="Text input with dropdown button">
+                                                                                </div> -->
 
 
                                                                         <h5 class="mt-2 mb-2">Mobile number 2</h5>
+                                                                        <input class="form-control" placeholder="+92xxxxxxxxxx" id="mobile_number2" name="mobile_number2" type="text" value="+92">
+                                                                        <span class=" bg-warning text-dark" id="error-mobile2"></span>
+                                                                        @if ($errors->hasBag('addPostError'))
+                                                                            <p class="text-danger">
+                                                                                {{ $errors->addPostError->first('mobile_number2')}}
+                                                                            </p>
+                                                                        @endif
 
-                                                                        <div class="form-group validate-input w-100 position-relative">
+                                                                        <script>
+                                                                            $(document).ready(function() {
+                                                                                $("#mobile_number2").on("input", function() { // Use "input" event for better handling of pasted text
+                                                                                    var inputValue = $(this).val();
+                                                                                    var regex = /^\+92\d{10}$/; // Regex for +92 followed by 9 digits
 
-                                                                            <input id="mobile2_number" name="mobile2_number" type="text" class="form-control" aria-label="Text input with dropdown button">
-
-
-                                                                            <span class="data-placeholder" data-placeholder="92**********"></span>
-                                                                            <label id="error2_mobile"></label>
-                                                                            @if($errors->register->has('mobile2_number'))
-
-                                                                            <span style="font-size: 15px" class="text text-danger" id="server2_error">{{$errors->register->first('mobile2_number')}}</span>
-
-
-                                                                            @endif
-                                                                            @if(session('msg'))
-                                                                            <span style="font-size: 15px" class="text text-danger" id="server2_error">{{session('msg')}}</span>
-                                                                            @endif
-
-
-                                                                        </div>
-
-                                                                        <span class=" bg-warning text-dark" id="error2-mobile"></span>
-
-
-
+                                                                                    if (regex.test(inputValue)) {
+                                                                                        $('#error-mobile2').text("");
+                                                                                    } else {
+                                                                                        $('#error-mobile2').text("Phone number is not valid");
+                                                                                    }
+                                                                                });
+                                                                            });
+                                                                        </script>
                                                                         <!-- <h5 class="mt-2 mb-2">Mobile number 2</h5>
 <div class="input-group mb-3">
     <select style="border-style: solid; border-width: 1px; z-index: 5;">
@@ -1453,7 +1448,7 @@ body 4 end
         </script>
 
 
-        <script>
+        {{-- <script>
             $("document").ready(function() {
 
                 $("#mobile_number").keyup(function() {
@@ -1557,7 +1552,7 @@ body 4 end
 
 
             });
-        </script>
+        </script> --}}
 
 
         @endsection

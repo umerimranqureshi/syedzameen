@@ -289,20 +289,28 @@
 
 
                                                 <h5 class="mt-2 mb-2">Mobile number</h5>
-                                                <input class="form-control" placeholder="92xxxxxxxxxx" id="mobile_number" name="mobile_number" type="text">
+                                                <input class="form-control" placeholder="+92xxxxxxxxxx" id="mobile_number" name="mobile_number" type="text" value="+92">
                                                 <span class=" bg-warning text-dark" id="error-mobile"></span>
                                                 @if ($errors->hasBag('addPostError'))
-
-                                                <p class="text-danger">
-
-
-                                                    {{ $errors->addPostError->first('mobile_number')}}
-                                                </p>
-
+                                                    <p class="text-danger">
+                                                        {{ $errors->addPostError->first('mobile_number')}}
+                                                    </p>
                                                 @endif
 
+                                                <script>
+                                                    $(document).ready(function() {
+                                                        $("#mobile_number").on("input", function() { // Use "input" event for better handling of pasted text
+                                                            var inputValue = $(this).val();
+                                                            var regex = /^\+92\d{9}$/; // Regex for +92 followed by 9 digits
 
-
+                                                            if (regex.test(inputValue)) {
+                                                                $('#error-mobile').text("");
+                                                            } else {
+                                                                $('#error-mobile').text("Phone number is not valid");
+                                                            }
+                                                        });
+                                                    });
+                                                </script>
 
 
 

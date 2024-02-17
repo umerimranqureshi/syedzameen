@@ -52,7 +52,7 @@
     <title>Syed-Zameen</title>
 
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('tabIcon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('tabIcon2.png') }}">
     {{-- <link rel="icon" href="{{asset('logo-3.png')}}"> --}}
 </head>
 

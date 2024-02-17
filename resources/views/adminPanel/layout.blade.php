@@ -27,7 +27,7 @@
     <link href="{{ asset('assetsAdminPanel/css/mycustom.css') }}" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="{{ asset('assetsAdminPanel/css/custom.css') }}">
     <script src="{{ asset('assetsAdminPanel/js/jquery.min.js') }}"></script>
-    <link rel="shortcut icon" type="image/png" href="{{asset('tabIcon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{asset('tabIcon2.png')}}">
 
     @yield('header')
     <style>

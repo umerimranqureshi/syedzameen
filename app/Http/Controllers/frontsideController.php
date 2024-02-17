@@ -108,7 +108,7 @@ class frontsideController extends Controller {
             "price" => "required",
             "land_area" => "required",
             "contact_person_name" => "required",
-            // "mobile_number" => "required|numeric|digits:12",
+            // "mobile_number" => "required|numeric|digits:13",
             "email" => "email",
             "mainimage"=>"required",
             "purpose"=> "required",
@@ -366,12 +366,11 @@ class frontsideController extends Controller {
             $req->validateWithBag( 'addPostError', [
                
                 'property_title' => 'required',
-                'property_title' => 'required',
                 'description' => 'required',
                 'price' => 'required',
                 'land_area' => 'required',
                 'contact_person_name' => 'required',
-                "mobile_number" => "required|numeric|digits:12",
+                // "mobile_number" => "required|numeric|digits:13",
                 'email' => 'email',
 
             ] );

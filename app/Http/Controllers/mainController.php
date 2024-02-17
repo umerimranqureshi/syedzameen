@@ -204,7 +204,7 @@ class mainController extends Controller
             "land_area" => "required",
             'mainimage' => 'required|mimes:jpeg,png',
             "contact_person_name" => "required",
-            "mobile_number" => "required|numeric|digits:12",
+            // "mobile_number" => "required|numeric|digits:12",
             "email" => "email",
             "year" => "required|integer",
 
@@ -539,7 +539,7 @@ class mainController extends Controller
                 "price" => "required",
                 "land_area" => "required",
                 "contact_person_name" => "required",
-                "mobile_number" => "required|numeric|digits:12",
+                // "mobile_number" => "required|numeric|digits:12",
                 "email" => "email",
 
             ]);

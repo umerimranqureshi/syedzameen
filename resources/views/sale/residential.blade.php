@@ -260,7 +260,7 @@ function formatPrice($price)
 								</p>
 							</div>
 							<div class="owl-carousel partners mt-30">
-								<img src="{{asset('login-logo.png')}}" alt="Image not found!">
+								<img src="{{asset('index-logo3.png')}}" alt="Image not found!">
 								<img src="{{asset('syedEstate Real logo.png')}}" alt="">
 							</div>
 						</div>

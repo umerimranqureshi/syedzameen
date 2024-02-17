@@ -76,9 +76,9 @@
                                         {{ $post->propertyCate->purpose == 'rent' ? 'Monthly' : '' }} </strong>
                                     <h3 class="color-secondary mt-15">{{ $post->property_title }}</h3>
                                     <span class="address icon-primary f-14 mt-5"><i class="fa fa-map-marker"></i>
-                                        {{ $post->cityAndArea->area . ' ,' . $post->cityAndArea->city }}</span>
+                                        {{ $post->cityAndArea->area ?? ('not-available' . ' ,' . $post->cityAndArea->city ?? 'not-available') }}</span>
                                     <span class="address icon-primary f-14 mt-5"><i class="fa fa-map-marker"></i>
-                                        {{ $post->manual_location . ' ,' . $post->cityAndArea->city }}</span>
+                                        {{ $post->manual_location ?? ('not-available' . ' ,' . $post->cityAndArea->city ?? 'not-available') }}</span>
                                     <ul class="property-features icon-primary d-table f-14 mt-15">
                                         <li><i style="font-size: 20px" class="fa fa-area-chart"></i>{{ $post->land_area }}
                                             Marla</li>
@@ -292,90 +292,85 @@
                                 Email
                             </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="emailModal1" tabindex="-1" aria-labelledby="emailModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="emailModalLabel1">Syed Zameen
-                                            </h5>
-
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Contact Person Name
-                                            <div>
-                                                {{ $post->contact_person_name }}
-                                            </div>
-                                            Email
-                                            <div>
-
-                                                <a href="mailto:{{ $post->email }}">{{ $post->email }}</a>
-                                            </div>
 
 
-                                            <!-- The button used to copy the text -->
 
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="callModal1" tabindex="-1" aria-labelledby="callModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="callModalLabel1">Syed Zameen
-                                            </h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p class="card-text"><span class="font-weight-bold text-success"></span>
-
-                                            </p> <b>Contact Person Name</b>
-                                            <div>
-                                                {{ $post->contact_person_name }}
-                                            </div>
-                                            <b> Mobile Number </b>
-
-                                            <div>
-                                                <a href="tel:+{{ $post->mobile_number }}">{{ $post->mobile_number }}</a>
-
-
-                                            </div>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </form>
 
 
 
                     </div>
 
+                    <!-- Modal -->
+                    <div class="modal fade" id="emailModal1" tabindex="-1" aria-labelledby="emailModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="emailModalLabel1">Syed Zameen
+                                    </h5>
 
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Contact Person Name
+                                    <div>
+                                        {{ $post->contact_person_name }}
+                                    </div>
+                                    Email
+                                    <div>
+
+                                        <a style="color: blue; text-decoration: underline;" href="mailto:{{ $post->email }}">{{ $post->email }}</a>
+                                    </div>
+
+
+                                    <!-- The button used to copy the text -->
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="callModal1" tabindex="-1" aria-labelledby="callModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="callModalLabel1">Syed Zameen
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="card-text"><span class="font-weight-bold text-success"></span>
+
+                                    </p> <b>Contact Person Name</b>
+                                    <div>
+                                        {{ $post->contact_person_name }}
+                                    </div>
+                                    <b> Mobile Number </b>
+                                    <div>
+                                        <a style="color: blue; text-decoration: underline;"  href="tel:+{{ $post->mobile_number }}">test {{ $post->mobile_number }}</a>
+                                    </div>
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -741,9 +736,9 @@
         </div>
     </section>
     <!-- Single Property End
-                                    ==================================================================-->
+                                                ==================================================================-->
     <!--  Partners and Subscribe Form Start
-                                    ==================================================================-->
+                                                ==================================================================-->
     <div class="patner-subscribe">
         <div class="container">
             <div class="row">
@@ -759,7 +754,7 @@
                                     </p>
                                 </div>
                                 <div class="owl-carousel partners mt-30">
-                                    <img src="{{ asset('login-logo.png') }}" alt="Image not found!">
+                                    <img src="{{ asset('index-logo3.png') }}" alt="Image not found!">
                                     <img src="{{ asset('syedEstate Real logo.png') }}" alt="">
                                     {{-- <img src="" alt=""> --}}
                                 </div>
@@ -789,9 +784,9 @@
         </div>
     </div>
     <!--  Partners and Subscribe Form
-                                    ==================================================================-->
+                                                ==================================================================-->
     <!-- jquery Links
-                                    ==================================================================-->
+                                                ==================================================================-->
 
     <!----------------------------------------Javascript starts---------------------------------------->
 
